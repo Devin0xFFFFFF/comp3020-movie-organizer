@@ -33,11 +33,12 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Location = new System.Drawing.Point(12, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
+            this.listView1.Size = new System.Drawing.Size(260, 238);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -46,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.listView1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "3020 A1 Part 2-A";
             this.ResumeLayout(false);
 
         }

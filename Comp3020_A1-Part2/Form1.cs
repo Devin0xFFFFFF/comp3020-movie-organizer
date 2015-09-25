@@ -16,5 +16,10 @@ namespace Comp3020_A1_Part2
         {
             InitializeComponent();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
