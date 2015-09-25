@@ -15,7 +15,14 @@ namespace Comp3020_A1_Part2
         public Form1()
         {
             InitializeComponent();
+            updateListView();
         }
+
+        private void updateListView()
+        {
+            //listView1.Items.Add("Course Number", 3);
+        }
+
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
