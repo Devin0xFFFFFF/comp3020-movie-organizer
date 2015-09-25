@@ -33,7 +33,101 @@
             "HCI",
             "PPI",
             "80"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("CS3380");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS3380",
+            "Databases",
+            "MIA",
+            "95"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS2080",
+            "Algorithms",
+            "NKA",
+            "45"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS3190",
+            "AI",
+            "JAN",
+            "75"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS2130",
+            "Logic",
+            "TUL",
+            "120"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS2150",
+            "OO",
+            "DOM",
+            "65"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS1010",
+            "Intro 1",
+            "GEO",
+            "200"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS1020",
+            "Intro 2",
+            "GEO",
+            "150"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS1260",
+            "Engi Comp",
+            "GRD",
+            "100"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS4050",
+            "Project Mgt",
+            "PRF",
+            "35"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS3370",
+            "Comp Org",
+            "TUL",
+            "75"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS2140",
+            "Prog Practices",
+            "GRD",
+            "90"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS4510",
+            "Parallelism",
+            "MIA",
+            "20"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS4580",
+            "Security",
+            "RIS",
+            "35"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS4710",
+            "Data Mining",
+            "CAR",
+            "50"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS2190",
+            "Sci Comp",
+            "DOM",
+            "40"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS3490",
+            "Graphics",
+            "PPI",
+            "60"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS4350",
+            "Software Eng 2",
+            "ZAP",
+            "50"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS3030",
+            "Automata",
+            "SEB",
+            "85"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
+            "CS4190",
+            "AI 2",
+            "BAL",
+            "40"}, -1);
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,7 +146,25 @@
             this.listView1.GridLines = true;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
-            listViewItem2});
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19,
+            listViewItem20});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(747, 530);
