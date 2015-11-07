@@ -24,6 +24,8 @@ namespace Comp3020A2P3
             people = new List<Person>();
 
             getPeople();
+            displayPeople();
+            savePeople();
         }
 
         private void getPeople()
@@ -51,15 +53,12 @@ namespace Comp3020A2P3
                 }
             }
 
-            foreach(Person p in people)
-            {
-                Console.WriteLine(p.firstname);
-            }
+            reader.Close();
         }
 
         private void savePeople()
         {
-            XmlWriter writer = XmlWriter.Create("../../out.xml");
+            XmlWriter writer = XmlWriter.Create(XML_FILE);
             writer.WriteStartDocument();
 
             writer.WriteStartElement("people");
@@ -83,6 +82,28 @@ namespace Comp3020A2P3
             writer.Close();
         }
 
+        private void displayPeople()
+        {
+            listView1.Items.Clear();
+            foreach(Person p in people)
+            {
+                if (p.age < trackBar1.Value)
+                {
+                    ListViewItem item = new ListViewItem();
+
+                    item.Text = p.firstname;
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem().Text = p.lastname);
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem().Text = "" + p.age);
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem().Text = p.gender);
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem().Text = p.uniyear);
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem().Text = p.phone);
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem().Text = p.address);
+
+                    listView1.Items.Add(item);
+                }
+            }
+        }
+
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -101,6 +122,11 @@ namespace Comp3020A2P3
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            displayPeople();
         }
     }
 
