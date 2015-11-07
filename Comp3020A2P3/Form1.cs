@@ -16,16 +16,18 @@ namespace Comp3020A2P3
         string XML_FILE = "../../people.xml";
         List<Person> people;
         int PERSON_ATTRS = 7;
+        Form2 form;
 
         public Form1()
         {
             InitializeComponent();
 
+            form = new Form2();
+
             people = new List<Person>();
 
             getPeople();
             displayPeople();
-            savePeople();
         }
 
         private void getPeople()
@@ -104,23 +106,63 @@ namespace Comp3020A2P3
             }
         }
 
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        private void createUpdateForm(Person p)
         {
 
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form = new Form2();
+            form.Show();
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int i = 0;
+            string selected = null;
+            Person p = null;
 
+            while(i < listView1.Items.Count && selected == null)
+            {
+                if(listView1.Items[i].Selected)
+                {
+                    selected = listView1.Items[i].Text;
+                }
+                i++;
+            }
+
+            i = 0;
+            while(i < people.Count && p == null)
+            {
+                if(people[i].firstname == selected)
+                {
+                    p = people[i];
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            if(p != null)
+            {
+                form = new Form2();
+                form.Update(p);
+                form.Show();
+            }
+            //savePeople();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            form.Show(this);
+            savePeople();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            savePeople();
             Close();
         }
 
@@ -130,7 +172,7 @@ namespace Comp3020A2P3
         }
     }
 
-    class Person
+    public class Person
     {
         public string firstname, lastname;
         public int age;
