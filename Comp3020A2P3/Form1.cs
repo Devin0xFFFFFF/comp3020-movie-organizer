@@ -13,9 +13,9 @@ namespace Comp3020A2P3
 {
     public partial class Form1 : Form
     {
-        string XML_FILE = "../../people.xml";
-        List<Person> people;
-        int PERSON_ATTRS = 7;
+        static string XML_FILE = "../../people.xml";
+        static List<Person> people;
+        static int PERSON_ATTRS = 7;
         Form2 form;
 
         public Form1()
@@ -58,7 +58,7 @@ namespace Comp3020A2P3
             reader.Close();
         }
 
-        private void savePeople()
+        public static void savePeople()
         {
             XmlWriter writer = XmlWriter.Create(XML_FILE);
             writer.WriteStartDocument();
@@ -87,8 +87,10 @@ namespace Comp3020A2P3
         private void displayPeople()
         {
             listView1.Items.Clear();
-            foreach(Person p in people)
+
+            for(int i = 0; i < people.Count; i++)
             {
+                Person p = people[i];
                 if (p.age < trackBar1.Value)
                 {
                     ListViewItem item = new ListViewItem();
@@ -100,15 +102,11 @@ namespace Comp3020A2P3
                     item.SubItems.Add(new ListViewItem.ListViewSubItem().Text = p.uniyear);
                     item.SubItems.Add(new ListViewItem.ListViewSubItem().Text = p.phone);
                     item.SubItems.Add(new ListViewItem.ListViewSubItem().Text = p.address);
+                    item.SubItems.Add(new ListViewItem.ListViewSubItem().Text = "" + i);
 
                     listView1.Items.Add(item);
                 }
             }
-        }
-
-        private void createUpdateForm(Person p)
-        {
-
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
@@ -119,45 +117,61 @@ namespace Comp3020A2P3
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            string selected = null;
-            Person p = null;
+            int selected = getSelectedPerson();
 
-            while(i < listView1.Items.Count && selected == null)
-            {
-                if(listView1.Items[i].Selected)
-                {
-                    selected = listView1.Items[i].Text;
-                }
-                i++;
-            }
-
-            i = 0;
-            while(i < people.Count && p == null)
-            {
-                if(people[i].firstname == selected)
-                {
-                    p = people[i];
-                }
-                else
-                {
-                    i++;
-                }
-            }
-
-            if(p != null)
+            if (selected != -1)
             {
                 form = new Form2();
-                form.Update(p);
+                form.Update(people[selected]);
                 form.Show();
             }
-            //savePeople();
+            else
+            {
+                MessageBox.Show("No Person Selected To Edit.");
+            }
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            form.Show(this);
-            savePeople();
+            int selected = getSelectedPerson();
+
+            if (selected != -1)
+            {
+                people.RemoveAt(selected);
+                displayPeople();
+                //savePeople();
+            }
+            else
+            {
+                MessageBox.Show("No Person Selected To Delete.");
+            }
+        }
+
+        private int getSelectedPerson()
+        {
+            int i = 0;
+            int selected = -1;
+
+            while (i < listView1.Items.Count && selected == -1)
+            {
+                if (listView1.Items[i].Selected)
+                {
+                    selected = i;
+                }
+                i++;
+            }
+
+            if(selected != -1)
+            {
+                selected = int.Parse(listView1.Items[selected].SubItems[listView1.Items[selected].SubItems.Count - 1].Text);
+            }
+
+            return selected;
+        }
+
+        public static void AddPerson(Person p)
+        {
+            people.Add(p);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

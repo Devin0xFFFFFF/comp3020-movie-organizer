@@ -185,7 +185,6 @@
             this.trackBar1.Size = new System.Drawing.Size(753, 59);
             this.trackBar1.TabIndex = 1;
             this.trackBar1.TickFrequency = 10;
-            this.trackBar1.Value = 50;
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
             // 
             // Form1

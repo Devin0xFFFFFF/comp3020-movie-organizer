@@ -39,13 +39,13 @@
             this.firstnamebox = new System.Windows.Forms.TextBox();
             this.lastnamebox = new System.Windows.Forms.TextBox();
             this.agebox = new System.Windows.Forms.TextBox();
-            this.phonebox = new System.Windows.Forms.TextBox();
             this.addressbox = new System.Windows.Forms.TextBox();
-            this.genderbox = new System.Windows.Forms.ListBox();
-            this.uniyearbox = new System.Windows.Forms.ListBox();
+            this.phonebox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.genderbox = new System.Windows.Forms.ComboBox();
+            this.uniyearbox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,9 +67,9 @@
             this.tableLayoutPanel1.Controls.Add(this.agebox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.addressbox, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.phonebox, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.genderbox, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.uniyearbox, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 8);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -154,35 +154,65 @@
             this.firstnamebox.Location = new System.Drawing.Point(74, 3);
             this.firstnamebox.Name = "firstnamebox";
             this.firstnamebox.Size = new System.Drawing.Size(100, 20);
-            this.firstnamebox.TabIndex = 7;
+            this.firstnamebox.TabIndex = 1;
             // 
             // lastnamebox
             // 
             this.lastnamebox.Location = new System.Drawing.Point(74, 29);
             this.lastnamebox.Name = "lastnamebox";
             this.lastnamebox.Size = new System.Drawing.Size(100, 20);
-            this.lastnamebox.TabIndex = 8;
+            this.lastnamebox.TabIndex = 2;
             // 
             // agebox
             // 
             this.agebox.Location = new System.Drawing.Point(74, 55);
             this.agebox.Name = "agebox";
             this.agebox.Size = new System.Drawing.Size(100, 20);
-            this.agebox.TabIndex = 9;
-            // 
-            // phonebox
-            // 
-            this.phonebox.Location = new System.Drawing.Point(74, 133);
-            this.phonebox.Name = "phonebox";
-            this.phonebox.Size = new System.Drawing.Size(100, 20);
-            this.phonebox.TabIndex = 10;
+            this.agebox.TabIndex = 3;
             // 
             // addressbox
             // 
             this.addressbox.Location = new System.Drawing.Point(74, 159);
             this.addressbox.Name = "addressbox";
             this.addressbox.Size = new System.Drawing.Size(100, 20);
-            this.addressbox.TabIndex = 11;
+            this.addressbox.TabIndex = 7;
+            // 
+            // phonebox
+            // 
+            this.phonebox.Location = new System.Drawing.Point(74, 133);
+            this.phonebox.Name = "phonebox";
+            this.phonebox.Size = new System.Drawing.Size(100, 20);
+            this.phonebox.TabIndex = 6;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(74, 211);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 47);
+            this.flowLayoutPanel1.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(84, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // genderbox
             // 
@@ -192,8 +222,9 @@
             "Female"});
             this.genderbox.Location = new System.Drawing.Point(74, 81);
             this.genderbox.Name = "genderbox";
-            this.genderbox.Size = new System.Drawing.Size(120, 17);
-            this.genderbox.TabIndex = 12;
+            this.genderbox.Size = new System.Drawing.Size(121, 21);
+            this.genderbox.TabIndex = 4;
+            this.genderbox.SelectedIndexChanged += new System.EventHandler(this.genderbox_SelectedIndexChanged);
             // 
             // uniyearbox
             // 
@@ -207,38 +238,9 @@
             "Ph.D"});
             this.uniyearbox.Location = new System.Drawing.Point(74, 107);
             this.uniyearbox.Name = "uniyearbox";
-            this.uniyearbox.Size = new System.Drawing.Size(120, 17);
-            this.uniyearbox.TabIndex = 13;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(84, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(74, 211);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 47);
-            this.flowLayoutPanel1.TabIndex = 16;
+            this.uniyearbox.Size = new System.Drawing.Size(121, 21);
+            this.uniyearbox.TabIndex = 5;
+            this.uniyearbox.SelectedIndexChanged += new System.EventHandler(this.uniyearbox_SelectedIndexChanged);
             // 
             // Form2
             // 
@@ -248,7 +250,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Person Update";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -271,10 +273,10 @@
         private System.Windows.Forms.TextBox agebox;
         private System.Windows.Forms.TextBox addressbox;
         private System.Windows.Forms.TextBox phonebox;
-        private System.Windows.Forms.ListBox genderbox;
-        private System.Windows.Forms.ListBox uniyearbox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox genderbox;
+        private System.Windows.Forms.ComboBox uniyearbox;
     }
 }
