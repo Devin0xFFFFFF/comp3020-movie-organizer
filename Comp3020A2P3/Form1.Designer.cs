@@ -44,9 +44,14 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.currAge = new System.Windows.Forms.Label();
+            this.maxAge = new System.Windows.Forms.Label();
+            this.minAge = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,13 +116,16 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.listView1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.trackBar1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(759, 437);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -176,15 +184,54 @@
             this.columnHeader7.Text = "Address";
             this.columnHeader7.Width = 200;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.currAge);
+            this.panel1.Controls.Add(this.maxAge);
+            this.panel1.Controls.Add(this.minAge);
+            this.panel1.Controls.Add(this.trackBar1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(753, 59);
+            this.panel1.TabIndex = 1;
+            // 
+            // currAge
+            // 
+            this.currAge.AutoSize = true;
+            this.currAge.Location = new System.Drawing.Point(9, 35);
+            this.currAge.Name = "currAge";
+            this.currAge.Size = new System.Drawing.Size(35, 13);
+            this.currAge.TabIndex = 4;
+            this.currAge.Text = "label2";
+            // 
+            // maxAge
+            // 
+            this.maxAge.AutoSize = true;
+            this.maxAge.Location = new System.Drawing.Point(725, 35);
+            this.maxAge.Name = "maxAge";
+            this.maxAge.Size = new System.Drawing.Size(35, 13);
+            this.maxAge.TabIndex = 3;
+            this.maxAge.Text = "label1";
+            // 
+            // minAge
+            // 
+            this.minAge.AutoSize = true;
+            this.minAge.Location = new System.Drawing.Point(9, 35);
+            this.minAge.Name = "minAge";
+            this.minAge.Size = new System.Drawing.Size(35, 13);
+            this.minAge.TabIndex = 2;
+            this.minAge.Text = "label1";
+            // 
             // trackBar1
             // 
-            this.trackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trackBar1.Location = new System.Drawing.Point(3, 3);
+            this.trackBar1.Location = new System.Drawing.Point(0, 3);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(753, 59);
+            this.trackBar1.Size = new System.Drawing.Size(753, 45);
             this.trackBar1.TabIndex = 1;
             this.trackBar1.TickFrequency = 10;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
             // 
             // Form1
@@ -200,7 +247,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,6 +274,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label minAge;
+        private System.Windows.Forms.Label currAge;
+        private System.Windows.Forms.Label maxAge;
     }
 }
 

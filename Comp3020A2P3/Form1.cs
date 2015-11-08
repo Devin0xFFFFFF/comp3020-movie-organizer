@@ -17,12 +17,19 @@ namespace Comp3020A2P3
         static List<Person> people;
         static int PERSON_ATTRS = 7;
         Form2 form;
+        int ageStartPos;
+        double TRACKBAR_SCALE;
 
         public Form1()
         {
             InitializeComponent();
 
-            form = new Form2();
+            minAge.Text = "" + trackBar1.Minimum;
+            currAge.Text = "" + trackBar1.Value;
+            maxAge.Text = "" + trackBar1.Maximum;
+
+            ageStartPos = currAge.Location.X;
+            TRACKBAR_SCALE = (double)(maxAge.Location.X - minAge.Location.X) / trackBar1.Maximum;
 
             people = new List<Person>();
 
@@ -183,6 +190,12 @@ namespace Comp3020A2P3
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
             displayPeople();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            currAge.Text = "" + trackBar1.Value;
+            currAge.Location = new Point((int)((double)ageStartPos + ((double)trackBar1.Value * TRACKBAR_SCALE)), currAge.Location.Y);
         }
     }
 
