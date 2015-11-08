@@ -13,7 +13,7 @@ namespace Comp3020A2P3
 {
     public partial class Form1 : Form
     {
-        static string XML_FILE = "../../people.xml";
+        static string XML_FILE = "people.xml";
         static List<Person> people;
         static int PERSON_ATTRS = 7;
         Form2 form;
