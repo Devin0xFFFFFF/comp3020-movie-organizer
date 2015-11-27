@@ -13,11 +13,13 @@ namespace Comp3020A3
         public HomeForm()
         {
             InitializeComponent();
+            ApplicationManager.loggedIn = new User() { username = "bobafett2", password = "demonlord2", following = new List<string>() };
+            ApplicationManager.createForms(this);
+            checkLoggedIn();
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
-            checkLoggedIn();
             loadNewMovies();
             loadNewReviews();
         }
@@ -38,6 +40,17 @@ namespace Comp3020A3
             newReviews = ReviewManager.getReviews(newReviews, 10);
 
             dataGridView2.DataSource = newReviews;
+            dataGridView2.Columns[0].Visible = false;
+        }
+
+        private void viewMoviePage(object sender, DataGridViewCellEventArgs e)
+        {
+            List<Movie> movies = (List<Movie>)dataGridView1.DataSource;
+            Movie[] movs = new Movie[movies.Count];
+            movies.CopyTo(movs);
+            Movie movie = movs[e.RowIndex];
+
+            ApplicationManager.showForm(this, "MOVIE", new Movie(movie));
         }
     }
 }

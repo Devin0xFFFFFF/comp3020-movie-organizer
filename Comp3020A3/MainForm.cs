@@ -62,24 +62,24 @@ namespace Comp3020A3
 
         private void profileLink_Click(object sender, EventArgs e)
         {
-            //ProfileForm.Show();
+            ApplicationManager.showForm(this, "PROFILE", ApplicationManager.loggedIn);
         }
 
         private void myListsLink_Click(object sender, EventArgs e)
         {
-            //MyListsForm.Show();
+            List<MovieList> lists = MovieListManager.getMovieLists(ApplicationManager.loggedIn.username);
+            ApplicationManager.showForm(this, "LISTS", lists);
         }
 
         private void signOutLink_Click(object sender, EventArgs e)
         {
             ApplicationManager.loggedIn = null;
-            checkLoggedIn();
+            ApplicationManager.showForm(this, "HOME", null);
         }
 
         private void signInLink_Click(object sender, EventArgs e)
         {
-            SignInForm form = new SignInForm();
-            form.Show();
+            ApplicationManager.showForm(this, "SIGNIN", null);
         }
 
         private void search(object sender, EventArgs e)
@@ -90,14 +90,28 @@ namespace Comp3020A3
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            //AdvancedSearchForm.Show();
 
+        }
 
-            //List<Movie> movs = DataAccess.readMovies();
-            //MovieForm form = new MovieForm(movs.ElementAt(0));
-            List<User> users = DataAccess.readUsers();
-            ProfileForm form = new ProfileForm(users.ElementAt(0));
-            form.Show();
+        private void titleLabel_Click(object sender, EventArgs e)
+        {
+            ApplicationManager.showForm(this, "HOME", null);
+        }
+
+        private void closeApplication(object sender, FormClosedEventArgs e)
+        {
+            ApplicationManager.exitApplication();
+        }
+
+        public void changeForm(Object element)
+        {
+            checkLoggedIn();
+            fillInForm(element);
+        }
+
+        protected virtual void fillInForm(Object element)
+        {
+            
         }
     }
 }

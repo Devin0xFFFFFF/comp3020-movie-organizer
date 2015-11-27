@@ -33,7 +33,7 @@ namespace Comp3020A3
             }
             else
             {
-                Close();
+                ApplicationManager.showForm(this, "HOME", null);
             }
         }
 
@@ -49,7 +49,7 @@ namespace Comp3020A3
             }
             else
             {
-                Close();
+                ApplicationManager.showForm(this, "HOME", null);
             }
         }
     }

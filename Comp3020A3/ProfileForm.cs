@@ -15,10 +15,9 @@ namespace Comp3020A3
             InitializeComponent();
         }
 
-        public ProfileForm(User user)
+        protected override void fillInForm(Object element)
         {
-            InitializeComponent();
-
+            User user = (User)element;
             fillInProfile(user);
         }
 

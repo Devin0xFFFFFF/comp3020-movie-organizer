@@ -15,9 +15,9 @@ namespace Comp3020A3
             InitializeComponent();
         }
 
-        public MovieForm(Movie movie)
+        protected override void fillInForm(Object element)
         {
-            InitializeComponent();
+            Movie movie = (Movie)element;
             fillInPage(movie);
         }
 
@@ -27,6 +27,8 @@ namespace Comp3020A3
             yearLabel.Text = "(" + movie.year + ")";
             ratingLabel.Text = "Rating: " + movie.rating;
             certificationLabel.Text = movie.certification;
+
+            genreList.Items.Clear();
 
             foreach(string genre in movie.genres)
             {
@@ -38,7 +40,9 @@ namespace Comp3020A3
 
             actorList.Items.Add("Actors:");
 
-            foreach(string actor in movie.actors)
+            actorList.Items.Clear();
+
+            foreach (string actor in movie.actors)
             {
                 actorList.Items.Add(actor);
             }

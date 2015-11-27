@@ -16,5 +16,22 @@ namespace Comp3020A3
         public int rating { get; set; }
         public List<string> genres { get; set; }
         public List<string> actors { get; set; }
+
+        public Movie()
+        {
+
+        }
+
+        public Movie(Movie m)
+        {
+            title = m.title;
+            year = m.year;
+            length = m.length;
+            certification = m.certification;
+            director = m.director;
+            rating = m.rating;
+            genres = m.genres;
+            actors = m.actors;
+        }
     }
 }
