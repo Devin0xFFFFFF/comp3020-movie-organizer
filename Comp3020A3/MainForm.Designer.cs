@@ -103,6 +103,7 @@
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(174, 20);
             this.searchBox.TabIndex = 1;
+            this.searchBox.TextChanged += new System.EventHandler(this.search);
             // 
             // searchButton
             // 
@@ -113,6 +114,7 @@
             this.searchButton.TabIndex = 2;
             this.searchButton.Text = "Advanced Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // profileLink
             // 
@@ -123,6 +125,7 @@
             this.profileLink.Size = new System.Drawing.Size(36, 13);
             this.profileLink.TabIndex = 3;
             this.profileLink.Text = "Profile";
+            this.profileLink.Click += new System.EventHandler(this.profileLink_Click);
             // 
             // myListsLink
             // 
@@ -133,6 +136,7 @@
             this.myListsLink.Size = new System.Drawing.Size(45, 13);
             this.myListsLink.TabIndex = 4;
             this.myListsLink.Text = "My Lists";
+            this.myListsLink.Click += new System.EventHandler(this.myListsLink_Click);
             // 
             // signOutLink
             // 
@@ -143,6 +147,7 @@
             this.signOutLink.Size = new System.Drawing.Size(48, 13);
             this.signOutLink.TabIndex = 5;
             this.signOutLink.Text = "Sign Out";
+            this.signOutLink.Click += new System.EventHandler(this.signOutLink_Click);
             // 
             // signInLink
             // 
@@ -153,6 +158,7 @@
             this.signInLink.Size = new System.Drawing.Size(65, 13);
             this.signInLink.TabIndex = 6;
             this.signInLink.Text = "Sign In / Up";
+            this.signInLink.Click += new System.EventHandler(this.signInLink_Click);
             // 
             // MainForm
             // 

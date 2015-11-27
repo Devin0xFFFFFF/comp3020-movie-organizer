@@ -19,24 +19,7 @@ namespace Comp3020A3
         {
             checkLoggedIn();
             loadNewMovies();
-        }
-
-        private void checkLoggedIn()
-        {
-            if(ApplicationManager.loggedIn != null)
-            {
-                changeProfileLinkText ("Profile");
-                changemyListsLinkText("My Lists");
-                changesignOutLinkText("Sign Out");
-                changesignInLinkText("");
-            }
-            else
-            {
-                changeProfileLinkText("");
-                changemyListsLinkText("");
-                changesignOutLinkText("");
-                changesignInLinkText("Sign In / Up");
-            }
+            loadNewReviews();
         }
 
         private void loadNewMovies()
@@ -46,6 +29,15 @@ namespace Comp3020A3
             newMovies = MovieManager.getMovies(newMovies, 10);
 
             dataGridView1.DataSource = newMovies;
+        }
+
+        private void loadNewReviews()
+        {
+            List<Review> newReviews = DataAccess.readReviews();
+            ReviewManager.sortByDateTime(newReviews);
+            newReviews = ReviewManager.getReviews(newReviews, 10);
+
+            dataGridView2.DataSource = newReviews;
         }
     }
 }

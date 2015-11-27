@@ -104,5 +104,26 @@ namespace Comp3020A3
 
             return removed;
         }
+
+        public static List<Review> getReviews(List<Review> reviews, int amt)
+        {
+            List<Review> revs = new List<Review>();
+            int i;
+
+            for (i = 0; i <= amt && i < reviews.Count; i++)
+            {
+                revs.Add(reviews.ElementAt(i));
+            }
+
+            return revs;
+        }
+
+        public static void sortByDateTime(List<Review> reviews)
+        {
+            reviews.Sort(delegate (Review x, Review y)
+            {
+                return y.createdAt.CompareTo(x.createdAt);
+            });
+        }
     }
 }
