@@ -36,5 +36,15 @@ namespace Comp3020A3
         {
             cancelButton.Text = txt;
         }
+
+        protected virtual void okButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void cancelButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

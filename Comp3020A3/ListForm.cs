@@ -66,7 +66,8 @@ namespace Comp3020A3
 
         private void newListButton_Click(object sender, EventArgs e)
         {
-            
+            ModifyListNameForm form = new ModifyListNameForm(ApplicationManager.loggedIn.username);
+            form.Show();
         }
     }
 }

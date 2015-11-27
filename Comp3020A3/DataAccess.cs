@@ -15,7 +15,16 @@ namespace Comp3020A3
         public static long generateID()
         {
             Random r = new Random();
-            return (long)((r.NextDouble() * 2.0 - 1.0) * long.MaxValue);
+            return LongRandom(10000000000000000, 99999999999999999, r);
+        }
+
+        public static long LongRandom(long min, long max, Random rand)
+        {
+            byte[] buf = new byte[8];
+            rand.NextBytes(buf);
+            long longRand = BitConverter.ToInt64(buf, 0);
+
+            return (Math.Abs(longRand % (max - min)) + min);
         }
 
         public static long validateReviewID(long ID)
@@ -65,6 +74,7 @@ namespace Comp3020A3
                 while (i < reviews.Count && valid)
                 {
                     valid = reviews.ElementAt(i).ID != ID;
+                    i++;
                 }
                 tries++;
                 if (!valid)

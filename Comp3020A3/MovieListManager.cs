@@ -76,12 +76,37 @@ namespace Comp3020A3
                 {
                     ml.RemoveAt(i);
                     removed = true;
+                    DataAccess.writeMovieLists(ml);
                 }
 
                 i++;
             }
 
             return removed;
+        }
+
+        public static bool changeListName(long ID, string name, List<FormError> errors)
+        {
+            List<MovieList> ml = DataAccess.readMovieLists();
+            int i = 0;
+
+            while(i < ml.Count && ml.ElementAt(i).ID != ID)
+            {
+                i++;
+            }
+
+            if(i < ml.Count)
+            {
+                ml.ElementAt(i).name = name;
+
+                if(ml.ElementAt(i).valid(errors))
+                {
+                    DataAccess.writeMovieLists(ml);
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

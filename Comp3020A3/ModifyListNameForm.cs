@@ -10,11 +10,74 @@ using System.Windows.Forms;
 
 namespace Comp3020A3
 {
-    public partial class ModifyListNameForm : PopupForm
+    public partial class ModifyListNameForm : Comp3020A3.PopupForm
     {
+        private MovieList list;
+        private string user;
+
         public ModifyListNameForm()
         {
+            
+        }
+
+        public ModifyListNameForm(string user)
+        {
             InitializeComponent();
+            list = null;
+            this.user = user;
+            fillPopup();
+        }
+
+        public ModifyListNameForm(MovieList list)
+        {
+            InitializeComponent();
+            this.list = list;
+            this.user = null;
+            nameBox.Text = list.name;
+            fillPopup();
+        }
+
+        private void fillPopup()
+        {
+            editTitle("Set List Name");
+            errorLabel.Text = "";
+        }
+
+        protected override void okButton_Click(object sender, EventArgs e)
+        {
+            string name = nameBox.Text;
+            List<FormError> errors;
+
+            if (list != null)
+            {
+                errors = new List<FormError>();
+                MovieListManager.changeListName(list.ID, name, errors);
+                errorLabel.Text = FormError.getErrorMessage("TITLELEN", errors);
+            }
+            else
+            {
+                //new list
+                errors = MovieListManager.createMovieList(name, user);
+                errorLabel.Text = FormError.getErrorMessage("TITLELEN", errors);
+            }
+
+            if(errors.Count <= 0)
+            {
+                if(user != null)
+                {
+                    ApplicationManager.reloadForm("LISTS", MovieListManager.getMovieLists(user));
+                }
+                else
+                {
+                    ApplicationManager.reloadForm("LISTS", MovieListManager.getMovieLists(list.user));
+                }
+                Close();
+            }
+        }
+
+        protected override void cancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

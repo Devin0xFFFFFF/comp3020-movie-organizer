@@ -11,9 +11,10 @@ namespace Comp3020A3
     {
         public static User loggedIn = null;
         public static SearchQuery lastQuery = null;
-        public static Form lastForm = null;
 
         public static List<MainForm> forms = new List<MainForm>();
+        public static MainForm lastForm = null;
+        public static object lastObject = null;
 
         public static MainForm getForm(string form)
         {
@@ -49,7 +50,18 @@ namespace Comp3020A3
             MainForm nextForm = getForm(next);
             nextForm.Show();
             nextForm.changeForm(obj);
+            lastObject = obj;
+        }
 
+        public static void reloadForm(string form)
+        {
+            getForm(form).changeForm(lastObject);
+        }
+
+        public static void reloadForm(string form, object obj)
+        {
+            getForm(form).changeForm(obj);
+            lastObject = obj;
         }
 
         public static void createForms(MainForm home)
