@@ -10,5 +10,23 @@ namespace Comp3020A3
     {
         public string err_code { get; set; }
         public string err_msg { get; set; }
+
+        public static string getErrorMessage(string code, List<FormError> errors)
+        {
+            string msg = "";
+            int i = 0;
+
+            while(i < errors.Count && !errors.ElementAt(i).err_code.Equals(code))
+            {
+                i++;
+            }
+
+            if(i < errors.Count)
+            {
+                msg = errors.ElementAt(i).err_msg;
+            }
+
+            return msg;
+        }
     }
 }

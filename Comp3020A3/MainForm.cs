@@ -78,7 +78,8 @@ namespace Comp3020A3
 
         private void signInLink_Click(object sender, EventArgs e)
         {
-            //SignInForm.Show();
+            SignInForm form = new SignInForm();
+            form.Show();
         }
 
         private void search(object sender, EventArgs e)
