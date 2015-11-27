@@ -10,7 +10,7 @@ namespace Comp3020A3
     {
         public string title { get; set; }
         public int year { get; set; }
-        public string length { get; set; }
+        public int length { get; set; }
         public string certification { get; set; }
         public string director { get; set; }
         public int rating { get; set; }
