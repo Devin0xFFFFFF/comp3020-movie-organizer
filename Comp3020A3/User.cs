@@ -16,6 +16,29 @@ namespace Comp3020A3
 
         public List<string> following { get; set; }
 
+        public bool isFollowing(string username)
+        {
+            int i = 0;
+
+            while(i < following.Count)
+            {
+                if(following.ElementAt(i).Equals(username))
+                {
+                    return true;
+                }
+                i++;
+            }
+
+            return false;
+        }
+
+        public int getFollowerCount()
+        {
+            List<User> followers = UserManager.getFollowers(this.username);
+
+            return followers.Count;
+        }
+
         public bool valid(List<FormError> errors)
         {
             int errs = errors.Count;

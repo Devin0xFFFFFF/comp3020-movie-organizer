@@ -54,11 +54,11 @@ namespace Comp3020A3
 
             while (i >= 0)
             {
-                if (mls.ElementAt(i).user.Equals(username))
+                if (!mls.ElementAt(i).user.Equals(username))
                 {
                     mls.RemoveAt(i);
-                    i--;
                 }
+                i--;
             }
 
             return mls;

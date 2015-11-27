@@ -36,6 +36,8 @@ namespace Comp3020A3
             directorLabel.Text = "Director: " + movie.director;
             lengthLabel.Text = "Length: " + movie.length + " min";
 
+            actorList.Items.Add("Actors:");
+
             foreach(string actor in movie.actors)
             {
                 actorList.Items.Add(actor);
