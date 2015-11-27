@@ -10,6 +10,8 @@ namespace Comp3020A3
 {
     public class DataAccess
     {
+        public static string DATA_DIR = Environment.CurrentDirectory + "\\data";
+
         public static long generateID()
         {
             Random r = new Random();
@@ -84,7 +86,7 @@ namespace Comp3020A3
             List<Movie> l = new List<Movie>();
             XmlSerializer serial = new XmlSerializer(typeof(List<Movie>));
 
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\movies.xml", FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new FileStream(DATA_DIR + "\\movies.xml", FileMode.Open, FileAccess.Read))
             {
                 l = serial.Deserialize(fs) as List<Movie>;
             }
@@ -97,7 +99,7 @@ namespace Comp3020A3
             List<User> l = new List<User>();
             XmlSerializer serial = new XmlSerializer(typeof(List<User>));
 
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\users.xml", FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new FileStream(DATA_DIR + "\\users.xml", FileMode.Open, FileAccess.Read))
             {
                 l = serial.Deserialize(fs) as List<User>;
             }
@@ -110,7 +112,7 @@ namespace Comp3020A3
             List<MovieList> l = new List<MovieList>();
             XmlSerializer serial = new XmlSerializer(typeof(List<MovieList>));
 
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\movielists.xml", FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new FileStream(DATA_DIR + "\\movielists.xml", FileMode.Open, FileAccess.Read))
             {
                 l = serial.Deserialize(fs) as List<MovieList>;
             }
@@ -123,7 +125,7 @@ namespace Comp3020A3
             List<Review> r = new List<Review>();
             XmlSerializer serial = new XmlSerializer(typeof(List<Review>));
 
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\reviews.xml", FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new FileStream(DATA_DIR + "\\reviews.xml", FileMode.Open, FileAccess.Read))
             {
                 r = serial.Deserialize(fs) as List<Review>;
             }
@@ -135,7 +137,7 @@ namespace Comp3020A3
         {
             XmlSerializer serial = new XmlSerializer(typeof(List<Movie>));
 
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\movies.xml", FileMode.Create, FileAccess.Write))
+            using (FileStream fs = new FileStream(DATA_DIR + "\\movies.xml", FileMode.Create, FileAccess.Write))
             {
                 serial.Serialize(fs, movies);
             }
@@ -145,7 +147,7 @@ namespace Comp3020A3
         {
             XmlSerializer serial = new XmlSerializer(typeof(List<User>));
 
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\users.xml", FileMode.Create, FileAccess.Write))
+            using (FileStream fs = new FileStream(DATA_DIR + "\\users.xml", FileMode.Create, FileAccess.Write))
             {
                 serial.Serialize(fs, users);
             }
@@ -155,7 +157,7 @@ namespace Comp3020A3
         {
             XmlSerializer serial = new XmlSerializer(typeof(List<MovieList>));
 
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\movielists.xml", FileMode.Create, FileAccess.Write))
+            using (FileStream fs = new FileStream(DATA_DIR + "\\movielists.xml", FileMode.Create, FileAccess.Write))
             {
                 serial.Serialize(fs, ml);
             }
@@ -165,7 +167,7 @@ namespace Comp3020A3
         {
             XmlSerializer serial = new XmlSerializer(typeof(List<Review>));
 
-            using (FileStream fs = new FileStream(Environment.CurrentDirectory + "\\reviews.xml", FileMode.Create, FileAccess.Write))
+            using (FileStream fs = new FileStream(DATA_DIR + "\\reviews.xml", FileMode.Create, FileAccess.Write))
             {
                 serial.Serialize(fs, reviews);
             }

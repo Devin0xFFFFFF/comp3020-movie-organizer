@@ -21,13 +21,14 @@ namespace Comp3020A3
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<Review> l = new List<Review>();
+            MovieManager.convertXMLFormats(Environment.CurrentDirectory + "\\movies.xml");
+            //List<Review> l = new List<Review>();
 
             //l.Add(new Review() { ID = DataAccess.generateID(), author = "bobafett" });
 
             //DataAccess.writeReviews(l);
 
-            ReviewManager.createReview("bobafett", "transformers", "this sucked", "This was an awful movie.");
+            //ReviewManager.createReview("bobafett", "transformers", "this sucked", "This was an awful movie.");
 
             //QueryEngine.addToMovieList(439512116797564928, "superman");
             //QueryEngine.addUser("tommyt", "12345678");

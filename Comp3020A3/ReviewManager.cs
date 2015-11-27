@@ -43,6 +43,48 @@ namespace Comp3020A3
             return reviews;
         }
 
+        public static Review editReview(long ID)
+        {
+            List<Review> reviews = DataAccess.readReviews();
+            Review review = null;
+            int i = 0;
+
+            while (i < reviews.Count && review == null)
+            {
+                if (reviews.ElementAt(i).ID == ID)
+                {
+                    review = reviews.ElementAt(i);
+                }
+                i++;
+            }
+
+            return review;
+        }
+
+        public static bool saveReview(Review review)
+        {
+            List<Review> reviews = DataAccess.readReviews();
+            int i = 0;
+
+            while (i < reviews.Count && reviews.ElementAt(i).ID != review.ID)
+            {
+                i++;
+            }
+
+            if(i < reviews.Count)
+            {
+                reviews.ElementAt(i).title = review.title;
+                reviews.ElementAt(i).content = review.content;
+                reviews.ElementAt(i).lastEdited = DateTime.Now;
+
+                DataAccess.writeReviews(reviews);
+
+                return true;
+            }
+
+            return false;
+        }
+
         public static bool destroyReview(long ID)
         {
             List<Review> reviews = DataAccess.readReviews();

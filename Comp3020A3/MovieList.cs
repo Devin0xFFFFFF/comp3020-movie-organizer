@@ -8,6 +8,8 @@ namespace Comp3020A3
 {
     public class MovieList
     {
+        public static int MAX_NAME_LENGTH = 50;
+
         public long ID { get; set; }
         public string name { get; set; }
         public string user { get; set; }
@@ -29,6 +31,11 @@ namespace Comp3020A3
                 errors.Add(new FormError() { err_code = "IDCONFLICT", err_msg = "Cannot create review at this time." });
             }
 
+            if (name.Length > MAX_NAME_LENGTH)
+            {
+                errors.Add(new FormError() { err_code = "TITLELEN", err_msg = "List name too long (" + name.Length + "/" + MAX_NAME_LENGTH + ")." });
+            }
+
             //Unique ID
             List<MovieList> ml = DataAccess.readMovieLists();
             int i = 0;
@@ -42,6 +49,8 @@ namespace Comp3020A3
             {
                 errors.Add(new FormError() { err_code = "NOTUNIQUEID", err_msg = "ID '" + ID + "' is taken." });
             }
+
+            //may add verification for author, movie
 
             return errs == errors.Count;
         }
