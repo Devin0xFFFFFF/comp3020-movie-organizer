@@ -109,6 +109,11 @@ namespace Comp3020A3
             fillInForm(element);
         }
 
+        public virtual void processData(FormData data)
+        {
+
+        }
+
         protected virtual void fillInForm(Object element)
         {
             

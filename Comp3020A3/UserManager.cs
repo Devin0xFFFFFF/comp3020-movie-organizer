@@ -108,7 +108,7 @@ namespace Comp3020A3
             List<User> users = DataAccess.readUsers();
             int i;
 
-            for(i = 0; i < users.Count; i++)
+            for(i = users.Count - 1; i >= 0; i--)
             {
                 if(!users.ElementAt(i).isFollowing(user))
                 {

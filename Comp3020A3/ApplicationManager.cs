@@ -61,6 +61,12 @@ namespace Comp3020A3
             forms.Add(new ListForm());
         }
 
+        public static void sendData(FormData data, string form)
+        {
+            MainForm mainForm = getForm(form);
+            mainForm.processData(data);
+        }
+
         public static void exitApplication()
         {
             //showForm(forms.ElementAt(0), "HOME", null);

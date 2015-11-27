@@ -52,9 +52,21 @@ namespace Comp3020A3
             newListButton.Hide();
         }
 
+        public override void processData(FormData data)
+        {
+            if(data.data_type.Equals("NEWLIST"))
+            {
+                object[] objs = new object[1];
+                data.data.CopyTo(objs);
+                string listName = (string)objs[0];
+
+                //if()
+            }
+        }
+
         private void newListButton_Click(object sender, EventArgs e)
         {
-            //either popup or something dynamic
+            
         }
     }
 }

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ApplicationManager.cs" />
     <Compile Include="DataAccess.cs" />
+    <Compile Include="FormData.cs" />
     <Compile Include="FormError.cs" />
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -67,6 +68,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyListNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyListNameForm.Designer.cs">
+      <DependentUpon>ModifyListNameForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movie.cs" />
     <Compile Include="MovieForm.cs">
       <SubType>Form</SubType>
@@ -77,6 +84,12 @@
     <Compile Include="MovieList.cs" />
     <Compile Include="MovieListManager.cs" />
     <Compile Include="MovieManager.cs" />
+    <Compile Include="PopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupForm.Designer.cs">
+      <DependentUpon>PopupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MovieForm.resx">
       <DependentUpon>MovieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForm.resx">
+      <DependentUpon>PopupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfileForm.resx">
       <DependentUpon>ProfileForm.cs</DependentUpon>

@@ -49,7 +49,10 @@ namespace Comp3020A3
             }
             else
             {
-                ApplicationManager.showForm(this, "HOME", null);
+                if(UserManager.login(usernameBox.Text, passwordBox.Text, errors))
+                {
+                    ApplicationManager.showForm(this, "HOME", null);
+                }
             }
         }
     }
