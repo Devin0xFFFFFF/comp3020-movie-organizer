@@ -91,6 +91,9 @@ namespace Comp3020A3
         private void searchButton_Click(object sender, EventArgs e)
         {
             //AdvancedSearchForm.Show();
+            List<Movie> movs = DataAccess.readMovies();
+            MovieForm form = new MovieForm(movs.ElementAt(0));
+            form.Show();
         }
     }
 }

@@ -26,14 +26,31 @@ namespace Comp3020A3
             return errors;
         }
 
-        public static List<Review> getReviews(string author)
+        public static List<Review> getReviewsByAuthor(string author)
         {
             List<Review> reviews = DataAccess.readReviews();
-            int i = reviews.Count;
+            int i = reviews.Count - 1;
 
             while (i >= 0)
             {
-                if(reviews.ElementAt(i).author.Equals(author))
+                if(reviews.ElementAt(i).author == null || !reviews.ElementAt(i).author.Equals(author))
+                {
+                    reviews.RemoveAt(i);
+                }
+                i--;
+            }
+
+            return reviews;
+        }
+
+        public static List<Review> getReviewsByMovie(string movie)
+        {
+            List<Review> reviews = DataAccess.readReviews();
+            int i = reviews.Count - 1;
+
+            while (i >= 0)
+            {
+                if (reviews.ElementAt(i).movie == null || !reviews.ElementAt(i).movie.Equals(movie))
                 {
                     reviews.RemoveAt(i);
                 }
