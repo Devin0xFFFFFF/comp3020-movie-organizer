@@ -118,9 +118,7 @@ namespace Comp3020A3
 
         public static void exitApplication()
         {
-            //showForm(forms.ElementAt(0), "HOME", null);
-            //forms.ElementAt(0).Close();
-            //forms.ElementAt(4).Close();
+            Application.Exit();
         }
     }
 }
