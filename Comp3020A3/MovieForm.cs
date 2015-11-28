@@ -47,6 +47,15 @@ namespace Comp3020A3
                 actorList.Items.Add(actor);
             }
 
+            if(ApplicationManager.loggedIn == null)
+            {
+                addToListButton.Hide();
+            }
+            else
+            {
+                addToListButton.Show();
+            }
+
             fillInReviews(movie.title);
         }
 

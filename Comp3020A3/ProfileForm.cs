@@ -51,7 +51,7 @@ namespace Comp3020A3
             listGrid.DataSource = MovieListManager.getMovieLists(user.username);
             reviewGrid.DataSource = ReviewManager.getReviewsByAuthor(user.username);
 
-            if(ApplicationManager.loggedIn != null && ApplicationManager.loggedIn.username.Equals(user.username))
+            if(ApplicationManager.loggedIn == null || ApplicationManager.loggedIn.username.Equals(user.username))
             {
                 followButton.Hide();
             }
