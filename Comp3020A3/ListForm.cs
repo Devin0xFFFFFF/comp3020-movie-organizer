@@ -95,7 +95,8 @@ namespace Comp3020A3
 
         private void editContentsButton_Click(object sender, EventArgs e)
         {
-
+            RemoveFromListsForm form = new RemoveFromListsForm(MovieListManager.getMovieList(long.Parse(listIDLabel.Text)));
+            form.Show();
         }
     }
 }

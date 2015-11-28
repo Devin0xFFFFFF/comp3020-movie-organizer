@@ -26,8 +26,8 @@ namespace Comp3020A3
             int i;
 
             foreach (string movie in list.movies)
-            {
-                box().Items.Add(list.name);
+            { 
+                box().Items.Add(movie);
             }
 
             for (i = 0; i < box().Items.Count; i++)
@@ -46,10 +46,12 @@ namespace Comp3020A3
             {
                 if (!box().GetItemChecked(i))
                 {
-                    MovieListManager.removeFromMovieList(ml.ID, getSubTitle());
+                    MovieListManager.removeFromMovieList(ml.ID, box().Items[i].ToString());
                 }
                 i++;
             }
+
+            ApplicationManager.reloadForm(MovieListManager.getMovieList(ml.ID));
 
             Close();
         }
