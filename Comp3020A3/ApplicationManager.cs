@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,8 @@ namespace Comp3020A3
                 next.Show();
                 next.changeForm(obj);
 
+                next.Location = appStack.Peek().form.Location;
+
                 appStack.Push(new ApplicationState() { form = next, obj = obj, user = (loggedIn == null) ? null : loggedIn.username});
             }
             else
@@ -83,9 +86,11 @@ namespace Comp3020A3
 
         public static void previousForm()
         {
+            Point loc;
             if(appStack.Count > 1)
             {
                 appStack.Peek().form.Hide();
+                loc = appStack.Peek().form.Location;
                 appStack.Pop();
 
                 while((!appStack.Peek().valid() && appStack.Peek().form is ListForm && appStack.Peek().obj is List<MovieList>) ||
@@ -93,6 +98,8 @@ namespace Comp3020A3
                 {
                     appStack.Pop();
                 }
+
+                appStack.Peek().form.Location = loc;
 
                 appStack.Peek().form.Show();
                 appStack.Peek().form.changeForm(appStack.Peek().obj);
