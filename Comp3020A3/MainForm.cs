@@ -62,24 +62,24 @@ namespace Comp3020A3
 
         private void profileLink_Click(object sender, EventArgs e)
         {
-            ApplicationManager.showForm(this, "PROFILE", ApplicationManager.loggedIn);
+            ApplicationManager.changeForm("PROFILE", ApplicationManager.loggedIn);
         }
 
         private void myListsLink_Click(object sender, EventArgs e)
         {
             List<MovieList> lists = MovieListManager.getMovieLists(ApplicationManager.loggedIn.username);
-            ApplicationManager.showForm(this, "LISTS", lists);
+            ApplicationManager.changeForm("LISTS", lists);
         }
 
         private void signOutLink_Click(object sender, EventArgs e)
         {
             ApplicationManager.loggedIn = null;
-            ApplicationManager.showForm(this, "HOME", null);
+            ApplicationManager.changeForm("HOME", null);
         }
 
         private void signInLink_Click(object sender, EventArgs e)
         {
-            ApplicationManager.showForm(this, "SIGNIN", null);
+            ApplicationManager.changeForm("SIGNIN", null);
         }
 
         private void search(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace Comp3020A3
 
         private void titleLabel_Click(object sender, EventArgs e)
         {
-            ApplicationManager.showForm(this, "HOME", null);
+            ApplicationManager.changeForm("HOME", null);
         }
 
         private void closeApplication(object sender, FormClosedEventArgs e)
@@ -117,6 +117,11 @@ namespace Comp3020A3
         protected virtual void fillInForm(Object element)
         {
             
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            ApplicationManager.previousForm();
         }
     }
 }

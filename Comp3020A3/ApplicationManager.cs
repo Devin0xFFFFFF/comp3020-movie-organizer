@@ -13,8 +13,9 @@ namespace Comp3020A3
         public static SearchQuery lastQuery = null;
 
         public static List<MainForm> forms = new List<MainForm>();
-        public static MainForm lastForm = null;
-        public static object lastObject = null;
+
+        private static Stack<MainForm> formStack = new Stack<MainForm>();
+        private static Stack<object> objectStack = new Stack<object>();
 
         public static MainForm getForm(string form)
         {
@@ -44,30 +45,44 @@ namespace Comp3020A3
             return forms.ElementAt(i);
         }
 
-        public static void showForm(MainForm current, string next, object obj)
+        private static void changeForm(MainForm next, object obj)
         {
-            current.Hide();
-            MainForm nextForm = getForm(next);
-            nextForm.Show();
-            nextForm.changeForm(obj);
-            lastForm = nextForm;
-            lastObject = obj;
+            formStack.Peek().Hide();
+            next.Show();
+            next.changeForm(obj);
+
+            formStack.Push(next);
+            objectStack.Push(obj);
         }
 
         public static void changeForm(string form, object obj)
         {
-            showForm(lastForm, form, obj);
+            changeForm(getForm(form), obj);
         }
 
-        public static void reloadForm(string form)
+        public static void reloadForm()
         {
-            getForm(form).changeForm(lastObject);
+            formStack.Peek().changeForm(objectStack.Peek());
         }
 
-        public static void reloadForm(string form, object obj)
+        public static void reloadForm(object obj)
         {
-            getForm(form).changeForm(obj);
-            lastObject = obj;
+            objectStack.Pop();
+            objectStack.Push(obj);
+
+            reloadForm();
+        }
+
+        public static void previousForm()
+        {
+            if(formStack.Count > 1)
+            {
+                formStack.Pop().Hide();
+                objectStack.Pop();
+
+                formStack.Peek().Show();
+                formStack.Peek().changeForm(objectStack.Peek());
+            }
         }
 
         public static void createForms(MainForm home)
@@ -77,6 +92,9 @@ namespace Comp3020A3
             forms.Add(new ProfileForm());
             forms.Add(new MovieForm());
             forms.Add(new ListForm());
+
+            formStack.Push(home);
+            objectStack.Push(null);
         }
 
         public static void sendData(FormData data, string form)

@@ -23,6 +23,7 @@ namespace Comp3020A3
 
             titleBox.Enabled = true;
             contentBox.Enabled = true;
+            deleteButton.Hide();
 
             titleBox.Text = "";
             contentBox.Text = "";
@@ -44,6 +45,7 @@ namespace Comp3020A3
 
             titleBox.Text = review.title;
             contentBox.Text = review.content;
+            deleteButton.Hide();
 
             this.review = review;
             user = null;
@@ -63,6 +65,7 @@ namespace Comp3020A3
 
             titleBox.Text = review.title;
             contentBox.Text = review.content;
+            deleteButton.Show();
 
             this.user = user;
             this.review = review;
@@ -72,6 +75,14 @@ namespace Comp3020A3
         private void authorLabel_Click(object sender, EventArgs e)
         {
             ApplicationManager.changeForm("PROFILE", UserManager.getUser(authorLabel.Text));
+            Close();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            ReviewManager.destroyReview(review.ID);
+
+            ApplicationManager.reloadForm();
             Close();
         }
 
@@ -102,11 +113,11 @@ namespace Comp3020A3
             {
                 if(movie != null)
                 {
-                    ApplicationManager.reloadForm("MOVIE", MovieManager.getMovie(movie));
+                    ApplicationManager.reloadForm(MovieManager.getMovie(movie));
                 }
                 else
                 {
-                    ApplicationManager.reloadForm("MOVIE", MovieManager.getMovie(review.movie));
+                    ApplicationManager.reloadForm(MovieManager.getMovie(review.movie));
                 }
 
                 Close();

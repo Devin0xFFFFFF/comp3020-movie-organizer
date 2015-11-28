@@ -52,7 +52,7 @@ namespace Comp3020A3
             movies.CopyTo(movs);
             Movie movie = movs[e.RowIndex];
 
-            ApplicationManager.showForm(this, "MOVIE", new Movie(movie));
+            ApplicationManager.changeForm("MOVIE", new Movie(movie));
         }
     }
 }

@@ -38,6 +38,7 @@
             this.myListsLink = new System.Windows.Forms.Label();
             this.signOutLink = new System.Windows.Forms.Label();
             this.signInLink = new System.Windows.Forms.Label();
+            this.Back = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 51);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 63);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -67,10 +68,11 @@
             this.flowLayoutPanel1.Controls.Add(this.myListsLink);
             this.flowLayoutPanel1.Controls.Add(this.signOutLink);
             this.flowLayoutPanel1.Controls.Add(this.signInLink);
+            this.flowLayoutPanel1.Controls.Add(this.Back);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(778, 45);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(778, 57);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // titleLabel
@@ -154,12 +156,22 @@
             // 
             this.signInLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.signInLink.AutoSize = true;
-            this.signInLink.Location = new System.Drawing.Point(3, 31);
+            this.signInLink.Location = new System.Drawing.Point(3, 39);
             this.signInLink.Name = "signInLink";
             this.signInLink.Size = new System.Drawing.Size(65, 13);
             this.signInLink.TabIndex = 6;
             this.signInLink.Text = "Sign In / Up";
             this.signInLink.Click += new System.EventHandler(this.signInLink_Click);
+            // 
+            // Back
+            // 
+            this.Back.Location = new System.Drawing.Point(74, 34);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(75, 23);
+            this.Back.TabIndex = 7;
+            this.Back.Text = "Back";
+            this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
             // MainForm
             // 
@@ -191,5 +203,6 @@
         private System.Windows.Forms.Label myListsLink;
         private System.Windows.Forms.Label signOutLink;
         private System.Windows.Forms.Label signInLink;
+        private System.Windows.Forms.Button Back;
     }
 }

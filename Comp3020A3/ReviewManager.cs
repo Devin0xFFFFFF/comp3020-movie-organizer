@@ -117,6 +117,7 @@ namespace Comp3020A3
                 {
                     reviews.RemoveAt(i);
                     removed = true;
+                    DataAccess.writeReviews(reviews);
                 }
 
                 i++;

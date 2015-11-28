@@ -30,10 +30,10 @@
         {
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.listDataGrid = new System.Windows.Forms.DataGridView();
             this.listTitleLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.newListButton = new System.Windows.Forms.Button();
+            this.listDataGrid = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,24 +64,6 @@
             this.panel1.Size = new System.Drawing.Size(778, 96);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.newListButton);
-            this.panel2.Controls.Add(this.listDataGrid);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 105);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(778, 402);
-            this.panel2.TabIndex = 1;
-            // 
-            // listDataGrid
-            // 
-            this.listDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listDataGrid.Location = new System.Drawing.Point(18, 12);
-            this.listDataGrid.Name = "listDataGrid";
-            this.listDataGrid.Size = new System.Drawing.Size(240, 150);
-            this.listDataGrid.TabIndex = 0;
-            // 
             // listTitleLabel
             // 
             this.listTitleLabel.AutoSize = true;
@@ -92,6 +74,16 @@
             this.listTitleLabel.TabIndex = 0;
             this.listTitleLabel.Text = "List Title";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.newListButton);
+            this.panel2.Controls.Add(this.listDataGrid);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 105);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(778, 402);
+            this.panel2.TabIndex = 1;
+            // 
             // newListButton
             // 
             this.newListButton.Location = new System.Drawing.Point(183, 192);
@@ -101,6 +93,15 @@
             this.newListButton.Text = "New List";
             this.newListButton.UseVisualStyleBackColor = true;
             this.newListButton.Click += new System.EventHandler(this.newListButton_Click);
+            // 
+            // listDataGrid
+            // 
+            this.listDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listDataGrid.Location = new System.Drawing.Point(18, 12);
+            this.listDataGrid.Name = "listDataGrid";
+            this.listDataGrid.Size = new System.Drawing.Size(240, 150);
+            this.listDataGrid.TabIndex = 0;
+            this.listDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selectCell);
             // 
             // ListForm
             // 

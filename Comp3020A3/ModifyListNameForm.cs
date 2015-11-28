@@ -65,11 +65,11 @@ namespace Comp3020A3
             {
                 if(user != null)
                 {
-                    ApplicationManager.reloadForm("LISTS", MovieListManager.getMovieLists(user));
+                    ApplicationManager.reloadForm(MovieListManager.getMovieLists(user));
                 }
                 else
                 {
-                    ApplicationManager.reloadForm("LISTS", MovieListManager.getMovieLists(list.user));
+                    ApplicationManager.reloadForm(MovieListManager.getMovieLists(list.user));
                 }
                 Close();
             }

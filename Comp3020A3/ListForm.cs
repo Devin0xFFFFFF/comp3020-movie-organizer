@@ -69,5 +69,17 @@ namespace Comp3020A3
             ModifyListNameForm form = new ModifyListNameForm(ApplicationManager.loggedIn.username);
             form.Show();
         }
+
+        private void selectCell(object sender, DataGridViewCellEventArgs e)
+        {
+            if (listTitleLabel.Text.Equals("My Lists"))
+            {
+                List<MovieList> lists = (List<MovieList>)listDataGrid.DataSource;
+                MovieList list = lists[e.RowIndex];
+                
+
+                ApplicationManager.changeForm("LISTS", list);
+            }
+        }
     }
 }
