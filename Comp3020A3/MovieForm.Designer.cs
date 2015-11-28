@@ -342,6 +342,7 @@
             this.reviewsGrid.Name = "reviewsGrid";
             this.reviewsGrid.Size = new System.Drawing.Size(772, 124);
             this.reviewsGrid.TabIndex = 1;
+            this.reviewsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.openReview);
             // 
             // actorList
             // 

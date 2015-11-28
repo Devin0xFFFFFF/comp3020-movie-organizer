@@ -87,5 +87,14 @@ namespace Comp3020A3
 
             form.Show();
         }
+
+        private void openReview(object sender, DataGridViewCellEventArgs e)
+        {
+            List<Review> reviews = (List<Review>)reviewsGrid.DataSource;
+            Review review = reviews[e.RowIndex];
+
+            ModifyReviewForm form = new ModifyReviewForm(review);
+            form.Show();
+        }
     }
 }
