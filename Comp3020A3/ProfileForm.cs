@@ -57,14 +57,17 @@ namespace Comp3020A3
             }
             else
             {
-                followButton.Show();
-                if(ApplicationManager.loggedIn != null && ApplicationManager.loggedIn.isFollowing(user.username))
+                if(ApplicationManager.loggedIn != null)
                 {
-                    followButton.Text = "Unfollow";
-                }
-                else
-                {
-                    followButton.Text = "Follow";
+                    followButton.Show();
+                    if (ApplicationManager.loggedIn.isFollowing(user.username))
+                    {
+                        followButton.Text = "Unfollow";
+                    }
+                    else
+                    {
+                        followButton.Text = "Follow";
+                    }
                 }
             }
         }

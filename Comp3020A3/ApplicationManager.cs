@@ -14,8 +14,10 @@ namespace Comp3020A3
 
         public static List<MainForm> forms = new List<MainForm>();
 
-        private static Stack<MainForm> formStack = new Stack<MainForm>();
-        private static Stack<object> objectStack = new Stack<object>();
+        private static Stack<ApplicationState> appStack = new Stack<ApplicationState>();
+
+        //private static Stack<MainForm> formStack = new Stack<MainForm>();
+        //private static Stack<object> objectStack = new Stack<object>();
 
         public static MainForm getForm(string form)
         {
@@ -47,12 +49,19 @@ namespace Comp3020A3
 
         private static void changeForm(MainForm next, object obj)
         {
-            formStack.Peek().Hide();
-            next.Show();
-            next.changeForm(obj);
+            if(next != appStack.Peek().form)
+            {
+                appStack.Peek().form.Hide();
+                next.Show();
+                next.changeForm(obj);
 
-            formStack.Push(next);
-            objectStack.Push(obj);
+                appStack.Push(new ApplicationState() { form = next, obj = obj, user = (loggedIn == null) ? null : loggedIn.username});
+            }
+            else
+            {
+                next.changeForm(obj);
+                appStack.Peek().obj = obj;
+            }
         }
 
         public static void changeForm(string form, object obj)
@@ -62,26 +71,31 @@ namespace Comp3020A3
 
         public static void reloadForm()
         {
-            formStack.Peek().changeForm(objectStack.Peek());
+            appStack.Peek().form.changeForm(appStack.Peek().obj);
         }
 
         public static void reloadForm(object obj)
         {
-            objectStack.Pop();
-            objectStack.Push(obj);
+            appStack.Peek().obj = obj;
 
             reloadForm();
         }
 
         public static void previousForm()
         {
-            if(formStack.Count > 1)
+            if(appStack.Count > 1)
             {
-                formStack.Pop().Hide();
-                objectStack.Pop();
+                appStack.Peek().form.Hide();
+                appStack.Pop();
 
-                formStack.Peek().Show();
-                formStack.Peek().changeForm(objectStack.Peek());
+                while((!appStack.Peek().valid() && appStack.Peek().form is ListForm && appStack.Peek().obj is List<MovieList>) ||
+                    appStack.Peek().form is SignInForm && appStack.Peek().obj == null) //skip sign in page and pages that require user logged in to view
+                {
+                    appStack.Pop();
+                }
+
+                appStack.Peek().form.Show();
+                appStack.Peek().form.changeForm(appStack.Peek().obj);
             }
         }
 
@@ -93,8 +107,7 @@ namespace Comp3020A3
             forms.Add(new MovieForm());
             forms.Add(new ListForm());
 
-            formStack.Push(home);
-            objectStack.Push(null);
+            appStack.Push(new ApplicationState() { form = home, obj = null, user = (loggedIn == null) ? null : loggedIn.username });
         }
 
         public static void sendData(FormData data, string form)

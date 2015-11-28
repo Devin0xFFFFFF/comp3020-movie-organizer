@@ -101,6 +101,7 @@ namespace Comp3020A3
         public static void logout()
         {
             ApplicationManager.loggedIn = null;
+            ApplicationManager.reloadForm();
         }
 
         public static List<User> getFollowers(string user)

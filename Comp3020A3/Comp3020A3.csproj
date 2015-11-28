@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationManager.cs" />
+    <Compile Include="ApplicationState.cs" />
     <Compile Include="ConfirmationForm.cs">
       <SubType>Form</SubType>
     </Compile>
