@@ -42,6 +42,9 @@ namespace Comp3020A3
 
             listDataGrid.DataSource = movieLists;
 
+            listDataGrid.Columns[0].Visible = false;
+            listDataGrid.Columns[2].Visible = false;
+
             newListButton.Show();
         }
 
@@ -77,19 +80,22 @@ namespace Comp3020A3
 
         private void selectCell(object sender, DataGridViewCellEventArgs e)
         {
-            if (listTitleLabel.Text.Equals("My Lists"))
+            if(e.RowIndex > -1)
             {
-                List<MovieList> lists = (List<MovieList>)listDataGrid.DataSource;
-                MovieList list = lists[e.RowIndex];
-                
+                if (listTitleLabel.Text.Equals("My Lists"))
+                {
+                    List<MovieList> lists = (List<MovieList>)listDataGrid.DataSource;
+                    MovieList list = lists[e.RowIndex];
 
-                ApplicationManager.changeForm("LISTS", list);
-            }
-            else
-            {
-                Movie movie = ((List<Movie>)listDataGrid.DataSource)[e.RowIndex];
 
-                ApplicationManager.changeForm("MOVIE", movie);
+                    ApplicationManager.changeForm("LISTS", list);
+                }
+                else
+                {
+                    Movie movie = ((List<Movie>)listDataGrid.DataSource)[e.RowIndex];
+
+                    ApplicationManager.changeForm("MOVIE", movie);
+                }
             }
         }
 

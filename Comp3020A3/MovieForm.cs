@@ -106,11 +106,15 @@ namespace Comp3020A3
 
         private void openReview(object sender, DataGridViewCellEventArgs e)
         {
-            List<Review> reviews = (List<Review>)reviewsGrid.DataSource;
-            Review review = reviews[e.RowIndex];
+            if(e.RowIndex > -1)
+            {
+                List<Review> reviews = (List<Review>)reviewsGrid.DataSource;
+                Console.WriteLine(e.RowIndex);
+                Review review = reviews[e.RowIndex];
 
-            ModifyReviewForm form = new ModifyReviewForm(review);
-            form.Show();
+                ModifyReviewForm form = new ModifyReviewForm(review);
+                form.Show();
+            }
         }
 
         private void addToListButton_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace Comp3020A3
         public HomeForm()
         {
             InitializeComponent();
-            ApplicationManager.loggedIn = new User() { username = "bobafett2", password = "demonlord2", following = new List<string>() };
+            ApplicationManager.loggedIn = new User() { username = "bobafett2", password = "", following = new List<string>() };
             ApplicationManager.createForms(this);
             checkLoggedIn();
         }
@@ -38,30 +38,69 @@ namespace Comp3020A3
         private void loadNewReviews()
         {
             List<Review> newReviews = DataAccess.readReviews();
-            ReviewManager.sortByDateTime(newReviews);
-            newReviews = ReviewManager.getReviews(newReviews, 30);
+            List<Review> followingReviews = new List<Review>();
 
-            dataGridView2.DataSource = newReviews;
+            int i = newReviews.Count - 1;
+
+            //Remove your own reviews, collect following ones to be displayed first
+
+            if(ApplicationManager.loggedIn != null)
+            {
+                while (i >= 0)
+                {
+                    if(ApplicationManager.loggedIn.isFollowing(newReviews[i].author))
+                    {
+                        followingReviews.Add(newReviews[i]);
+                        newReviews.RemoveAt(i);
+                    }
+                    else if (newReviews[i].author.Equals(ApplicationManager.loggedIn.username))
+                    {
+                        newReviews.RemoveAt(i);
+                    }
+                        i--;
+                }
+
+                ReviewManager.sortByDateTime(newReviews);
+                ReviewManager.sortByDateTime(followingReviews);
+            }
+
+            followingReviews = ReviewManager.getReviews(followingReviews, 30);
+
+            if(followingReviews.Count < 30)
+            {
+                for(i = 0; i < 30 - followingReviews.Count && i < newReviews.Count; i++)
+                {
+                    followingReviews.Add(newReviews[i]);
+                }
+            }
+
+            dataGridView2.DataSource = followingReviews;
             dataGridView2.Columns[0].Visible = false;
         }
 
         private void viewMoviePage(object sender, DataGridViewCellEventArgs e)
         {
-            List<Movie> movies = (List<Movie>)dataGridView1.DataSource;
-            Movie[] movs = new Movie[movies.Count];
-            movies.CopyTo(movs);
-            Movie movie = movs[e.RowIndex];
+            if(e.RowIndex > -1)
+            {
+                List<Movie> movies = (List<Movie>)dataGridView1.DataSource;
+                Movie[] movs = new Movie[movies.Count];
+                movies.CopyTo(movs);
+                Movie movie = movs[e.RowIndex];
 
-            ApplicationManager.changeForm("MOVIE", new Movie(movie));
+                ApplicationManager.changeForm("MOVIE", new Movie(movie));
+            }
         }
 
         private void openReview(object sender, DataGridViewCellEventArgs e)
         {
-            List<Review> reviews = (List<Review>)dataGridView2.DataSource;
-            Review review = reviews[e.RowIndex];
+            if (e.RowIndex > -1)
+            {
+                List<Review> reviews = (List<Review>)dataGridView2.DataSource;
+                Review review = reviews[e.RowIndex];
 
-            ModifyReviewForm form = new ModifyReviewForm(review);
-            form.Show();
+                ModifyReviewForm form = new ModifyReviewForm(review);
+                form.Show();
+            }
         }
     }
 }

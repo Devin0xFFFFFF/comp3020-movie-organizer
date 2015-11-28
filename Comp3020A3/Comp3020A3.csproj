@@ -182,6 +182,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
@@ -201,6 +202,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default_movie_image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default_movie_image1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default_movie_image2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

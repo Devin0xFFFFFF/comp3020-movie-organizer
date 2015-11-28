@@ -30,7 +30,7 @@ namespace Comp3020A3
         {
             reviews.Sort(delegate (Review x, Review y)
             {
-                return x.lastEdited.CompareTo(y.lastEdited);
+                return y.lastEdited.CompareTo(x.lastEdited);
             });
         }
 

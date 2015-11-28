@@ -43,6 +43,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.directorLabel = new System.Windows.Forms.Label();
             this.lengthLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reviewsGrid)).BeginInit();
@@ -91,6 +93,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -116,7 +119,7 @@
             this.addToListButton.Location = new System.Drawing.Point(3, 182);
             this.addToListButton.Name = "addToListButton";
             this.addToListButton.Size = new System.Drawing.Size(95, 23);
-            this.addToListButton.TabIndex = 0;
+            this.addToListButton.TabIndex = 1;
             this.addToListButton.Text = "Add To List";
             this.addToListButton.UseVisualStyleBackColor = true;
             this.addToListButton.Click += new System.EventHandler(this.addToListButton_Click);
@@ -179,12 +182,16 @@
             // 
             // genreList
             // 
+            this.genreList.BackColor = System.Drawing.SystemColors.Control;
+            this.genreList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.genreList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.genreList.Location = new System.Drawing.Point(153, 3);
             this.genreList.Name = "genreList";
             this.genreList.Size = new System.Drawing.Size(221, 41);
-            this.genreList.TabIndex = 1;
+            this.genreList.TabIndex = 0;
+            this.genreList.TabStop = false;
             this.genreList.UseCompatibleStateImageBehavior = false;
+            this.genreList.View = System.Windows.Forms.View.List;
             // 
             // flowLayoutPanel2
             // 
@@ -250,6 +257,17 @@
             this.lengthLabel.TabIndex = 1;
             this.lengthLabel.Text = "Length: X Min";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Comp3020A3.Properties.Resources.default_movie_image2;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(227, 212);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -296,7 +314,7 @@
             this.reviewButton.Location = new System.Drawing.Point(114, 3);
             this.reviewButton.Name = "reviewButton";
             this.reviewButton.Size = new System.Drawing.Size(100, 23);
-            this.reviewButton.TabIndex = 1;
+            this.reviewButton.TabIndex = 2;
             this.reviewButton.Text = "reviewButton";
             this.reviewButton.UseVisualStyleBackColor = true;
             this.reviewButton.Click += new System.EventHandler(this.reviewButton_Click);
@@ -340,7 +358,7 @@
             this.filterBox.Location = new System.Drawing.Point(421, 3);
             this.filterBox.Name = "filterBox";
             this.filterBox.Size = new System.Drawing.Size(121, 21);
-            this.filterBox.TabIndex = 5;
+            this.filterBox.TabIndex = 4;
             this.filterBox.SelectedIndexChanged += new System.EventHandler(this.filterReviews);
             // 
             // reviewsGrid
@@ -350,7 +368,7 @@
             this.reviewsGrid.Location = new System.Drawing.Point(3, 45);
             this.reviewsGrid.Name = "reviewsGrid";
             this.reviewsGrid.Size = new System.Drawing.Size(772, 121);
-            this.reviewsGrid.TabIndex = 1;
+            this.reviewsGrid.TabIndex = 6;
             this.reviewsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.openReview);
             // 
             // actorList
@@ -361,6 +379,7 @@
             this.actorList.Size = new System.Drawing.Size(778, 93);
             this.actorList.TabIndex = 2;
             this.actorList.UseCompatibleStateImageBehavior = false;
+            this.actorList.View = System.Windows.Forms.View.Tile;
             // 
             // MovieForm
             // 
@@ -381,6 +400,7 @@
             this.flowLayoutPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
@@ -416,5 +436,6 @@
         private System.Windows.Forms.Label yearLabel;
         private System.Windows.Forms.DataGridView reviewsGrid;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

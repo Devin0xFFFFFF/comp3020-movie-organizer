@@ -51,7 +51,13 @@ namespace Comp3020A3
             listGrid.DataSource = MovieListManager.getMovieLists(user.username);
             reviewGrid.DataSource = ReviewManager.getReviewsByAuthor(user.username);
 
-            if(ApplicationManager.loggedIn == null || ApplicationManager.loggedIn.username.Equals(user.username))
+            listGrid.Columns[0].Visible = false;
+            listGrid.Columns[2].Visible = false;
+
+            reviewGrid.Columns[0].Visible = false;
+            reviewGrid.Columns[1].Visible = false;
+
+            if (ApplicationManager.loggedIn == null || ApplicationManager.loggedIn.username.Equals(user.username))
             {
                 followButton.Hide();
             }
@@ -74,18 +80,24 @@ namespace Comp3020A3
 
         private void selectList(object sender, DataGridViewCellEventArgs e)
         {
-            List<MovieList> lists = (List<MovieList>)listGrid.DataSource;
-            MovieList list = lists[e.RowIndex];
-            ApplicationManager.changeForm("LISTS", list);
+            if(e.RowIndex > -1)
+            {
+                List<MovieList> lists = (List<MovieList>)listGrid.DataSource;
+                MovieList list = lists[e.RowIndex];
+                ApplicationManager.changeForm("LISTS", list);
+            }
         }
 
         private void selectReview(object sender, DataGridViewCellEventArgs e)
         {
-            List<Review> reviews = (List<Review>)reviewGrid.DataSource;
-            Review review = reviews[e.RowIndex];
+            if(e.RowIndex > -1)
+            {
+                List<Review> reviews = (List<Review>)reviewGrid.DataSource;
+                Review review = reviews[e.RowIndex];
 
-            ModifyReviewForm form = new ModifyReviewForm(review);
-            form.Show();
+                ModifyReviewForm form = new ModifyReviewForm(review);
+                form.Show();
+            }
         }
     }
 }
