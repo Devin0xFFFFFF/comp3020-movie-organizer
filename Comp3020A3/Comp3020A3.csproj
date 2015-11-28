@@ -190,9 +190,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\default_movie_image.jpg" />
   </ItemGroup>
@@ -201,6 +199,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\default_movie_image2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\movielists.xml" />
+    <Content Include="data\movies.xml" />
+    <Content Include="data\reviews.xml" />
+    <Content Include="data\users.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

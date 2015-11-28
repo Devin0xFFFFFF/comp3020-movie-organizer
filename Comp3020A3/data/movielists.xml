@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ArrayOfMovieList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MovieList>
+    <ID>439512116797564928</ID>
+    <name>favs</name>
+    <user>bobafett</user>
+    <movies>
+      <string>transformers</string>
+      <string>superman</string>
+    </movies>
+  </MovieList>
+  <MovieList>
+    <ID>-516156684403704832</ID>
+    <name>action</name>
+    <user>tommyt</user>
+  </MovieList>
+</ArrayOfMovieList>

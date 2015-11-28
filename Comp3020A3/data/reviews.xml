@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Review>
+    <ID>-6520914368832331776</ID>
+    <author>bobafett</author>
+    <createdAt>0001-01-01T00:00:00</createdAt>
+    <lastEdited>0001-01-01T00:00:00</lastEdited>
+  </Review>
+  <Review>
+    <ID>-1121972481895438336</ID>
+    <author>bobafett</author>
+    <movie>transformers</movie>
+    <title>this sucked</title>
+    <content>This was an awful movie.</content>
+    <createdAt>2015-11-26T13:41:30.9728885-06:00</createdAt>
+    <lastEdited>2015-11-26T13:41:30.9758906-06:00</lastEdited>
+  </Review>
+</ArrayOfReview>
