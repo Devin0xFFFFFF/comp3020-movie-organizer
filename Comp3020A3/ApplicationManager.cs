@@ -123,6 +123,16 @@ namespace Comp3020A3
             mainForm.processData(data);
         }
 
+        public static Point getCurrentFormLocation()
+        {
+            return appStack.Peek().form.Location;
+        }
+
+        public static Size getCurrentFormSize()
+        {
+            return appStack.Peek().form.Size;
+        }
+
         public static void exitApplication()
         {
             Application.Exit();

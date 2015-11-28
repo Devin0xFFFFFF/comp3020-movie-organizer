@@ -54,12 +54,6 @@
     </Compile>
     <Compile Include="ApplicationManager.cs" />
     <Compile Include="ApplicationState.cs" />
-    <Compile Include="ConfirmationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConfirmationForm.Designer.cs">
-      <DependentUpon>ConfirmationForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataAccess.cs" />
     <Compile Include="FormData.cs" />
     <Compile Include="FormError.cs" />
@@ -140,12 +134,8 @@
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserManager.cs" />
-    <Compile Include="YesNoResult.cs" />
     <EmbeddedResource Include="AddToListsForm.resx">
       <DependentUpon>AddToListsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConfirmationForm.resx">
-      <DependentUpon>ConfirmationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

@@ -19,7 +19,9 @@ namespace Comp3020A3
 
         private void PopupForm_Load(object sender, EventArgs e)
         {
-
+            Point loc = ApplicationManager.getCurrentFormLocation();
+            loc.X += ApplicationManager.getCurrentFormSize().Width / 4;
+            Location = loc;
         }
 
         protected void editTitle(string title)
@@ -43,6 +45,11 @@ namespace Comp3020A3
         }
 
         protected void cancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void deactivationClose(object sender, EventArgs e)
         {
             Close();
         }
