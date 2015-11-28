@@ -42,9 +42,9 @@ namespace Comp3020A3
 
         }
 
-        protected virtual void cancelButton_Click(object sender, EventArgs e)
+        protected void cancelButton_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

@@ -39,6 +39,25 @@ namespace Comp3020A3
             return followers.Count;
         }
 
+        public Review getReview(string movie)
+        {
+            Review review = null;
+            List<Review> reviews = ReviewManager.getReviewsByMovie(movie);
+            int i = 0;
+
+            while (i < reviews.Count && !reviews.ElementAt(i).author.Equals(username))
+            {
+                i++;
+            }
+
+            if(i < reviews.Count)
+            {
+                review = reviews.ElementAt(i);
+            }
+
+            return review;
+        }
+
         public bool valid(List<FormError> errors)
         {
             int errs = errors.Count;

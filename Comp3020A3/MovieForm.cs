@@ -54,7 +54,38 @@ namespace Comp3020A3
         {
             List<Review> reviews = ReviewManager.getReviewsByMovie(movie);
 
+            if(ApplicationManager.loggedIn == null)
+            {
+                reviewButton.Hide();
+            }
+            else if (ApplicationManager.loggedIn.getReview(movie) != null)
+            {
+                reviewButton.Show();
+                reviewButton.Text = "Edit Review";
+            }
+            else
+            {
+                reviewButton.Show();
+                reviewButton.Text = "Create Review";
+            }
+
             reviewsGrid.DataSource = reviews;
+        }
+
+        private void reviewButton_Click(object sender, EventArgs e)
+        {
+            ModifyReviewForm form;
+            Review r = ApplicationManager.loggedIn.getReview(movieTitleLabel.Text);
+            if (r != null)
+            {
+                form = new ModifyReviewForm(r, ApplicationManager.loggedIn.username);
+            }
+            else
+            {
+                form = new ModifyReviewForm(movieTitleLabel.Text, ApplicationManager.loggedIn.username);
+            }
+
+            form.Show();
         }
     }
 }

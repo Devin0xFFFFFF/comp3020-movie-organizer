@@ -78,25 +78,28 @@ namespace Comp3020A3
             return review;
         }
 
-        public static bool saveReview(Review review)
+        public static bool saveReview(Review review, List<FormError> errors)
         {
-            List<Review> reviews = DataAccess.readReviews();
-            int i = 0;
-
-            while (i < reviews.Count && reviews.ElementAt(i).ID != review.ID)
+            if (review.valid(errors, true))
             {
-                i++;
-            }
+                List<Review> reviews = DataAccess.readReviews();
+                int i = 0;
 
-            if(i < reviews.Count)
-            {
-                reviews.ElementAt(i).title = review.title;
-                reviews.ElementAt(i).content = review.content;
-                reviews.ElementAt(i).lastEdited = DateTime.Now;
+                while (i < reviews.Count && reviews.ElementAt(i).ID != review.ID)
+                {
+                    i++;
+                }
 
-                DataAccess.writeReviews(reviews);
+                if (i < reviews.Count)
+                {
+                    reviews.ElementAt(i).title = review.title;
+                    reviews.ElementAt(i).content = review.content;
+                    reviews.ElementAt(i).lastEdited = DateTime.Now;
 
-                return true;
+                    DataAccess.writeReviews(reviews);
+
+                    return true;
+                }
             }
 
             return false;

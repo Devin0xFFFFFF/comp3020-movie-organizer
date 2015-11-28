@@ -47,5 +47,24 @@ namespace Comp3020A3
 
             return errs == errors.Count;
         }
+
+        public bool valid(List<FormError> errors, bool NOIDCHECK)
+        {
+            int errs = errors.Count;
+
+            if (title.Length > MAX_TITLE_LENGTH)
+            {
+                errors.Add(new FormError() { err_code = "TITLELEN", err_msg = "Title too long (" + title.Length + "/" + MAX_TITLE_LENGTH + ")." });
+            }
+
+            if (content.Length > MAX_CONTENT_LENGTH)
+            {
+                errors.Add(new FormError() { err_code = "CONTENTLEN", err_msg = "Content too long (" + content.Length + "/" + MAX_CONTENT_LENGTH + ")." });
+            }
+
+            //may add verification for author, movie
+
+            return errs == errors.Count;
+        }
     }
 }

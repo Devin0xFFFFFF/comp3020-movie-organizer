@@ -38,6 +38,25 @@ namespace Comp3020A3
             });
         }
 
+        public static Movie getMovie(string title)
+        {
+            Movie movie = null;
+            List < Movie > movies = DataAccess.readMovies();
+            int i = 0;
+
+            while(i < movies.Count && !movies.ElementAt(i).title.Equals(title))
+            {
+                i++;
+            }
+
+            if(i < movies.Count)
+            {
+                movie = movies.ElementAt(i);
+            }
+
+            return movie;
+        }
+
         public static void convertXMLFormats(string xml_in_path)
         {
             List<Movie> movies = new List<Movie>();

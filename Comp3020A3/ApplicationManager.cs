@@ -50,7 +50,13 @@ namespace Comp3020A3
             MainForm nextForm = getForm(next);
             nextForm.Show();
             nextForm.changeForm(obj);
+            lastForm = nextForm;
             lastObject = obj;
+        }
+
+        public static void changeForm(string form, object obj)
+        {
+            showForm(lastForm, form, obj);
         }
 
         public static void reloadForm(string form)
@@ -83,6 +89,7 @@ namespace Comp3020A3
         {
             //showForm(forms.ElementAt(0), "HOME", null);
             //forms.ElementAt(0).Close();
+            //forms.ElementAt(4).Close();
         }
     }
 }

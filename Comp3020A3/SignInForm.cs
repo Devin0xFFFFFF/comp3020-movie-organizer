@@ -17,9 +17,17 @@ namespace Comp3020A3
 
         private void SignInForm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        protected override void fillInForm(object element)
+        {
             changesignInLinkText("");
             usernameErrors.Text = "";
             passwordErrors.Text = "";
+
+            usernameBox.Text = "";
+            passwordBox.Text = "";
         }
 
         private void signInButton_Click(object sender, EventArgs e)

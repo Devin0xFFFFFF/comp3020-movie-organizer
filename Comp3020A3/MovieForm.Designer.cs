@@ -96,7 +96,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 214F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 223F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(778, 223);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
@@ -298,6 +298,7 @@
             this.reviewButton.TabIndex = 1;
             this.reviewButton.Text = "reviewButton";
             this.reviewButton.UseVisualStyleBackColor = true;
+            this.reviewButton.Click += new System.EventHandler(this.reviewButton_Click);
             // 
             // label2
             // 

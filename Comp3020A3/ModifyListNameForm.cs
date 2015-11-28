@@ -74,10 +74,5 @@ namespace Comp3020A3
                 Close();
             }
         }
-
-        protected override void cancelButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

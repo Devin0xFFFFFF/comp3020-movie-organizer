@@ -74,6 +74,12 @@
     <Compile Include="ModifyListNameForm.Designer.cs">
       <DependentUpon>ModifyListNameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyReviewForm.Designer.cs">
+      <DependentUpon>ModifyReviewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movie.cs" />
     <Compile Include="MovieForm.cs">
       <SubType>Form</SubType>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyListNameForm.resx">
       <DependentUpon>ModifyListNameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyReviewForm.resx">
+      <DependentUpon>ModifyReviewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MovieForm.resx">
       <DependentUpon>MovieForm.cs</DependentUpon>
