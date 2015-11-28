@@ -118,5 +118,25 @@ namespace Comp3020A3
 
             return users;
         }
+
+        public static bool saveUser(User user)
+        {
+            List<User> users = DataAccess.readUsers();
+            int i = 0;
+
+            while(i < users.Count && !users.ElementAt(i).username.Equals(user.username))
+            {
+                i++;
+            }
+
+            if(i < users.Count)
+            {
+                users.ElementAt(i).following = user.following;
+                DataAccess.writeUsers(users);
+                return true;
+            }
+
+            return false;
+        }
     }
 }

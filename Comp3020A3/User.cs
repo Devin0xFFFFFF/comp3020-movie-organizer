@@ -39,6 +39,37 @@ namespace Comp3020A3
             return followers.Count;
         }
 
+        public bool follow(string user)
+        {
+            if(!isFollowing(user))
+            {
+                following.Add(user);
+                UserManager.saveUser(this);
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool unfollow(string user)
+        {
+            int i = following.Count - 1;
+
+            while(i >= 0 && !following.ElementAt(i).Equals(user))
+            {
+                i--;
+            }
+
+            if(i >= 0)
+            {
+                following.RemoveAt(i);
+                UserManager.saveUser(this);
+                return true;
+            }
+
+            return false;
+        }
+
         public Review getReview(string movie)
         {
             Review review = null;

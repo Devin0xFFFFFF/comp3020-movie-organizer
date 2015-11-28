@@ -23,7 +23,14 @@ namespace Comp3020A3
 
         private void followButton_Click(object sender, EventArgs e)
         {
-
+            if(followButton.Text.Equals("Follow") && ApplicationManager.loggedIn.follow(userTitleLabel.Text))
+            {
+                followButton.Text = "Unfollow";
+            }
+            else if(ApplicationManager.loggedIn.unfollow(userTitleLabel.Text))
+            {
+                followButton.Text = "Follow";
+            }
         }
 
         private void fillInProfile(User user)

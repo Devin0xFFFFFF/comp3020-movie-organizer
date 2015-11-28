@@ -22,6 +22,8 @@ namespace Comp3020A3
         {
             loadNewMovies();
             loadNewReviews();
+
+            //Console.WriteLine(YesNoResult.yes());
         }
 
         private void loadNewMovies()
