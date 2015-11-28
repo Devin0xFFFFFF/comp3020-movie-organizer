@@ -26,6 +26,22 @@ namespace Comp3020A3
             return errors;
         }
 
+        public static void sortByDateTime(List<Review> reviews)
+        {
+            reviews.Sort(delegate (Review x, Review y)
+            {
+                return x.lastEdited.CompareTo(y.lastEdited);
+            });
+        }
+
+        public static void sortByAuthor(List<Review> reviews)
+        {
+            reviews.Sort(delegate (Review x, Review y)
+            {
+                return x.author.CompareTo(y.author);
+            });
+        }
+
         public static List<Review> getReviewsByAuthor(string author)
         {
             List<Review> reviews = DataAccess.readReviews();
@@ -137,14 +153,6 @@ namespace Comp3020A3
             }
 
             return revs;
-        }
-
-        public static void sortByDateTime(List<Review> reviews)
-        {
-            reviews.Sort(delegate (Review x, Review y)
-            {
-                return y.createdAt.CompareTo(x.createdAt);
-            });
         }
     }
 }

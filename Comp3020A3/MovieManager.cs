@@ -22,6 +22,35 @@ namespace Comp3020A3
             return movs;
         }
 
+        public static List<Movie> getMovies(List<string> titles)
+        {
+            List<Movie> movies = new List<Movie>();
+            
+            if(titles.Count > 0)
+            {
+                List<Movie> movs = DataAccess.readMovies();
+                int i, j;
+
+                for (i = 0; i < movs.Count; i++)
+                {
+                    Movie movie = movs.ElementAt(i);
+                    j = 0;
+
+                    while (j < titles.Count && !titles.ElementAt(j).Equals(movie.title))
+                    {
+                        j++;
+                    }
+
+                    if (j < titles.Count)
+                    {
+                        movies.Add(movie);
+                    }
+                }
+            }
+
+            return movies;
+        }
+
         public static void sortByYear(List<Movie> movies)
         {
             movies.Sort(delegate (Movie x, Movie y)

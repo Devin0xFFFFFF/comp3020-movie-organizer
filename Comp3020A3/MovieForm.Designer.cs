@@ -34,32 +34,32 @@
             this.addToListButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.ratingLabel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.directorLabel = new System.Windows.Forms.Label();
-            this.lengthLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.certificationLabel = new System.Windows.Forms.Label();
             this.genreList = new System.Windows.Forms.ListView();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.movieTitleLabel = new System.Windows.Forms.Label();
             this.yearLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.directorLabel = new System.Windows.Forms.Label();
+            this.lengthLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.reviewButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.orderBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.filterBox = new System.Windows.Forms.ComboBox();
             this.reviewsGrid = new System.Windows.Forms.DataGridView();
             this.actorList = new System.Windows.Forms.ListView();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.flowLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reviewsGrid)).BeginInit();
@@ -96,7 +96,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 223F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 218F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(778, 218);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
@@ -125,17 +125,16 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Controls.Add(this.ratingLabel, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel5, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel2, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.panel1, 0, 3);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(236, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(383, 212);
@@ -146,41 +145,11 @@
             this.ratingLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ratingLabel.AutoSize = true;
             this.ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ratingLabel.Location = new System.Drawing.Point(3, 67);
+            this.ratingLabel.Location = new System.Drawing.Point(3, 77);
             this.ratingLabel.Name = "ratingLabel";
             this.ratingLabel.Size = new System.Drawing.Size(100, 25);
             this.ratingLabel.TabIndex = 1;
             this.ratingLabel.Text = "Rating: X";
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.directorLabel);
-            this.flowLayoutPanel5.Controls.Add(this.lengthLabel);
-            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 162);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(377, 47);
-            this.flowLayoutPanel5.TabIndex = 3;
-            // 
-            // directorLabel
-            // 
-            this.directorLabel.AutoSize = true;
-            this.directorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.directorLabel.Location = new System.Drawing.Point(3, 0);
-            this.directorLabel.Name = "directorLabel";
-            this.directorLabel.Size = new System.Drawing.Size(84, 20);
-            this.directorLabel.TabIndex = 0;
-            this.directorLabel.Text = "Director: X";
-            // 
-            // lengthLabel
-            // 
-            this.lengthLabel.AutoSize = true;
-            this.lengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lengthLabel.Location = new System.Drawing.Point(93, 0);
-            this.lengthLabel.Name = "lengthLabel";
-            this.lengthLabel.Size = new System.Drawing.Size(107, 20);
-            this.lengthLabel.TabIndex = 1;
-            this.lengthLabel.Text = "Length: X Min";
             // 
             // tableLayoutPanel6
             // 
@@ -190,7 +159,7 @@
             this.tableLayoutPanel6.Controls.Add(this.certificationLabel, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.genreList, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 109);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 108);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -224,7 +193,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(377, 47);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(377, 68);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // movieTitleLabel
@@ -250,6 +219,37 @@
             this.yearLabel.Text = "(Year)";
             this.yearLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.directorLabel);
+            this.panel1.Controls.Add(this.lengthLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 161);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(377, 48);
+            this.panel1.TabIndex = 6;
+            // 
+            // directorLabel
+            // 
+            this.directorLabel.AutoSize = true;
+            this.directorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.directorLabel.Location = new System.Drawing.Point(16, 11);
+            this.directorLabel.Name = "directorLabel";
+            this.directorLabel.Size = new System.Drawing.Size(84, 20);
+            this.directorLabel.TabIndex = 0;
+            this.directorLabel.Text = "Director: X";
+            // 
+            // lengthLabel
+            // 
+            this.lengthLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lengthLabel.AutoSize = true;
+            this.lengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lengthLabel.Location = new System.Drawing.Point(238, 11);
+            this.lengthLabel.Name = "lengthLabel";
+            this.lengthLabel.Size = new System.Drawing.Size(107, 20);
+            this.lengthLabel.TabIndex = 1;
+            this.lengthLabel.Text = "Length: X Min";
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -271,9 +271,9 @@
             this.flowLayoutPanel4.Controls.Add(this.label1);
             this.flowLayoutPanel4.Controls.Add(this.reviewButton);
             this.flowLayoutPanel4.Controls.Add(this.label2);
-            this.flowLayoutPanel4.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel4.Controls.Add(this.orderBox);
             this.flowLayoutPanel4.Controls.Add(this.label3);
-            this.flowLayoutPanel4.Controls.Add(this.comboBox2);
+            this.flowLayoutPanel4.Controls.Add(this.filterBox);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
@@ -310,13 +310,17 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Order";
             // 
-            // comboBox1
+            // orderBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(259, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.orderBox.FormattingEnabled = true;
+            this.orderBox.Items.AddRange(new object[] {
+            "Date Edited",
+            "Author"});
+            this.orderBox.Location = new System.Drawing.Point(259, 3);
+            this.orderBox.Name = "orderBox";
+            this.orderBox.Size = new System.Drawing.Size(121, 21);
+            this.orderBox.TabIndex = 3;
+            this.orderBox.SelectedIndexChanged += new System.EventHandler(this.orderReviews);
             // 
             // label3
             // 
@@ -327,13 +331,17 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Filter";
             // 
-            // comboBox2
+            // filterBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(421, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 5;
+            this.filterBox.FormattingEnabled = true;
+            this.filterBox.Items.AddRange(new object[] {
+            "All",
+            "Following"});
+            this.filterBox.Location = new System.Drawing.Point(421, 3);
+            this.filterBox.Name = "filterBox";
+            this.filterBox.Size = new System.Drawing.Size(121, 21);
+            this.filterBox.TabIndex = 5;
+            this.filterBox.SelectedIndexChanged += new System.EventHandler(this.filterReviews);
             // 
             // reviewsGrid
             // 
@@ -359,7 +367,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "MovieForm";
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -368,12 +375,12 @@
             this.flowLayoutPanel3.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.flowLayoutPanel5.ResumeLayout(false);
-            this.flowLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
@@ -391,12 +398,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button reviewButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox orderBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox filterBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label ratingLabel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Label directorLabel;
         private System.Windows.Forms.Label lengthLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
@@ -409,5 +415,6 @@
         private System.Windows.Forms.Label movieTitleLabel;
         private System.Windows.Forms.Label yearLabel;
         private System.Windows.Forms.DataGridView reviewsGrid;
+        private System.Windows.Forms.Panel panel1;
     }
 }

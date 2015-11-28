@@ -38,17 +38,28 @@ namespace Comp3020A3
 
             errorLabel.Text = "";
             editTitle("Review for " + review.movie);
-            authorLabel.Text = review.author;
 
-            titleBox.Enabled = false;
-            contentBox.Enabled = false;
+            if(ApplicationManager.loggedIn != null && ApplicationManager.loggedIn.username.Equals(review.author))
+            {
+                authorLabel.Text = "";
+                titleBox.Enabled = true;
+                contentBox.Enabled = true;
+                deleteButton.Show();
+                this.user = review.author;
+            }
+            else
+            {
+                authorLabel.Text = review.author;
+                titleBox.Enabled = false;
+                contentBox.Enabled = false;
+                deleteButton.Hide();
+                user = null;
+            }
 
             titleBox.Text = review.title;
             contentBox.Text = review.content;
-            deleteButton.Hide();
 
             this.review = review;
-            user = null;
             movie = null;
         }
 
@@ -111,14 +122,7 @@ namespace Comp3020A3
 
             if(errors == null || errors.Count <= 0)
             {
-                if(movie != null)
-                {
-                    ApplicationManager.reloadForm(MovieManager.getMovie(movie));
-                }
-                else
-                {
-                    ApplicationManager.reloadForm(MovieManager.getMovie(review.movie));
-                }
+                ApplicationManager.reloadForm();
 
                 Close();
             }

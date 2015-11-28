@@ -52,7 +52,7 @@ namespace Comp3020A3
             listIDLabel.Show();
             listIDLabel.Text = "" + movieList.ID;
 
-            listDataGrid.DataSource = movieList.movies;
+            listDataGrid.DataSource = MovieManager.getMovies(movieList.movies);
 
             newListButton.Hide();
         }
@@ -84,6 +84,12 @@ namespace Comp3020A3
                 
 
                 ApplicationManager.changeForm("LISTS", list);
+            }
+            else
+            {
+                Movie movie = ((List<Movie>)listDataGrid.DataSource)[e.RowIndex];
+
+                ApplicationManager.changeForm("MOVIE", movie);
             }
         }
 

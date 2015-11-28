@@ -30,7 +30,7 @@ namespace Comp3020A3
         {
             List<Movie> newMovies = DataAccess.readMovies();
             MovieManager.sortByYear(newMovies);
-            newMovies = MovieManager.getMovies(newMovies, 10);
+            newMovies = MovieManager.getMovies(newMovies, 30);
 
             dataGridView1.DataSource = newMovies;
         }
@@ -39,7 +39,7 @@ namespace Comp3020A3
         {
             List<Review> newReviews = DataAccess.readReviews();
             ReviewManager.sortByDateTime(newReviews);
-            newReviews = ReviewManager.getReviews(newReviews, 10);
+            newReviews = ReviewManager.getReviews(newReviews, 30);
 
             dataGridView2.DataSource = newReviews;
             dataGridView2.Columns[0].Visible = false;
@@ -53,6 +53,15 @@ namespace Comp3020A3
             Movie movie = movs[e.RowIndex];
 
             ApplicationManager.changeForm("MOVIE", new Movie(movie));
+        }
+
+        private void openReview(object sender, DataGridViewCellEventArgs e)
+        {
+            List<Review> reviews = (List<Review>)dataGridView2.DataSource;
+            Review review = reviews[e.RowIndex];
+
+            ModifyReviewForm form = new ModifyReviewForm(review);
+            form.Show();
         }
     }
 }

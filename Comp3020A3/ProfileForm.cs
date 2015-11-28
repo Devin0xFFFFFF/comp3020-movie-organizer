@@ -71,5 +71,21 @@ namespace Comp3020A3
                 }
             }
         }
+
+        private void selectList(object sender, DataGridViewCellEventArgs e)
+        {
+            List<MovieList> lists = (List<MovieList>)listGrid.DataSource;
+            MovieList list = lists[e.RowIndex];
+            ApplicationManager.changeForm("LISTS", list);
+        }
+
+        private void selectReview(object sender, DataGridViewCellEventArgs e)
+        {
+            List<Review> reviews = (List<Review>)reviewGrid.DataSource;
+            Review review = reviews[e.RowIndex];
+
+            ModifyReviewForm form = new ModifyReviewForm(review);
+            form.Show();
+        }
     }
 }

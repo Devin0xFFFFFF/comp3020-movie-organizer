@@ -10,6 +10,10 @@ namespace Comp3020A3
 {
     public partial class MovieForm : Comp3020A3.MainForm
     {
+        private string order = "Date Edited";
+        private string filter = "All";
+        private List<Review> allReviews = null;
+
         public MovieForm()
         {
             InitializeComponent();
@@ -61,7 +65,7 @@ namespace Comp3020A3
 
         private void fillInReviews(string movie)
         {
-            List<Review> reviews = ReviewManager.getReviewsByMovie(movie);
+            allReviews = ReviewManager.getReviewsByMovie(movie);
 
             if(ApplicationManager.loggedIn == null)
             {
@@ -78,7 +82,10 @@ namespace Comp3020A3
                 reviewButton.Text = "Create Review";
             }
 
-            reviewsGrid.DataSource = reviews;
+            reviewsGrid.DataSource = allReviews;
+
+            orderBox.SelectedIndex = 0;
+            filterBox.SelectedIndex = 0;
         }
 
         private void reviewButton_Click(object sender, EventArgs e)
@@ -110,6 +117,50 @@ namespace Comp3020A3
         {
             AddToListsForm form = new AddToListsForm(movieTitleLabel.Text);
             form.Show();
+        }
+
+        private void orderReviews(object sender, EventArgs e)
+        {
+            order = (string)orderBox.SelectedItem;
+            formatReviews();
+        }
+
+        private void filterReviews(object sender, EventArgs e)
+        {
+            filter = (string)filterBox.SelectedItem;
+            formatReviews();
+        }
+
+        private void formatReviews()
+        {
+            List<Review> reviews = new List<Review>();
+
+            if (filter.Equals("Following"))
+            {
+                for(int i = 0; i < allReviews.Count; i++)
+                {
+                    if(ApplicationManager.loggedIn != null && ApplicationManager.loggedIn.isFollowing(allReviews[i].author))
+                    {
+                        reviews.Add(allReviews[i]);
+                    }
+                }
+            }
+            else
+            {
+                reviews = allReviews;
+            }
+
+            if (order.Equals("Author"))
+            {
+                ReviewManager.sortByAuthor(reviews);
+            }
+            else
+            {
+                ReviewManager.sortByDateTime(reviews);
+            }
+
+            reviewsGrid.DataSource = reviews;
+            reviewsGrid.Refresh();
         }
     }
 }
