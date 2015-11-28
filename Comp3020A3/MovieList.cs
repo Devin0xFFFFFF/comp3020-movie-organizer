@@ -20,6 +20,24 @@ namespace Comp3020A3
             return movies.Contains(movie);
         }
 
+        public bool removeMovie(string movie)
+        {
+            int i = 0;
+
+            while(i < movies.Count && !movies[i].Equals(movie))
+            {
+                i++;
+            }
+
+            if(i < movies.Count)
+            {
+                movies.RemoveAt(i);
+                return true;
+            }
+
+            return false;
+        }
+
         public bool valid(List<FormError> errors)
         {
             int errs = errors.Count;

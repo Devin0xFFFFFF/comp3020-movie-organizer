@@ -46,6 +46,30 @@ namespace Comp3020A3
             return false;
         }
 
+        public static bool removeFromMovieList(long ID, string movie)
+        {
+            List<MovieList> ml = DataAccess.readMovieLists();
+
+        int i = 0;
+
+            while (i<ml.Count && ID != ml.ElementAt(i).ID)
+            {
+                i++;
+            }
+
+            if (i < ml.Count)
+            {
+                if(ml.ElementAt(i).removeMovie(movie))
+                {
+                    DataAccess.writeMovieLists(ml);
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
         public static List<MovieList> getMovieLists(string username)
         {
             List<MovieList> mls = DataAccess.readMovieLists();

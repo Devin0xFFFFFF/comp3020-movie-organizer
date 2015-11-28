@@ -96,5 +96,11 @@ namespace Comp3020A3
             ModifyReviewForm form = new ModifyReviewForm(review);
             form.Show();
         }
+
+        private void addToListButton_Click(object sender, EventArgs e)
+        {
+            AddToListsForm form = new AddToListsForm(movieTitleLabel.Text);
+            form.Show();
+        }
     }
 }

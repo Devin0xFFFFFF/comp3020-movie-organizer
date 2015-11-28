@@ -73,14 +73,14 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.actorList, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 51);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 63);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(784, 510);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(784, 498);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -97,7 +97,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 223F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(778, 223);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(778, 218);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // flowLayoutPanel3
@@ -119,6 +119,7 @@
             this.addToListButton.TabIndex = 0;
             this.addToListButton.Text = "Add To List";
             this.addToListButton.UseVisualStyleBackColor = true;
+            this.addToListButton.Click += new System.EventHandler(this.addToListButton_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -137,7 +138,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(383, 217);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(383, 212);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // ratingLabel
@@ -145,7 +146,7 @@
             this.ratingLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ratingLabel.AutoSize = true;
             this.ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ratingLabel.Location = new System.Drawing.Point(3, 68);
+            this.ratingLabel.Location = new System.Drawing.Point(3, 67);
             this.ratingLabel.Name = "ratingLabel";
             this.ratingLabel.Size = new System.Drawing.Size(100, 25);
             this.ratingLabel.TabIndex = 1;
@@ -156,9 +157,9 @@
             this.flowLayoutPanel5.Controls.Add(this.directorLabel);
             this.flowLayoutPanel5.Controls.Add(this.lengthLabel);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 165);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 162);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(377, 49);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(377, 47);
             this.flowLayoutPanel5.TabIndex = 3;
             // 
             // directorLabel
@@ -189,11 +190,11 @@
             this.tableLayoutPanel6.Controls.Add(this.certificationLabel, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.genreList, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 111);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 109);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(377, 48);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(377, 47);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // certificationLabel
@@ -201,7 +202,7 @@
             this.certificationLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.certificationLabel.AutoSize = true;
             this.certificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.certificationLabel.Location = new System.Drawing.Point(3, 12);
+            this.certificationLabel.Location = new System.Drawing.Point(3, 11);
             this.certificationLabel.Name = "certificationLabel";
             this.certificationLabel.Size = new System.Drawing.Size(61, 24);
             this.certificationLabel.TabIndex = 0;
@@ -212,7 +213,7 @@
             this.genreList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.genreList.Location = new System.Drawing.Point(153, 3);
             this.genreList.Name = "genreList";
-            this.genreList.Size = new System.Drawing.Size(221, 42);
+            this.genreList.Size = new System.Drawing.Size(221, 41);
             this.genreList.TabIndex = 1;
             this.genreList.UseCompatibleStateImageBehavior = false;
             // 
@@ -223,7 +224,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(377, 48);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(377, 47);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // movieTitleLabel
@@ -257,12 +258,12 @@
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel4, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.reviewsGrid, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 334);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 326);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(778, 173);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(778, 169);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // flowLayoutPanel4
@@ -276,7 +277,7 @@
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(772, 37);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(772, 36);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
             // label1
@@ -338,18 +339,18 @@
             // 
             this.reviewsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reviewsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reviewsGrid.Location = new System.Drawing.Point(3, 46);
+            this.reviewsGrid.Location = new System.Drawing.Point(3, 45);
             this.reviewsGrid.Name = "reviewsGrid";
-            this.reviewsGrid.Size = new System.Drawing.Size(772, 124);
+            this.reviewsGrid.Size = new System.Drawing.Size(772, 121);
             this.reviewsGrid.TabIndex = 1;
             this.reviewsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.openReview);
             // 
             // actorList
             // 
             this.actorList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.actorList.Location = new System.Drawing.Point(3, 232);
+            this.actorList.Location = new System.Drawing.Point(3, 227);
             this.actorList.Name = "actorList";
-            this.actorList.Size = new System.Drawing.Size(778, 96);
+            this.actorList.Size = new System.Drawing.Size(778, 93);
             this.actorList.TabIndex = 2;
             this.actorList.UseCompatibleStateImageBehavior = false;
             // 
