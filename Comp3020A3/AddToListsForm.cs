@@ -8,13 +8,13 @@ using System.Windows.Forms;
 
 namespace Comp3020A3
 {
-    public partial class AddToListsForm : Comp3020A3.PopupForm
+    public partial class AddToListsForm : Comp3020A3.ListManagementForm
     {
         public AddToListsForm(string movie)
         {
             InitializeComponent();
             editTitle("Add To Lists");
-            movieTitleLabel.Text = movie;
+            editSubTitle(movie);
             fillOutForm(movie);
         }
 
@@ -25,14 +25,14 @@ namespace Comp3020A3
 
             foreach(MovieList ml in mls)
             {
-                movieLists.Items.Add(ml.name);
+                box().Items.Add(ml.name);
             }
 
-            for(i = 0; i < movieLists.Items.Count; i++)
+            for(i = 0; i < box().Items.Count; i++)
             {
                 if (mls[i].contains(movie))
                 {
-                    movieLists.SetItemChecked(i, true);
+                    box().SetItemChecked(i, true);
                 }
             }
         }
@@ -44,13 +44,13 @@ namespace Comp3020A3
 
             foreach (MovieList ml in mls)
             {
-                if(movieLists.GetItemChecked(i))
+                if(box().GetItemChecked(i))
                 {
-                    MovieListManager.addToMovieList(ml.ID, movieTitleLabel.Text);
+                    MovieListManager.addToMovieList(ml.ID, getSubTitle());
                 }
                 else
                 {
-                    MovieListManager.removeFromMovieList(ml.ID, movieTitleLabel.Text);
+                    MovieListManager.removeFromMovieList(ml.ID, getSubTitle());
                 }
                 i++;
             }

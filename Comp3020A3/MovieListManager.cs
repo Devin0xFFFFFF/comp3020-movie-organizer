@@ -88,6 +88,25 @@ namespace Comp3020A3
             return mls;
         }
 
+        public static MovieList getMovieList(long ID)
+        {
+            List<MovieList> mls = DataAccess.readMovieLists();
+
+            int i = 0;
+
+            while (i < mls.Count && mls.ElementAt(i).ID != ID)
+            {
+                i++;
+            }
+
+            if(i < mls.Count)
+            {
+                return mls.ElementAt(i);
+            }
+
+            return null;
+        }
+
         public static bool destroyMovieList(long ID)
         {
             List<MovieList> ml = DataAccess.readMovieLists();

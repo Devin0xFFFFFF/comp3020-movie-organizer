@@ -1,6 +1,6 @@
 ﻿namespace Comp3020A3
 {
-    partial class AddToListsForm
+    partial class RemoveFromListsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // AddToListsForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(384, 461);
-            this.Name = "AddToListsForm";
-            this.ResumeLayout(false);
-
+            this.components = new System.ComponentModel.Container();
         }
 
         #endregion

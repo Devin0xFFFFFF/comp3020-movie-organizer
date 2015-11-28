@@ -28,6 +28,16 @@ namespace Comp3020A3
             fillPopup();
         }
 
+        public ModifyListNameForm(long ID)
+        {
+            MovieList list = MovieListManager.getMovieList(ID);
+            InitializeComponent();
+            this.list = list;
+            this.user = null;
+            nameBox.Text = list.name;
+            fillPopup();
+        }
+
         public ModifyListNameForm(MovieList list)
         {
             InitializeComponent();

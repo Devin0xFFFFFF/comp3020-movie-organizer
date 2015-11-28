@@ -37,6 +37,8 @@ namespace Comp3020A3
         private void fillInForm(List<MovieList> movieLists)
         {
             listTitleLabel.Text = "My Lists";
+            editNameButton.Hide();
+            listIDLabel.Hide();
 
             listDataGrid.DataSource = movieLists;
 
@@ -46,6 +48,9 @@ namespace Comp3020A3
         private void fillInForm(MovieList movieList)
         {
             listTitleLabel.Text = movieList.name;
+            editNameButton.Show();
+            listIDLabel.Show();
+            listIDLabel.Text = "" + movieList.ID;
 
             listDataGrid.DataSource = movieList.movies;
 
@@ -80,6 +85,17 @@ namespace Comp3020A3
 
                 ApplicationManager.changeForm("LISTS", list);
             }
+        }
+
+        private void editNameButton_Click(object sender, EventArgs e)
+        {
+            ModifyListNameForm form = new ModifyListNameForm(long.Parse(listIDLabel.Text));
+            form.Show();
+        }
+
+        private void editContentsButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

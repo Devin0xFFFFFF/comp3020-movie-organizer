@@ -30,6 +30,9 @@
         {
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listIDLabel = new System.Windows.Forms.Label();
+            this.editContentsButton = new System.Windows.Forms.Button();
+            this.editNameButton = new System.Windows.Forms.Button();
             this.listTitleLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.newListButton = new System.Windows.Forms.Button();
@@ -47,22 +50,57 @@
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 51);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 63);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(784, 510);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(784, 498);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.listIDLabel);
+            this.panel1.Controls.Add(this.editContentsButton);
+            this.panel1.Controls.Add(this.editNameButton);
             this.panel1.Controls.Add(this.listTitleLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(778, 96);
+            this.panel1.Size = new System.Drawing.Size(778, 93);
             this.panel1.TabIndex = 0;
+            // 
+            // listIDLabel
+            // 
+            this.listIDLabel.AutoSize = true;
+            this.listIDLabel.Location = new System.Drawing.Point(15, 67);
+            this.listIDLabel.Name = "listIDLabel";
+            this.listIDLabel.Size = new System.Drawing.Size(103, 13);
+            this.listIDLabel.TabIndex = 3;
+            this.listIDLabel.Text = "0000000000000000";
+            // 
+            // editContentsButton
+            // 
+            this.editContentsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editContentsButton.AutoSize = true;
+            this.editContentsButton.Location = new System.Drawing.Point(672, 44);
+            this.editContentsButton.Name = "editContentsButton";
+            this.editContentsButton.Size = new System.Drawing.Size(80, 23);
+            this.editContentsButton.TabIndex = 2;
+            this.editContentsButton.Text = "Edit Contents";
+            this.editContentsButton.UseVisualStyleBackColor = true;
+            this.editContentsButton.Click += new System.EventHandler(this.editContentsButton_Click);
+            // 
+            // editNameButton
+            // 
+            this.editNameButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editNameButton.Location = new System.Drawing.Point(591, 44);
+            this.editNameButton.Name = "editNameButton";
+            this.editNameButton.Size = new System.Drawing.Size(75, 23);
+            this.editNameButton.TabIndex = 1;
+            this.editNameButton.Text = "Edit Name";
+            this.editNameButton.UseVisualStyleBackColor = true;
+            this.editNameButton.Click += new System.EventHandler(this.editNameButton_Click);
             // 
             // listTitleLabel
             // 
@@ -79,9 +117,9 @@
             this.panel2.Controls.Add(this.newListButton);
             this.panel2.Controls.Add(this.listDataGrid);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 105);
+            this.panel2.Location = new System.Drawing.Point(3, 102);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(778, 402);
+            this.panel2.Size = new System.Drawing.Size(778, 393);
             this.panel2.TabIndex = 1;
             // 
             // newListButton
@@ -129,5 +167,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView listDataGrid;
         private System.Windows.Forms.Button newListButton;
+        private System.Windows.Forms.Button editContentsButton;
+        private System.Windows.Forms.Button editNameButton;
+        private System.Windows.Forms.Label listIDLabel;
     }
 }
