@@ -76,6 +76,15 @@ namespace Comp3020A3
                     }
                 }
             }
+
+            if (ApplicationManager.loggedIn != null && ApplicationManager.loggedIn.username.Equals(user.username))
+            {
+                manageFollowingButton.Show();
+            }
+            else
+            {
+                manageFollowingButton.Hide();
+            }
         }
 
         private void selectList(object sender, DataGridViewCellEventArgs e)
@@ -98,6 +107,12 @@ namespace Comp3020A3
                 ModifyReviewForm form = new ModifyReviewForm(review);
                 form.Show();
             }
+        }
+
+        private void manageFollowingButton_Click(object sender, EventArgs e)
+        {
+            FollowingMangementForm form = new FollowingMangementForm(ApplicationManager.loggedIn);
+            form.Show();
         }
     }
 }

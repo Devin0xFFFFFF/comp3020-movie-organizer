@@ -61,6 +61,12 @@
     <Compile Include="ApplicationManager.cs" />
     <Compile Include="ApplicationState.cs" />
     <Compile Include="DataAccess.cs" />
+    <Compile Include="FollowingMangementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FollowingMangementForm.Designer.cs">
+      <DependentUpon>FollowingMangementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormData.cs" />
     <Compile Include="FormError.cs" />
     <Compile Include="HomeForm.cs">

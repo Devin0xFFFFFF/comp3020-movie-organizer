@@ -121,7 +121,7 @@ namespace Comp3020A3
             if (movie != null)
             {
                 errors = ReviewManager.createReview(user, movie, ratingBox.Text, contentBox.Text);
-                errorLabel.Text = FormError.getErrorMessage("TITLELEN", errors) + " " + 
+                errorLabel.Text = FormError.getErrorMessage("NORATING", errors) + " " + 
                     FormError.getErrorMessage("CONTENTLEN", errors) + " " +
                     FormError.getErrorMessage("IDCONFLICT", errors);
             }
@@ -133,7 +133,7 @@ namespace Comp3020A3
 
                 if (!ReviewManager.saveReview(review, errors))
                 {
-                    errorLabel.Text = FormError.getErrorMessage("RATINGLEN", errors) + " " + FormError.getErrorMessage("CONTENTLEN", errors);
+                    errorLabel.Text = FormError.getErrorMessage("NORATING", errors) + " " + FormError.getErrorMessage("CONTENTLEN", errors);
                 }
             }
 

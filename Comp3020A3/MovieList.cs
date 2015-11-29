@@ -53,6 +53,10 @@ namespace Comp3020A3
             {
                 errors.Add(new FormError() { err_code = "TITLELEN", err_msg = "List name too long (" + name.Length + "/" + MAX_NAME_LENGTH + ")." });
             }
+            else if (name.Length < 1)
+            {
+                errors.Add(new FormError() { err_code = "TITLELEN", err_msg = "List name too short (" + name.Length + "/" + MAX_NAME_LENGTH + ")." });
+            }
 
             //Unique ID
             List<MovieList> ml = DataAccess.readMovieLists();

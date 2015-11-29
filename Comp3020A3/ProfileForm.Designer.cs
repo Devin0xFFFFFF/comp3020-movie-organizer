@@ -38,15 +38,16 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.listGrid = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.followButton = new System.Windows.Forms.Button();
+            this.manageFollowingButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reviewGrid)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listGrid)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -57,7 +58,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 63);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -175,24 +176,37 @@
             this.listGrid.TabIndex = 1;
             this.listGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selectList);
             // 
-            // panel1
+            // flowLayoutPanel3
             // 
-            this.panel1.Controls.Add(this.followButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(395, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(386, 118);
-            this.panel1.TabIndex = 4;
+            this.flowLayoutPanel3.Controls.Add(this.followButton);
+            this.flowLayoutPanel3.Controls.Add(this.manageFollowingButton);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(395, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(40, 5, 0, 0);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(386, 118);
+            this.flowLayoutPanel3.TabIndex = 4;
             // 
             // followButton
             // 
-            this.followButton.Location = new System.Drawing.Point(29, 25);
+            this.followButton.Location = new System.Drawing.Point(43, 8);
             this.followButton.Name = "followButton";
             this.followButton.Size = new System.Drawing.Size(75, 23);
             this.followButton.TabIndex = 0;
             this.followButton.Text = "Follow";
             this.followButton.UseVisualStyleBackColor = true;
             this.followButton.Click += new System.EventHandler(this.followButton_Click);
+            // 
+            // manageFollowingButton
+            // 
+            this.manageFollowingButton.AutoSize = true;
+            this.manageFollowingButton.Location = new System.Drawing.Point(124, 8);
+            this.manageFollowingButton.Name = "manageFollowingButton";
+            this.manageFollowingButton.Size = new System.Drawing.Size(103, 23);
+            this.manageFollowingButton.TabIndex = 1;
+            this.manageFollowingButton.Text = "Manage Following";
+            this.manageFollowingButton.UseVisualStyleBackColor = true;
+            this.manageFollowingButton.Click += new System.EventHandler(this.manageFollowingButton_Click);
             // 
             // ProfileForm
             // 
@@ -210,7 +224,8 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listGrid)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -226,8 +241,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView listGrid;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button followButton;
         private System.Windows.Forms.DataGridView reviewGrid;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Button manageFollowingButton;
     }
 }

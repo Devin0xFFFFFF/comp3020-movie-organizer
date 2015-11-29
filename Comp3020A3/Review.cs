@@ -33,14 +33,18 @@ namespace Comp3020A3
                 errors.Add(new FormError() { err_code = "IDCONFLICT", err_msg = "Cannot create review at this time." });
             }
 
-            if(rating.Length > MAX_RATING_LENGTH)
+            if(rating.Length < 1)
             {
-
+                errors.Add(new FormError() { err_code = "NORATING", err_msg = "No Rating Given" });
             }
 
             if (content.Length > MAX_CONTENT_LENGTH)
             {
                 errors.Add(new FormError() { err_code = "CONTENTLEN", err_msg = "Content too long (" + content.Length + "/" + MAX_CONTENT_LENGTH + ")." });
+            }
+            else if (content.Length < 1)
+            {
+                errors.Add(new FormError() { err_code = "CONTENTLEN", err_msg = "Content too short (" + content.Length + "/" + MAX_CONTENT_LENGTH + ")." });
             }
 
             //may add verification for author, movie

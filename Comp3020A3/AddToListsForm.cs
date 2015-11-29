@@ -13,6 +13,7 @@ namespace Comp3020A3
         public AddToListsForm(string movie)
         {
             InitializeComponent();
+            editWindowTitle("Add To Lists");
             editTitle("Add To Lists");
             editSubTitle(movie);
             fillOutForm(movie);
