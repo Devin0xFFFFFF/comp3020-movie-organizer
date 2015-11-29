@@ -32,12 +32,14 @@
             this.contentBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.titleBox = new System.Windows.Forms.TextBox();
+            this.ratingBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.authorLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.errorLabel = new System.Windows.Forms.Label();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.authorFrontLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -51,6 +53,7 @@
             this.tableLayoutPanel3.Controls.Add(this.contentBox, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 56);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -75,7 +78,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.titleBox);
+            this.flowLayoutPanel1.Controls.Add(this.ratingBox);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 36);
@@ -91,24 +94,30 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.Size = new System.Drawing.Size(80, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Title:";
+            this.label1.Text = "Rating:";
             // 
-            // titleBox
+            // ratingBox
             // 
-            this.titleBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.titleBox.Location = new System.Drawing.Point(68, 3);
-            this.titleBox.Name = "titleBox";
-            this.titleBox.Size = new System.Drawing.Size(301, 20);
-            this.titleBox.TabIndex = 1;
+            this.ratingBox.FormattingEnabled = true;
+            this.ratingBox.Items.AddRange(new object[] {
+            "Terrible",
+            "Bad",
+            "Okay",
+            "Good",
+            "Awesome"});
+            this.ratingBox.Location = new System.Drawing.Point(89, 3);
+            this.ratingBox.Name = "ratingBox";
+            this.ratingBox.Size = new System.Drawing.Size(280, 21);
+            this.ratingBox.TabIndex = 4;
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel1.Controls.Add(this.authorFrontLabel);
             this.panel1.Controls.Add(this.authorLabel);
-            this.panel1.Location = new System.Drawing.Point(3, 29);
+            this.panel1.Location = new System.Drawing.Point(3, 30);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(375, 32);
             this.panel1.TabIndex = 3;
@@ -120,12 +129,30 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.authorLabel.AutoSize = true;
             this.authorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.authorLabel.Location = new System.Drawing.Point(61, 12);
+            this.authorLabel.Location = new System.Drawing.Point(82, 12);
             this.authorLabel.Name = "authorLabel";
             this.authorLabel.Size = new System.Drawing.Size(51, 20);
             this.authorLabel.TabIndex = 2;
             this.authorLabel.Text = "label2";
             this.authorLabel.Click += new System.EventHandler(this.authorLabel_Click);
+            this.authorLabel.MouseEnter += new System.EventHandler(this.authorLabelMouseEnter);
+            this.authorLabel.MouseLeave += new System.EventHandler(this.authorLabelMouseLeave);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.Controls.Add(this.errorLabel, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.deleteButton, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 304);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(378, 28);
+            this.tableLayoutPanel4.TabIndex = 4;
             // 
             // errorLabel
             // 
@@ -147,21 +174,27 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
-            // tableLayoutPanel4
+            // label2
             // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Controls.Add(this.errorLabel, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.deleteButton, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 304);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(378, 28);
-            this.tableLayoutPanel4.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(374, 24);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Review";
+            // 
+            // authorFrontLabel
+            // 
+            this.authorFrontLabel.AutoSize = true;
+            this.authorFrontLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.authorFrontLabel.Location = new System.Drawing.Point(7, 12);
+            this.authorFrontLabel.Name = "authorFrontLabel";
+            this.authorFrontLabel.Size = new System.Drawing.Size(61, 20);
+            this.authorFrontLabel.TabIndex = 3;
+            this.authorFrontLabel.Text = "Author:";
             // 
             // ModifyReviewForm
             // 
@@ -188,11 +221,13 @@
         private System.Windows.Forms.TextBox contentBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox titleBox;
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label authorLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.ComboBox ratingBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label authorFrontLabel;
     }
 }

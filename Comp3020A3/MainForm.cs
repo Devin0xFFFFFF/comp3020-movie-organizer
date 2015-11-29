@@ -123,5 +123,19 @@ namespace Comp3020A3
         {
             ApplicationManager.previousForm();
         }
+
+        private void linkMouseEnter(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+
+            label.ForeColor = System.Drawing.Color.DeepSkyBlue;
+        }
+
+        private void linkMouseLeave(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+
+            label.ForeColor = System.Drawing.Color.Black;
+        }
     }
 }

@@ -24,9 +24,19 @@ namespace Comp3020A3
             Location = loc;
         }
 
+        protected void editWindowTitle(string title)
+        {
+            this.Text = title;
+        }
+
         protected void editTitle(string title)
         {
             titleLabel.Text = title;
+        }
+
+        protected string getTitle()
+        {
+            return titleLabel.Text;
         }
 
         protected void editOkButton(string txt)
@@ -52,6 +62,31 @@ namespace Comp3020A3
         private void deactivationClose(object sender, EventArgs e)
         {
             Close();
+        }
+
+        protected virtual void enterPopupTitle(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void leavePopupTitle(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void clickTitle(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void setTitleHover()
+        {
+            titleLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+        }
+
+        protected void setTitleNormal()
+        {
+            titleLabel.ForeColor = System.Drawing.Color.Black;
         }
     }
 }

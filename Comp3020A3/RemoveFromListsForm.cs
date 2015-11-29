@@ -16,8 +16,9 @@ namespace Comp3020A3
         public RemoveFromListsForm(MovieList list)
         {
             InitializeComponent();
+            editWindowTitle("Edit List");
             editTitle("Manage " + list.name);
-            editSubTitle("List ID: " + list.ID);
+            editSubTitle("");
             ml = list;
             fillOutForm(list);
         }
@@ -25,6 +26,7 @@ namespace Comp3020A3
         public RemoveFromListsForm(List<MovieList> lists)
         {
             InitializeComponent();
+            editWindowTitle("Edit List");
             editTitle("Manage My Lists");
             editSubTitle("");
             mls = lists;

@@ -195,7 +195,7 @@
             this.lengthLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lengthLabel.AutoSize = true;
             this.lengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lengthLabel.Location = new System.Drawing.Point(373, 11);
+            this.lengthLabel.Location = new System.Drawing.Point(349, 11);
             this.lengthLabel.Name = "lengthLabel";
             this.lengthLabel.Size = new System.Drawing.Size(107, 20);
             this.lengthLabel.TabIndex = 1;
@@ -335,7 +335,8 @@
             this.orderBox.FormattingEnabled = true;
             this.orderBox.Items.AddRange(new object[] {
             "Date Edited",
-            "Author"});
+            "Author",
+            "Rating"});
             this.orderBox.Location = new System.Drawing.Point(259, 3);
             this.orderBox.Name = "orderBox";
             this.orderBox.Size = new System.Drawing.Size(121, 21);

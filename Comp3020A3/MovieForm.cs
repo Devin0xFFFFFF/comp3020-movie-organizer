@@ -30,9 +30,12 @@ namespace Comp3020A3
             movieTitleLabel.Text = movie.title;
             yearLabel.Text = "(" + movie.year + ")";
             ratingLabel.Text = "Rating: " + movie.rating;
-            certificationLabel.Text = movie.certification;
+
+            certificationLabel.Text = movie.certification.Length > 0 ? "Certification: " + movie.certification : "";
 
             genreList.Items.Clear();
+
+            genreList.Items.Add("Genres: ");
 
             foreach(string genre in movie.genres)
             {
@@ -42,9 +45,9 @@ namespace Comp3020A3
             directorLabel.Text = "Director: " + movie.director;
             lengthLabel.Text = "Length: " + movie.length + " min";
 
-            actorList.Items.Add("Actors:");
-
             actorList.Items.Clear();
+
+            actorList.Items.Add("Actors:");
 
             foreach (string actor in movie.actors)
             {
@@ -83,6 +86,7 @@ namespace Comp3020A3
             }
 
             reviewsGrid.DataSource = allReviews;
+            reviewsGrid.Columns[0].Visible = false;
 
             orderBox.SelectedIndex = 0;
             filterBox.SelectedIndex = 0;
@@ -157,6 +161,10 @@ namespace Comp3020A3
             if (order.Equals("Author"))
             {
                 ReviewManager.sortByAuthor(reviews);
+            }
+            else if(order.Equals("Rating"))
+            {
+                ReviewManager.sortByRating(reviews);
             }
             else
             {

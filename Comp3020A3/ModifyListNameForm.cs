@@ -23,6 +23,7 @@ namespace Comp3020A3
         public ModifyListNameForm(string user)
         {
             InitializeComponent();
+            editWindowTitle("Create List");
             list = null;
             this.user = user;
             fillPopup();
@@ -32,6 +33,7 @@ namespace Comp3020A3
         {
             MovieList list = MovieListManager.getMovieList(ID);
             InitializeComponent();
+            editWindowTitle("Edit List Name");
             this.list = list;
             this.user = null;
             nameBox.Text = list.name;
@@ -41,6 +43,7 @@ namespace Comp3020A3
         public ModifyListNameForm(MovieList list)
         {
             InitializeComponent();
+            editWindowTitle("Edit List Name");
             this.list = list;
             this.user = null;
             nameBox.Text = list.name;

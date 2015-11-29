@@ -8,12 +8,12 @@ namespace Comp3020A3
 {
     class ReviewManager
     {
-        public static List<FormError> createReview(string rauthor, string rmovie, string rtitle, string rcontent)
+        public static List<FormError> createReview(string rauthor, string rmovie, string rrating, string rcontent)
         {
             List<FormError> errors = new List<FormError>();
 
             Review review = new Review() { ID = DataAccess.generateID(),
-                author = rauthor, movie = rmovie, title = rtitle, content = rcontent,
+                author = rauthor, movie = rmovie, rating = rrating, content = rcontent,
             createdAt = DateTime.Now, lastEdited = DateTime.Now};
 
             if (review.valid(errors))
@@ -39,6 +39,14 @@ namespace Comp3020A3
             reviews.Sort(delegate (Review x, Review y)
             {
                 return x.author.CompareTo(y.author);
+            });
+        }
+
+        public static void sortByRating(List<Review> reviews)
+        {
+            reviews.Sort(delegate (Review x, Review y)
+            {
+                return y.getRatingValue().CompareTo(x.getRatingValue());
             });
         }
 
@@ -108,7 +116,7 @@ namespace Comp3020A3
 
                 if (i < reviews.Count)
                 {
-                    reviews.ElementAt(i).title = review.title;
+                    reviews.ElementAt(i).rating = review.rating;
                     reviews.ElementAt(i).content = review.content;
                     reviews.ElementAt(i).lastEdited = DateTime.Now;
 

@@ -38,6 +38,7 @@ namespace Comp3020A3
         {
             listTitleLabel.Text = "My Lists";
             editNameButton.Hide();
+            editContentsButton.Show();
             listIDLabel.Hide();
 
             listDataGrid.DataSource = movieLists;
@@ -51,9 +52,19 @@ namespace Comp3020A3
         private void fillInForm(MovieList movieList)
         {
             listTitleLabel.Text = movieList.name;
-            editNameButton.Show();
-            listIDLabel.Show();
+            listIDLabel.Hide();
             listIDLabel.Text = "" + movieList.ID;
+
+            if(ApplicationManager.loggedIn != null && ApplicationManager.loggedIn.username.Equals(movieList.user))
+            {
+                editNameButton.Show();
+                editContentsButton.Show();
+            }
+            else
+            {
+                editNameButton.Hide();
+                editContentsButton.Hide();
+            }
 
             listDataGrid.DataSource = MovieManager.getMovies(movieList.movies);
 

@@ -8,7 +8,7 @@ namespace Comp3020A3
 {
     public class Review
     {
-        public static int MAX_TITLE_LENGTH = 50;
+        public static int MAX_RATING_LENGTH = 50;
         public static int MAX_CONTENT_LENGTH = 500;
 
         public long ID { get; set; }
@@ -16,7 +16,7 @@ namespace Comp3020A3
         public string author { get; set; }
         public string movie { get; set; }
 
-        public string title { get; set; }
+        public string rating { get; set; }
         public string content { get; set; }
 
         public DateTime createdAt { get; set; }
@@ -33,9 +33,9 @@ namespace Comp3020A3
                 errors.Add(new FormError() { err_code = "IDCONFLICT", err_msg = "Cannot create review at this time." });
             }
 
-            if (title.Length > MAX_TITLE_LENGTH)
+            if(rating.Length > MAX_RATING_LENGTH)
             {
-                errors.Add(new FormError() { err_code = "TITLELEN", err_msg = "Title too long (" + title.Length + "/" + MAX_TITLE_LENGTH + ")." });
+
             }
 
             if (content.Length > MAX_CONTENT_LENGTH)
@@ -52,11 +52,6 @@ namespace Comp3020A3
         {
             int errs = errors.Count;
 
-            if (title.Length > MAX_TITLE_LENGTH)
-            {
-                errors.Add(new FormError() { err_code = "TITLELEN", err_msg = "Title too long (" + title.Length + "/" + MAX_TITLE_LENGTH + ")." });
-            }
-
             if (content.Length > MAX_CONTENT_LENGTH)
             {
                 errors.Add(new FormError() { err_code = "CONTENTLEN", err_msg = "Content too long (" + content.Length + "/" + MAX_CONTENT_LENGTH + ")." });
@@ -65,6 +60,34 @@ namespace Comp3020A3
             //may add verification for author, movie
 
             return errs == errors.Count;
+        }
+
+        public int getRatingValue()
+        {
+            int i = 0;
+
+            if(rating.Equals("Terrible"))
+            {
+                i = 1;
+            }
+            else if(rating.Equals("Bad"))
+            {
+                i = 2;
+            }
+            else if (rating.Equals("Okay"))
+            {
+                i = 3;
+            }
+            else if (rating.Equals("Good"))
+            {
+                i = 4;
+            }
+            else if (rating.Equals("Awesome"))
+            {
+                i = 5;
+            }
+
+            return i;
         }
     }
 }

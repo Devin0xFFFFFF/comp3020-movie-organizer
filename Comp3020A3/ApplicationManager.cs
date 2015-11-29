@@ -130,12 +130,12 @@ namespace Comp3020A3
 
         public static Point getCurrentFormLocation()
         {
-            return appStack.Peek().form.Location;
+            return appStack.Count > 0 ? appStack.Peek().form.Location : new Point(0, 0);
         }
 
         public static Size getCurrentFormSize()
         {
-            return appStack.Peek().form.Size;
+            return appStack.Count > 0 ? appStack.Peek().form.Size : new Size(0, 0);
         }
 
         public static void exitApplication()

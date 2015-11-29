@@ -18,14 +18,16 @@ namespace Comp3020A3
             InitializeComponent();
 
             errorLabel.Text = "";
-            editTitle("Review for " + movie);
+            editWindowTitle("Create Review");
+            editTitle(movie);
             authorLabel.Text = "";
+            authorFrontLabel.Text = "";
 
-            titleBox.Enabled = true;
+            ratingBox.Enabled = true;
             contentBox.Enabled = true;
             deleteButton.Hide();
 
-            titleBox.Text = "";
+            ratingBox.Text = "";
             contentBox.Text = "";
             
             this.user = user;
@@ -37,12 +39,14 @@ namespace Comp3020A3
             InitializeComponent();
 
             errorLabel.Text = "";
-            editTitle("Review for " + review.movie);
+            editWindowTitle("Examine Review");
+            editTitle(review.movie);
 
             if(ApplicationManager.loggedIn != null && ApplicationManager.loggedIn.username.Equals(review.author))
             {
                 authorLabel.Text = "";
-                titleBox.Enabled = true;
+                authorFrontLabel.Text = "";
+                ratingBox.Enabled = true;
                 contentBox.Enabled = true;
                 deleteButton.Show();
                 this.user = review.author;
@@ -50,13 +54,14 @@ namespace Comp3020A3
             else
             {
                 authorLabel.Text = review.author;
-                titleBox.Enabled = false;
+                authorFrontLabel.Text = "Author:";
+                ratingBox.Enabled = false;
                 contentBox.Enabled = false;
                 deleteButton.Hide();
                 user = null;
             }
 
-            titleBox.Text = review.title;
+            ratingBox.Text = review.rating;
             contentBox.Text = review.content;
 
             this.review = review;
@@ -68,13 +73,15 @@ namespace Comp3020A3
             InitializeComponent();
 
             errorLabel.Text = "";
-            editTitle("Review for " + review.movie);
+            editWindowTitle("Edit Review");
+            editTitle(review.movie);
             authorLabel.Text = "";
+            authorFrontLabel.Text = "";
 
-            titleBox.Enabled = true;
+            ratingBox.Enabled = true;
             contentBox.Enabled = true;
 
-            titleBox.Text = review.title;
+            ratingBox.Text = review.rating;
             contentBox.Text = review.content;
             deleteButton.Show();
 
@@ -97,13 +104,23 @@ namespace Comp3020A3
             Close();
         }
 
+        private void authorLabelMouseEnter(object sender, EventArgs e)
+        {
+            authorLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
+        }
+
+        private void authorLabelMouseLeave(object sender, EventArgs e)
+        {
+            authorLabel.ForeColor = System.Drawing.Color.Black;
+        }
+
         protected override void okButton_Click(object sender, EventArgs e)
         {
             List<FormError> errors = null;
 
             if (movie != null)
             {
-                errors = ReviewManager.createReview(user, movie, titleBox.Text, contentBox.Text);
+                errors = ReviewManager.createReview(user, movie, ratingBox.Text, contentBox.Text);
                 errorLabel.Text = FormError.getErrorMessage("TITLELEN", errors) + " " + 
                     FormError.getErrorMessage("CONTENTLEN", errors) + " " +
                     FormError.getErrorMessage("IDCONFLICT", errors);
@@ -111,12 +128,12 @@ namespace Comp3020A3
             else if(user != null)
             {
                 errors = new List<FormError>();
-                review.title = titleBox.Text;
+                review.rating = ratingBox.Text;
                 review.content = contentBox.Text;
 
                 if (!ReviewManager.saveReview(review, errors))
                 {
-                    errorLabel.Text = FormError.getErrorMessage("TITLELEN", errors) + " " + FormError.getErrorMessage("CONTENTLEN", errors);
+                    errorLabel.Text = FormError.getErrorMessage("RATINGLEN", errors) + " " + FormError.getErrorMessage("CONTENTLEN", errors);
                 }
             }
 
@@ -126,6 +143,22 @@ namespace Comp3020A3
 
                 Close();
             }
+        }
+
+        protected override void enterPopupTitle(object sender, EventArgs e)
+        {
+            setTitleHover();
+        }
+
+        protected override void leavePopupTitle(object sender, EventArgs e)
+        {
+            setTitleNormal();
+        }
+
+        protected override void clickTitle(object sender, EventArgs e)
+        {
+            ApplicationManager.changeForm("MOVIE", MovieManager.getMovie(getTitle()));
+            Close();
         }
     }
 }

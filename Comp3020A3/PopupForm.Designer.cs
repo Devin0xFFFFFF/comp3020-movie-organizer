@@ -64,6 +64,9 @@
             this.titleLabel.Size = new System.Drawing.Size(151, 31);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Popup Title";
+            this.titleLabel.Click += new System.EventHandler(this.clickTitle);
+            this.titleLabel.MouseEnter += new System.EventHandler(this.enterPopupTitle);
+            this.titleLabel.MouseLeave += new System.EventHandler(this.leavePopupTitle);
             // 
             // groupBox1
             // 

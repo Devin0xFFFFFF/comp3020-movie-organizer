@@ -86,6 +86,8 @@
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Movie Organizer";
             this.titleLabel.Click += new System.EventHandler(this.titleLabel_Click);
+            this.titleLabel.MouseEnter += new System.EventHandler(this.linkMouseEnter);
+            this.titleLabel.MouseLeave += new System.EventHandler(this.linkMouseLeave);
             // 
             // searchLabel
             // 
@@ -129,6 +131,8 @@
             this.profileLink.TabIndex = 3;
             this.profileLink.Text = "Profile";
             this.profileLink.Click += new System.EventHandler(this.profileLink_Click);
+            this.profileLink.MouseEnter += new System.EventHandler(this.linkMouseEnter);
+            this.profileLink.MouseLeave += new System.EventHandler(this.linkMouseLeave);
             // 
             // myListsLink
             // 
@@ -140,6 +144,8 @@
             this.myListsLink.TabIndex = 4;
             this.myListsLink.Text = "My Lists";
             this.myListsLink.Click += new System.EventHandler(this.myListsLink_Click);
+            this.myListsLink.MouseEnter += new System.EventHandler(this.linkMouseEnter);
+            this.myListsLink.MouseLeave += new System.EventHandler(this.linkMouseLeave);
             // 
             // signOutLink
             // 
@@ -151,6 +157,8 @@
             this.signOutLink.TabIndex = 5;
             this.signOutLink.Text = "Sign Out";
             this.signOutLink.Click += new System.EventHandler(this.signOutLink_Click);
+            this.signOutLink.MouseEnter += new System.EventHandler(this.linkMouseEnter);
+            this.signOutLink.MouseLeave += new System.EventHandler(this.linkMouseLeave);
             // 
             // signInLink
             // 
@@ -162,6 +170,8 @@
             this.signInLink.TabIndex = 6;
             this.signInLink.Text = "Sign In / Up";
             this.signInLink.Click += new System.EventHandler(this.signInLink_Click);
+            this.signInLink.MouseEnter += new System.EventHandler(this.linkMouseEnter);
+            this.signInLink.MouseLeave += new System.EventHandler(this.linkMouseLeave);
             // 
             // Back
             // 
@@ -180,6 +190,8 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "Movie Organizer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.closeApplication);

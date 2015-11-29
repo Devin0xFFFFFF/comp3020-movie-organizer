@@ -13,7 +13,7 @@ namespace Comp3020A3
         public HomeForm()
         {
             InitializeComponent();
-            ApplicationManager.loggedIn = new User() { username = "bobafett2", password = "", following = new List<string>() };
+            //ApplicationManager.loggedIn = new User() { username = "bobafett2", password = "", following = new List<string>() };
             ApplicationManager.createForms(this);
             checkLoggedIn();
         }
@@ -101,6 +101,11 @@ namespace Comp3020A3
                 ModifyReviewForm form = new ModifyReviewForm(review);
                 form.Show();
             }
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
