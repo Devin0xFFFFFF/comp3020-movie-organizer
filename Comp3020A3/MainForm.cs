@@ -90,7 +90,7 @@ namespace Comp3020A3
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-
+            ApplicationManager.changeForm("SEARCH", null);
         }
 
         private void titleLabel_Click(object sender, EventArgs e)

@@ -43,6 +43,10 @@ namespace Comp3020A3
             else if (form.Equals("LISTS"))
             {
                 i = 4;
+            }   
+            else if (form.Equals("SEARCH"))
+            {
+                i = 5;
             }
 
             return forms.ElementAt(i);
@@ -113,6 +117,7 @@ namespace Comp3020A3
             forms.Add(new ProfileForm());
             forms.Add(new MovieForm());
             forms.Add(new ListForm());
+            forms.Add(new AdvancedSearchForm());
 
             appStack.Push(new ApplicationState() { form = home, obj = null, user = (loggedIn == null) ? null : loggedIn.username });
         }
