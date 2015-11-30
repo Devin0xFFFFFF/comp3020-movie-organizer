@@ -28,6 +28,8 @@ namespace Comp3020A3
 
             textActors.Add(txtActor1);
             numActors = 1;
+            
+            
 
         }
 
@@ -56,6 +58,36 @@ namespace Comp3020A3
             if (numActors == 1)
             {
                 btnRemoveActor.Enabled = false;
+            }
+        }
+
+        private void numericRating1_ValueChanged(object sender, EventArgs e)
+        {
+            numericRating2.Minimum = numericRating1.Value;
+
+            if (numericRating2.Value < numericRating1.Value)
+            {
+                numericRating2.Value = numericRating1.Value;
+            }
+        }
+
+        private void numericYear1_ValueChanged(object sender, EventArgs e)
+        {
+            numericYear2.Minimum = numericYear1.Value;
+
+            if (numericYear2.Value < numericYear1.Value)
+            {
+                numericYear2.Value = numericYear1.Value;
+            }
+        }
+
+        private void numericLength1_ValueChanged(object sender, EventArgs e)
+        {
+            numericLength2.Minimum = numericLength1.Value;
+
+            if (numericLength2.Value < numericLength1.Value)
+            {
+                numericLength2.Value = numericLength1.Value;
             }
         }
     }

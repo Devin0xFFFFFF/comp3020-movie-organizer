@@ -56,12 +56,6 @@
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
-            this.domainUpDown2 = new System.Windows.Forms.DomainUpDown();
-            this.domainUpDown3 = new System.Windows.Forms.DomainUpDown();
-            this.domainUpDown4 = new System.Windows.Forms.DomainUpDown();
-            this.domainUpDown5 = new System.Windows.Forms.DomainUpDown();
-            this.domainUpDown6 = new System.Windows.Forms.DomainUpDown();
             this.btnRemoveActor = new System.Windows.Forms.Button();
             this.checkBox13 = new System.Windows.Forms.CheckBox();
             this.checkBox14 = new System.Windows.Forms.CheckBox();
@@ -81,6 +75,18 @@
             this.checkBox28 = new System.Windows.Forms.CheckBox();
             this.checkBox29 = new System.Windows.Forms.CheckBox();
             this.checkBox30 = new System.Windows.Forms.CheckBox();
+            this.numericRating1 = new System.Windows.Forms.NumericUpDown();
+            this.numericRating2 = new System.Windows.Forms.NumericUpDown();
+            this.numericYear1 = new System.Windows.Forms.NumericUpDown();
+            this.numericYear2 = new System.Windows.Forms.NumericUpDown();
+            this.numericLength1 = new System.Windows.Forms.NumericUpDown();
+            this.numericLength2 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericRating1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericRating2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericYear1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericYear2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericLength1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericLength2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -356,54 +362,6 @@
             this.checkBox12.Text = "R";
             this.checkBox12.UseVisualStyleBackColor = true;
             // 
-            // domainUpDown1
-            // 
-            this.domainUpDown1.Location = new System.Drawing.Point(103, 535);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(49, 20);
-            this.domainUpDown1.TabIndex = 30;
-            this.domainUpDown1.Text = "domainUpDown1";
-            // 
-            // domainUpDown2
-            // 
-            this.domainUpDown2.Location = new System.Drawing.Point(235, 535);
-            this.domainUpDown2.Name = "domainUpDown2";
-            this.domainUpDown2.Size = new System.Drawing.Size(49, 20);
-            this.domainUpDown2.TabIndex = 31;
-            this.domainUpDown2.Text = "domainUpDown2";
-            // 
-            // domainUpDown3
-            // 
-            this.domainUpDown3.Location = new System.Drawing.Point(103, 576);
-            this.domainUpDown3.Name = "domainUpDown3";
-            this.domainUpDown3.Size = new System.Drawing.Size(49, 20);
-            this.domainUpDown3.TabIndex = 32;
-            this.domainUpDown3.Text = "domainUpDown3";
-            // 
-            // domainUpDown4
-            // 
-            this.domainUpDown4.Location = new System.Drawing.Point(235, 576);
-            this.domainUpDown4.Name = "domainUpDown4";
-            this.domainUpDown4.Size = new System.Drawing.Size(49, 20);
-            this.domainUpDown4.TabIndex = 33;
-            this.domainUpDown4.Text = "domainUpDown4";
-            // 
-            // domainUpDown5
-            // 
-            this.domainUpDown5.Location = new System.Drawing.Point(103, 614);
-            this.domainUpDown5.Name = "domainUpDown5";
-            this.domainUpDown5.Size = new System.Drawing.Size(49, 20);
-            this.domainUpDown5.TabIndex = 34;
-            this.domainUpDown5.Text = "domainUpDown5";
-            // 
-            // domainUpDown6
-            // 
-            this.domainUpDown6.Location = new System.Drawing.Point(235, 614);
-            this.domainUpDown6.Name = "domainUpDown6";
-            this.domainUpDown6.Size = new System.Drawing.Size(49, 20);
-            this.domainUpDown6.TabIndex = 35;
-            this.domainUpDown6.Text = "domainUpDown6";
-            // 
             // btnRemoveActor
             // 
             this.btnRemoveActor.Enabled = false;
@@ -595,10 +553,151 @@
             this.checkBox30.Text = "NC-17";
             this.checkBox30.UseVisualStyleBackColor = true;
             // 
+            // numericRating1
+            // 
+            this.numericRating1.Location = new System.Drawing.Point(103, 532);
+            this.numericRating1.Maximum = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
+            this.numericRating1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericRating1.Name = "numericRating1";
+            this.numericRating1.Size = new System.Drawing.Size(49, 20);
+            this.numericRating1.TabIndex = 55;
+            this.numericRating1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericRating1.ValueChanged += new System.EventHandler(this.numericRating1_ValueChanged);
+            // 
+            // numericRating2
+            // 
+            this.numericRating2.Location = new System.Drawing.Point(235, 532);
+            this.numericRating2.Maximum = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
+            this.numericRating2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericRating2.Name = "numericRating2";
+            this.numericRating2.Size = new System.Drawing.Size(49, 20);
+            this.numericRating2.TabIndex = 56;
+            this.numericRating2.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
+            // 
+            // numericYear1
+            // 
+            this.numericYear1.Location = new System.Drawing.Point(103, 576);
+            this.numericYear1.Maximum = new decimal(new int[] {
+            2015,
+            0,
+            0,
+            0});
+            this.numericYear1.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.numericYear1.Name = "numericYear1";
+            this.numericYear1.Size = new System.Drawing.Size(49, 20);
+            this.numericYear1.TabIndex = 57;
+            this.numericYear1.Value = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.numericYear1.ValueChanged += new System.EventHandler(this.numericYear1_ValueChanged);
+            // 
+            // numericYear2
+            // 
+            this.numericYear2.Location = new System.Drawing.Point(235, 576);
+            this.numericYear2.Maximum = new decimal(new int[] {
+            2015,
+            0,
+            0,
+            0});
+            this.numericYear2.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.numericYear2.Name = "numericYear2";
+            this.numericYear2.Size = new System.Drawing.Size(49, 20);
+            this.numericYear2.TabIndex = 58;
+            this.numericYear2.Value = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            // 
+            // numericLength1
+            // 
+            this.numericLength1.Location = new System.Drawing.Point(103, 614);
+            this.numericLength1.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numericLength1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericLength1.Name = "numericLength1";
+            this.numericLength1.Size = new System.Drawing.Size(49, 20);
+            this.numericLength1.TabIndex = 59;
+            this.numericLength1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericLength1.ValueChanged += new System.EventHandler(this.numericLength1_ValueChanged);
+            // 
+            // numericLength2
+            // 
+            this.numericLength2.Location = new System.Drawing.Point(235, 614);
+            this.numericLength2.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numericLength2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericLength2.Name = "numericLength2";
+            this.numericLength2.Size = new System.Drawing.Size(49, 20);
+            this.numericLength2.TabIndex = 60;
+            this.numericLength2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // AdvancedSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(784, 650);
+            this.Controls.Add(this.numericLength2);
+            this.Controls.Add(this.numericLength1);
+            this.Controls.Add(this.numericYear2);
+            this.Controls.Add(this.numericYear1);
+            this.Controls.Add(this.numericRating2);
+            this.Controls.Add(this.numericRating1);
             this.Controls.Add(this.checkBox30);
             this.Controls.Add(this.checkBox24);
             this.Controls.Add(this.checkBox25);
@@ -618,12 +717,6 @@
             this.Controls.Add(this.checkBox14);
             this.Controls.Add(this.checkBox15);
             this.Controls.Add(this.btnRemoveActor);
-            this.Controls.Add(this.domainUpDown6);
-            this.Controls.Add(this.domainUpDown5);
-            this.Controls.Add(this.domainUpDown4);
-            this.Controls.Add(this.domainUpDown3);
-            this.Controls.Add(this.domainUpDown2);
-            this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.checkBox12);
             this.Controls.Add(this.checkBox11);
             this.Controls.Add(this.checkBox10);
@@ -681,12 +774,6 @@
             this.Controls.SetChildIndex(this.checkBox10, 0);
             this.Controls.SetChildIndex(this.checkBox11, 0);
             this.Controls.SetChildIndex(this.checkBox12, 0);
-            this.Controls.SetChildIndex(this.domainUpDown1, 0);
-            this.Controls.SetChildIndex(this.domainUpDown2, 0);
-            this.Controls.SetChildIndex(this.domainUpDown3, 0);
-            this.Controls.SetChildIndex(this.domainUpDown4, 0);
-            this.Controls.SetChildIndex(this.domainUpDown5, 0);
-            this.Controls.SetChildIndex(this.domainUpDown6, 0);
             this.Controls.SetChildIndex(this.btnRemoveActor, 0);
             this.Controls.SetChildIndex(this.checkBox15, 0);
             this.Controls.SetChildIndex(this.checkBox14, 0);
@@ -706,6 +793,18 @@
             this.Controls.SetChildIndex(this.checkBox25, 0);
             this.Controls.SetChildIndex(this.checkBox24, 0);
             this.Controls.SetChildIndex(this.checkBox30, 0);
+            this.Controls.SetChildIndex(this.numericRating1, 0);
+            this.Controls.SetChildIndex(this.numericRating2, 0);
+            this.Controls.SetChildIndex(this.numericYear1, 0);
+            this.Controls.SetChildIndex(this.numericYear2, 0);
+            this.Controls.SetChildIndex(this.numericLength1, 0);
+            this.Controls.SetChildIndex(this.numericLength2, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.numericRating1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericRating2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericYear1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericYear2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericLength1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericLength2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -741,12 +840,6 @@
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.CheckBox checkBox11;
         private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
-        private System.Windows.Forms.DomainUpDown domainUpDown2;
-        private System.Windows.Forms.DomainUpDown domainUpDown3;
-        private System.Windows.Forms.DomainUpDown domainUpDown4;
-        private System.Windows.Forms.DomainUpDown domainUpDown5;
-        private System.Windows.Forms.DomainUpDown domainUpDown6;
         private System.Windows.Forms.Button btnRemoveActor;
         private System.Windows.Forms.CheckBox checkBox13;
         private System.Windows.Forms.CheckBox checkBox14;
@@ -766,5 +859,11 @@
         private System.Windows.Forms.CheckBox checkBox28;
         private System.Windows.Forms.CheckBox checkBox29;
         private System.Windows.Forms.CheckBox checkBox30;
+        private System.Windows.Forms.NumericUpDown numericRating1;
+        private System.Windows.Forms.NumericUpDown numericRating2;
+        private System.Windows.Forms.NumericUpDown numericYear1;
+        private System.Windows.Forms.NumericUpDown numericYear2;
+        private System.Windows.Forms.NumericUpDown numericLength1;
+        private System.Windows.Forms.NumericUpDown numericLength2;
     }
 }
