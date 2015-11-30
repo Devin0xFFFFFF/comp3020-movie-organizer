@@ -137,5 +137,13 @@ namespace Comp3020A3
 
             label.ForeColor = System.Drawing.Color.Black;
         }
+
+        private void searchOnEnter(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                //search
+            }
+        }
     }
 }

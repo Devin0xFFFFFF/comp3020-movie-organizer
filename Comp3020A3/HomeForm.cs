@@ -30,9 +30,13 @@ namespace Comp3020A3
         {
             List<Movie> newMovies = DataAccess.readMovies();
             MovieManager.sortByYear(newMovies);
-            newMovies = MovieManager.getMovies(newMovies, 30);
+            newMovies = MovieManager.getMovies(newMovies, 18);
 
             dataGridView1.DataSource = newMovies;
+
+            dataGridView1.Columns[2].Visible = false;
+            dataGridView1.Columns[3].Visible = false;
+            dataGridView1.Columns[4].Visible = false;
         }
 
         private void loadNewReviews()
@@ -64,11 +68,11 @@ namespace Comp3020A3
                 ReviewManager.sortByDateTime(followingReviews);
             }
 
-            followingReviews = ReviewManager.getReviews(followingReviews, 30);
+            followingReviews = ReviewManager.getReviews(followingReviews, 18);
 
-            if(followingReviews.Count < 30)
+            if(followingReviews.Count < 18)
             {
-                for(i = 0; i < 30 - followingReviews.Count && i < newReviews.Count; i++)
+                for(i = 0; i < 18 - followingReviews.Count && i < newReviews.Count; i++)
                 {
                     followingReviews.Add(newReviews[i]);
                 }
@@ -76,6 +80,9 @@ namespace Comp3020A3
 
             dataGridView2.DataSource = followingReviews;
             dataGridView2.Columns[0].Visible = false;
+            dataGridView2.Columns[4].Visible = false;
+            dataGridView2.Columns[5].Visible = false;
+            dataGridView2.Columns[6].Visible = false;
         }
 
         private void viewMoviePage(object sender, DataGridViewCellEventArgs e)

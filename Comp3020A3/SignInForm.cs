@@ -32,17 +32,7 @@ namespace Comp3020A3
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            List<FormError> errors = new List<FormError>();
-
-            if(!UserManager.login(usernameBox.Text, passwordBox.Text, errors))
-            {
-                usernameErrors.Text = FormError.getErrorMessage("WRONGUNAME", errors);
-                passwordErrors.Text = FormError.getErrorMessage("WRONGPASS", errors);
-            }
-            else
-            {
-                ApplicationManager.changeForm("HOME", null);
-            }
+            signIn();
         }
 
         private void signUpButton_Click(object sender, EventArgs e)
@@ -61,6 +51,29 @@ namespace Comp3020A3
                 {
                     ApplicationManager.changeForm("HOME", null);
                 }
+            }
+        }
+
+        private void signIn()
+        {
+            List<FormError> errors = new List<FormError>();
+
+            if (!UserManager.login(usernameBox.Text, passwordBox.Text, errors))
+            {
+                usernameErrors.Text = FormError.getErrorMessage("WRONGUNAME", errors);
+                passwordErrors.Text = FormError.getErrorMessage("WRONGPASS", errors);
+            }
+            else
+            {
+                ApplicationManager.changeForm("HOME", null);
+            }
+        }
+
+        private void loginOnEnter(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                signIn();
             }
         }
     }

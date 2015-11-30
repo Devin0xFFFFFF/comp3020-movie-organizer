@@ -250,6 +250,7 @@
             this.genreList.BackColor = System.Drawing.SystemColors.Control;
             this.genreList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.genreList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genreList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.genreList.Location = new System.Drawing.Point(6, 21);
             this.genreList.Margin = new System.Windows.Forms.Padding(0);
             this.genreList.Name = "genreList";
@@ -366,10 +367,20 @@
             // 
             // reviewsGrid
             // 
+            this.reviewsGrid.AllowUserToAddRows = false;
+            this.reviewsGrid.AllowUserToDeleteRows = false;
+            this.reviewsGrid.AllowUserToResizeColumns = false;
+            this.reviewsGrid.AllowUserToResizeRows = false;
+            this.reviewsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.reviewsGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.reviewsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reviewsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reviewsGrid.Location = new System.Drawing.Point(3, 45);
             this.reviewsGrid.Name = "reviewsGrid";
+            this.reviewsGrid.ReadOnly = true;
+            this.reviewsGrid.RowHeadersVisible = false;
+            this.reviewsGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.reviewsGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.reviewsGrid.Size = new System.Drawing.Size(772, 121);
             this.reviewsGrid.TabIndex = 6;
             this.reviewsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.openReview);

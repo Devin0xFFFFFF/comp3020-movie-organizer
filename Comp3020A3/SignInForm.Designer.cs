@@ -51,8 +51,8 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.37374F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.62626F));
             this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 63);
@@ -69,9 +69,9 @@
             this.panel1.Controls.Add(this.flowLayoutPanel3);
             this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(316, 127);
+            this.panel1.Location = new System.Drawing.Point(296, 127);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(465, 368);
+            this.panel1.Size = new System.Drawing.Size(485, 368);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel4
@@ -81,7 +81,7 @@
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 134);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(465, 56);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(485, 56);
             this.flowLayoutPanel4.TabIndex = 2;
             // 
             // signInButton
@@ -112,7 +112,7 @@
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 70);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(465, 64);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(485, 64);
             this.flowLayoutPanel3.TabIndex = 1;
             // 
             // label2
@@ -131,6 +131,7 @@
             this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(100, 20);
             this.passwordBox.TabIndex = 1;
+            this.passwordBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginOnEnter);
             // 
             // passwordErrors
             // 
@@ -149,7 +150,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(465, 70);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(485, 70);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // label1
@@ -167,6 +168,7 @@
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(100, 20);
             this.usernameBox.TabIndex = 1;
+            this.usernameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginOnEnter);
             // 
             // usernameErrors
             // 

@@ -41,6 +41,7 @@ namespace Comp3020A3
             errorLabel.Text = "";
             editWindowTitle("Examine Review");
             editTitle(review.movie);
+            reviewTimeLabel.Text = "Reviewed at " + review.lastEdited.ToShortTimeString() + " on " + review.lastEdited.ToShortDateString();
 
             if(ApplicationManager.loggedIn != null && ApplicationManager.loggedIn.username.Equals(review.author))
             {
@@ -77,6 +78,7 @@ namespace Comp3020A3
             editTitle(review.movie);
             authorLabel.Text = "";
             authorFrontLabel.Text = "";
+            reviewTimeLabel.Text = "Reviewed at " + review.lastEdited.ToShortTimeString() + " on " + review.lastEdited.ToShortDateString();
 
             ratingBox.Enabled = true;
             contentBox.Enabled = true;

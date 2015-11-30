@@ -25,6 +25,11 @@ namespace Comp3020A3
             return subTitleLabel.Text;
         }
 
+        protected void EditToolTip(string txt)
+        {
+            toolTipLabel.Text = txt;
+        }
+
         protected CheckedListBox box()
         {
             return checkListBox;

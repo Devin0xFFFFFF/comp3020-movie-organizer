@@ -113,7 +113,6 @@ namespace Comp3020A3
             if(e.RowIndex > -1)
             {
                 List<Review> reviews = (List<Review>)reviewsGrid.DataSource;
-                Console.WriteLine(e.RowIndex);
                 Review review = reviews[e.RowIndex];
 
                 ModifyReviewForm form = new ModifyReviewForm(review);

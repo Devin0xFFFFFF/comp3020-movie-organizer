@@ -32,7 +32,7 @@
             this.checkListBox = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.subTitleLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.toolTipLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.subTitleLabel, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.toolTipLabel, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -89,15 +89,15 @@
             this.subTitleLabel.TabIndex = 1;
             this.subTitleLabel.Text = "Sub Title";
             // 
-            // label1
+            // toolTipLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(367, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Uncheck boxes to remove elements from the list. Press Ok to save changes.";
+            this.toolTipLabel.AutoSize = true;
+            this.toolTipLabel.Location = new System.Drawing.Point(3, 35);
+            this.toolTipLabel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.toolTipLabel.Name = "toolTipLabel";
+            this.toolTipLabel.Size = new System.Drawing.Size(367, 13);
+            this.toolTipLabel.TabIndex = 2;
+            this.toolTipLabel.Text = "Uncheck boxes to remove elements from the list. Press Ok to save changes.";
             // 
             // ListManagementForm
             // 
@@ -119,6 +119,6 @@
         private System.Windows.Forms.CheckedListBox checkListBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label subTitleLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label toolTipLabel;
     }
 }

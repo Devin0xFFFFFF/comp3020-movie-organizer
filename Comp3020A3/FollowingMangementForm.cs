@@ -24,6 +24,7 @@ namespace Comp3020A3
             editWindowTitle("Manage Following");
             editTitle("Manage Who You Follow");
             editSubTitle("");
+            EditToolTip("Uncheck boxes to unfollow users. Press Ok to save changes.");
 
             int i;
 

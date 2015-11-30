@@ -36,6 +36,7 @@ namespace Comp3020A3
 
         private void fillInForm(List<MovieList> movieLists)
         {
+            listDataGrid.ColumnHeadersVisible = false;
             listTitleLabel.Text = "My Lists";
             editNameButton.Hide();
             editContentsButton.Show();
@@ -51,6 +52,7 @@ namespace Comp3020A3
 
         private void fillInForm(MovieList movieList)
         {
+            listDataGrid.ColumnHeadersVisible = true;
             listTitleLabel.Text = movieList.name;
             listIDLabel.Hide();
             listIDLabel.Text = "" + movieList.ID;

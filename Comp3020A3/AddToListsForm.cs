@@ -15,6 +15,7 @@ namespace Comp3020A3
             InitializeComponent();
             editWindowTitle("Add To Lists");
             editTitle("Add To Lists");
+            EditToolTip("");
             editSubTitle(movie);
             fillOutForm(movie);
         }

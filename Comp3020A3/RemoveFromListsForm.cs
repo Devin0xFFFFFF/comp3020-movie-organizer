@@ -19,6 +19,7 @@ namespace Comp3020A3
             editWindowTitle("Edit List");
             editTitle("Manage " + list.name);
             editSubTitle("");
+            EditToolTip("Uncheck boxes to remove movies. Press Ok to save changes.");
             ml = list;
             fillOutForm(list);
         }
@@ -29,6 +30,7 @@ namespace Comp3020A3
             editWindowTitle("Edit List");
             editTitle("Manage My Lists");
             editSubTitle("");
+            EditToolTip("Uncheck boxes to delete lists. Press Ok to save changes.");
             mls = lists;
             fillOutForm(lists);
         }

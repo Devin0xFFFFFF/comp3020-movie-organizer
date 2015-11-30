@@ -28,60 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.reviewGrid = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.userTitleLabel = new System.Windows.Forms.Label();
             this.followerCountLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.listGrid = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.followButton = new System.Windows.Forms.Button();
             this.manageFollowingButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.reviewGrid)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listGrid)).BeginInit();
-            this.flowLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 63);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(784, 498);
-            this.tableLayoutPanel2.TabIndex = 1;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.reviewGrid, 0, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(395, 127);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(386, 368);
-            this.tableLayoutPanel4.TabIndex = 3;
             // 
             // label2
             // 
@@ -97,29 +64,27 @@
             // 
             this.reviewGrid.AllowUserToAddRows = false;
             this.reviewGrid.AllowUserToDeleteRows = false;
+            this.reviewGrid.AllowUserToResizeColumns = false;
+            this.reviewGrid.AllowUserToResizeRows = false;
+            this.reviewGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.reviewGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.reviewGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reviewGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.reviewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reviewGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reviewGrid.Location = new System.Drawing.Point(3, 58);
+            this.reviewGrid.Location = new System.Drawing.Point(3, 65);
             this.reviewGrid.Name = "reviewGrid";
             this.reviewGrid.ReadOnly = true;
-            this.reviewGrid.Size = new System.Drawing.Size(380, 307);
+            this.reviewGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.reviewGrid.RowHeadersVisible = false;
+            this.reviewGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.reviewGrid.Size = new System.Drawing.Size(546, 351);
             this.reviewGrid.TabIndex = 1;
             this.reviewGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selectReview);
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.userTitleLabel);
-            this.flowLayoutPanel2.Controls.Add(this.followerCountLabel);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(386, 118);
-            this.flowLayoutPanel2.TabIndex = 0;
             // 
             // userTitleLabel
             // 
             this.userTitleLabel.AutoSize = true;
-            this.userTitleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userTitleLabel.Location = new System.Drawing.Point(3, 0);
             this.userTitleLabel.Name = "userTitleLabel";
@@ -138,21 +103,6 @@
             this.followerCountLabel.TabIndex = 1;
             this.followerCountLabel.Text = "Followers: X";
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.listGrid, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 127);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(386, 368);
-            this.tableLayoutPanel3.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -167,29 +117,29 @@
             // 
             this.listGrid.AllowUserToAddRows = false;
             this.listGrid.AllowUserToDeleteRows = false;
+            this.listGrid.AllowUserToResizeColumns = false;
+            this.listGrid.AllowUserToResizeRows = false;
+            this.listGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listGrid.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.listGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.listGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listGrid.ColumnHeadersVisible = false;
             this.listGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listGrid.Location = new System.Drawing.Point(3, 58);
+            this.listGrid.Location = new System.Drawing.Point(3, 65);
             this.listGrid.Name = "listGrid";
             this.listGrid.ReadOnly = true;
-            this.listGrid.Size = new System.Drawing.Size(380, 307);
+            this.listGrid.RowHeadersVisible = false;
+            this.listGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.listGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listGrid.Size = new System.Drawing.Size(208, 351);
             this.listGrid.TabIndex = 1;
             this.listGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selectList);
             // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.followButton);
-            this.flowLayoutPanel3.Controls.Add(this.manageFollowingButton);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(395, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Padding = new System.Windows.Forms.Padding(40, 5, 0, 0);
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(386, 118);
-            this.flowLayoutPanel3.TabIndex = 4;
-            // 
             // followButton
             // 
-            this.followButton.Location = new System.Drawing.Point(43, 8);
+            this.followButton.Location = new System.Drawing.Point(346, 3);
+            this.followButton.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.followButton.Name = "followButton";
             this.followButton.Size = new System.Drawing.Size(75, 23);
             this.followButton.TabIndex = 0;
@@ -200,7 +150,8 @@
             // manageFollowingButton
             // 
             this.manageFollowingButton.AutoSize = true;
-            this.manageFollowingButton.Location = new System.Drawing.Point(124, 8);
+            this.manageFollowingButton.Location = new System.Drawing.Point(464, 3);
+            this.manageFollowingButton.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.manageFollowingButton.Name = "manageFollowingButton";
             this.manageFollowingButton.Size = new System.Drawing.Size(103, 23);
             this.manageFollowingButton.TabIndex = 1;
@@ -208,42 +159,112 @@
             this.manageFollowingButton.UseVisualStyleBackColor = true;
             this.manageFollowingButton.Click += new System.EventHandler(this.manageFollowingButton_Click);
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel4, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 63);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.45382F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.54619F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(784, 498);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.27764F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.72237F));
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 70);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(778, 425);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Controls.Add(this.reviewGrid, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(223, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(552, 419);
+            this.tableLayoutPanel8.TabIndex = 1;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.listGrid, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(214, 419);
+            this.tableLayoutPanel7.TabIndex = 0;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.userTitleLabel);
+            this.flowLayoutPanel4.Controls.Add(this.followerCountLabel);
+            this.flowLayoutPanel4.Controls.Add(this.followButton);
+            this.flowLayoutPanel4.Controls.Add(this.manageFollowingButton);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(778, 61);
+            this.flowLayoutPanel4.TabIndex = 1;
+            // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tableLayoutPanel5);
             this.Name = "ProfileForm";
-            this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
+            this.Controls.SetChildIndex(this.tableLayoutPanel5, 0);
             ((System.ComponentModel.ISupportInitialize)(this.reviewGrid)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listGrid)).EndInit();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label userTitleLabel;
         private System.Windows.Forms.Label followerCountLabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView listGrid;
         private System.Windows.Forms.Button followButton;
         private System.Windows.Forms.DataGridView reviewGrid;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button manageFollowingButton;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
     }
 }

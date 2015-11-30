@@ -109,6 +109,7 @@
             this.searchBox.Size = new System.Drawing.Size(174, 20);
             this.searchBox.TabIndex = 1;
             this.searchBox.TextChanged += new System.EventHandler(this.search);
+            this.searchBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.searchOnEnter);
             // 
             // searchButton
             // 

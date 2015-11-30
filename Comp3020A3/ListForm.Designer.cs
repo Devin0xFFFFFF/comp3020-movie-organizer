@@ -60,9 +60,8 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.Controls.Add(this.newListButton, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.listDataGrid, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -86,11 +85,19 @@
             // 
             // listDataGrid
             // 
-            this.listDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listDataGrid.AllowUserToAddRows = false;
+            this.listDataGrid.AllowUserToDeleteRows = false;
+            this.listDataGrid.AllowUserToResizeColumns = false;
+            this.listDataGrid.AllowUserToResizeRows = false;
+            this.listDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.listDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listDataGrid.Location = new System.Drawing.Point(3, 3);
             this.listDataGrid.Name = "listDataGrid";
-            this.listDataGrid.Size = new System.Drawing.Size(616, 347);
+            this.listDataGrid.ReadOnly = true;
+            this.listDataGrid.RowHeadersVisible = false;
+            this.listDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listDataGrid.Size = new System.Drawing.Size(772, 347);
             this.listDataGrid.TabIndex = 0;
             this.listDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selectCell);
             // 
