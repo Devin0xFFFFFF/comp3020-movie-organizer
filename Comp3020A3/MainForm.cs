@@ -128,6 +128,7 @@ namespace Comp3020A3
         {
             checkLoggedIn();
             applyLookAndFeel();
+            Activate();
             fillInForm(element);
         }
 

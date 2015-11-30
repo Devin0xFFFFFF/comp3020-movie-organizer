@@ -31,19 +31,18 @@ namespace Comp3020A3
                 List<Movie> movs = DataAccess.readMovies();
                 int i, j;
 
-                for (i = 0; i < movs.Count; i++)
+                for (i = 0; i < titles.Count; i++)
                 {
-                    Movie movie = movs.ElementAt(i);
                     j = 0;
 
-                    while (j < titles.Count && !titles.ElementAt(j).Equals(movie.title))
+                    while (j < movs.Count && !movs.ElementAt(j).title.Equals(titles[i]))
                     {
                         j++;
                     }
 
-                    if (j < titles.Count)
+                    if (j < movs.Count)
                     {
-                        movies.Add(movie);
+                        movies.Add(movs[j]);
                     }
                 }
             }
