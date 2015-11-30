@@ -60,6 +60,27 @@ namespace Comp3020A3
             }
         }
 
+        protected void applyLookAndFeel()
+        {
+            if(ApplicationManager.loggedIn != null)
+            {
+                List<int> colors = ApplicationManager.loggedIn.userColors;
+
+                if (colors != null && colors.Count > 0)
+                {
+                    BackColor = Color.FromArgb(colors[0]);
+                    taskBarPanel.BackColor = Color.FromArgb(colors[1]);
+                }
+            }
+            else
+            {
+                List<int> colors = UserManager.getDefaultUserColors();
+
+                BackColor = Color.FromArgb(colors[0]);
+                taskBarPanel.BackColor = Color.FromArgb(colors[1]);
+            }
+        }
+
         private void profileLink_Click(object sender, EventArgs e)
         {
             ApplicationManager.changeForm("PROFILE", ApplicationManager.loggedIn);
@@ -106,6 +127,7 @@ namespace Comp3020A3
         public void changeForm(Object element)
         {
             checkLoggedIn();
+            applyLookAndFeel();
             fillInForm(element);
         }
 
@@ -144,6 +166,11 @@ namespace Comp3020A3
             {
                 //search
             }
+        }
+
+        private void searchLabel_Click(object sender, EventArgs e)
+        {
+            //search
         }
     }
 }

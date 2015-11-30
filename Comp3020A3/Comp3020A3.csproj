@@ -60,7 +60,19 @@
     </Compile>
     <Compile Include="ApplicationManager.cs" />
     <Compile Include="ApplicationState.cs" />
+    <Compile Include="ChangeColorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeColorsForm.Designer.cs">
+      <DependentUpon>ChangeColorsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess.cs" />
+    <Compile Include="FirstSignInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstSignInForm.Designer.cs">
+      <DependentUpon>FirstSignInForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FollowingMangementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdvancedSearchForm.resx">
       <DependentUpon>AdvancedSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeColorsForm.resx">
+      <DependentUpon>ChangeColorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstSignInForm.resx">
+      <DependentUpon>FirstSignInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

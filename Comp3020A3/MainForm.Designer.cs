@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.taskBarPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.titleLabel = new System.Windows.Forms.Label();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
@@ -40,7 +40,7 @@
             this.signInLink = new System.Windows.Forms.Label();
             this.Back = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.taskBarPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -48,7 +48,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.taskBarPanel, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -58,22 +58,24 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 63);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // taskBarPanel
             // 
-            this.flowLayoutPanel1.Controls.Add(this.titleLabel);
-            this.flowLayoutPanel1.Controls.Add(this.searchLabel);
-            this.flowLayoutPanel1.Controls.Add(this.searchBox);
-            this.flowLayoutPanel1.Controls.Add(this.searchButton);
-            this.flowLayoutPanel1.Controls.Add(this.profileLink);
-            this.flowLayoutPanel1.Controls.Add(this.myListsLink);
-            this.flowLayoutPanel1.Controls.Add(this.signOutLink);
-            this.flowLayoutPanel1.Controls.Add(this.signInLink);
-            this.flowLayoutPanel1.Controls.Add(this.Back);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(778, 57);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.taskBarPanel.BackColor = System.Drawing.Color.LightGray;
+            this.taskBarPanel.Controls.Add(this.titleLabel);
+            this.taskBarPanel.Controls.Add(this.searchLabel);
+            this.taskBarPanel.Controls.Add(this.searchBox);
+            this.taskBarPanel.Controls.Add(this.searchButton);
+            this.taskBarPanel.Controls.Add(this.profileLink);
+            this.taskBarPanel.Controls.Add(this.myListsLink);
+            this.taskBarPanel.Controls.Add(this.signOutLink);
+            this.taskBarPanel.Controls.Add(this.signInLink);
+            this.taskBarPanel.Controls.Add(this.Back);
+            this.taskBarPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taskBarPanel.Location = new System.Drawing.Point(0, 0);
+            this.taskBarPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.taskBarPanel.Name = "taskBarPanel";
+            this.taskBarPanel.Size = new System.Drawing.Size(784, 63);
+            this.taskBarPanel.TabIndex = 0;
             // 
             // titleLabel
             // 
@@ -100,6 +102,9 @@
             this.searchLabel.TabIndex = 0;
             this.searchLabel.Text = "Search";
             this.searchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.searchLabel.Click += new System.EventHandler(this.searchLabel_Click);
+            this.searchLabel.MouseEnter += new System.EventHandler(this.linkMouseEnter);
+            this.searchLabel.MouseLeave += new System.EventHandler(this.linkMouseLeave);
             // 
             // searchBox
             // 
@@ -126,9 +131,11 @@
             // 
             this.profileLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.profileLink.AutoSize = true;
-            this.profileLink.Location = new System.Drawing.Point(613, 9);
+            this.profileLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profileLink.Location = new System.Drawing.Point(618, 8);
+            this.profileLink.Margin = new System.Windows.Forms.Padding(8, 0, 3, 0);
             this.profileLink.Name = "profileLink";
-            this.profileLink.Size = new System.Drawing.Size(36, 13);
+            this.profileLink.Size = new System.Drawing.Size(42, 15);
             this.profileLink.TabIndex = 3;
             this.profileLink.Text = "Profile";
             this.profileLink.Click += new System.EventHandler(this.profileLink_Click);
@@ -139,9 +146,10 @@
             // 
             this.myListsLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.myListsLink.AutoSize = true;
-            this.myListsLink.Location = new System.Drawing.Point(655, 9);
+            this.myListsLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myListsLink.Location = new System.Drawing.Point(666, 8);
             this.myListsLink.Name = "myListsLink";
-            this.myListsLink.Size = new System.Drawing.Size(45, 13);
+            this.myListsLink.Size = new System.Drawing.Size(51, 15);
             this.myListsLink.TabIndex = 4;
             this.myListsLink.Text = "My Lists";
             this.myListsLink.Click += new System.EventHandler(this.myListsLink_Click);
@@ -152,9 +160,11 @@
             // 
             this.signOutLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.signOutLink.AutoSize = true;
-            this.signOutLink.Location = new System.Drawing.Point(706, 9);
+            this.signOutLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signOutLink.Location = new System.Drawing.Point(723, 8);
+            this.signOutLink.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.signOutLink.Name = "signOutLink";
-            this.signOutLink.Size = new System.Drawing.Size(48, 13);
+            this.signOutLink.Size = new System.Drawing.Size(54, 15);
             this.signOutLink.TabIndex = 5;
             this.signOutLink.Text = "Sign Out";
             this.signOutLink.Click += new System.EventHandler(this.signOutLink_Click);
@@ -165,9 +175,11 @@
             // 
             this.signInLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.signInLink.AutoSize = true;
-            this.signInLink.Location = new System.Drawing.Point(3, 39);
+            this.signInLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signInLink.Location = new System.Drawing.Point(10, 38);
+            this.signInLink.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.signInLink.Name = "signInLink";
-            this.signInLink.Size = new System.Drawing.Size(65, 13);
+            this.signInLink.Size = new System.Drawing.Size(70, 15);
             this.signInLink.TabIndex = 6;
             this.signInLink.Text = "Sign In / Up";
             this.signInLink.Click += new System.EventHandler(this.signInLink_Click);
@@ -176,7 +188,7 @@
             // 
             // Back
             // 
-            this.Back.Location = new System.Drawing.Point(74, 34);
+            this.Back.Location = new System.Drawing.Point(86, 34);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(75, 23);
             this.Back.TabIndex = 7;
@@ -198,8 +210,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.closeApplication);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.taskBarPanel.ResumeLayout(false);
+            this.taskBarPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -207,7 +219,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel taskBarPanel;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox searchBox;

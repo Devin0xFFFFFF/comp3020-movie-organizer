@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace Comp3020A3
         {
             List<FormError> errors = new List<FormError>();
 
-            User user = new User() { username = uname, password = pwd, following = new List<string>() };
+            User user = new User() { username = uname, password = pwd, following = new List<string>(), userColors = getDefaultUserColors() };
 
             if (user.valid(errors))
             {
@@ -22,6 +23,16 @@ namespace Comp3020A3
             }
 
             return errors;
+        }
+
+        public static List<int> getDefaultUserColors()
+        {
+            List<int> defaultColors = new List<int>();
+            defaultColors.Add(Color.White.ToArgb());
+            defaultColors.Add(Color.LightGray.ToArgb());
+            defaultColors.Add(Color.White.ToArgb());
+
+            return defaultColors;
         }
 
         public static User getUser(string uname)
@@ -84,7 +95,7 @@ namespace Comp3020A3
                 {
                     if(user.password.Equals(pwd))
                     {
-                        ApplicationManager.loggedIn = new User() { username = user.username, password = user.password, following = user.following };
+                        ApplicationManager.loggedIn = user;
                         return true;
                     }
                     errors.Add(new FormError { err_code = "WRONGPASS", err_msg = "Incorrect password." });
@@ -133,11 +144,24 @@ namespace Comp3020A3
             if(i < users.Count)
             {
                 users.ElementAt(i).following = user.following;
+                users.ElementAt(i).userColors = user.userColors;
                 DataAccess.writeUsers(users);
                 return true;
             }
 
             return false;
+        }
+
+        public static void setUserColor(User user, int colID, Color color)
+        {
+            user.userColors[colID] = color.ToArgb();
+            saveUser(user);
+        }
+
+        public static void setUserColor(User user, int colID, int color)
+        {
+            user.userColors[colID] = color;
+            saveUser(user);
         }
     }
 }

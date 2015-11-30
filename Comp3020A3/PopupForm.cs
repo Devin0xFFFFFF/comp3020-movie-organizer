@@ -12,6 +12,8 @@ namespace Comp3020A3
 {
     public partial class PopupForm : Form
     {
+        private bool holdDialog = false;
+
         public PopupForm()
         {
             InitializeComponent();
@@ -22,6 +24,21 @@ namespace Comp3020A3
             Point loc = ApplicationManager.getCurrentFormLocation();
             loc.X += ApplicationManager.getCurrentFormSize().Width / 4;
             Location = loc;
+
+            if(ApplicationManager.loggedIn != null)
+            {
+                List<int> colors = ApplicationManager.loggedIn.userColors;
+
+                if(colors != null && colors.Count > 2)
+                {
+                    BackColor = Color.FromArgb(colors[2]);
+                }
+            }
+            else
+            {
+                List<int> colors = UserManager.getDefaultUserColors();
+                BackColor = Color.FromArgb(colors[2]);
+            }
         }
 
         protected void editWindowTitle(string title)
@@ -59,9 +76,36 @@ namespace Comp3020A3
             Close();
         }
 
+        protected void hideCancel(bool hide)
+        {
+            if(hide)
+            {
+                buttonPanel.Location = new Point(151, 7);
+                cancelButton.Hide();
+            }
+            else
+            {
+                buttonPanel.Location = new Point(101, 7);
+                cancelButton.Show();
+            }
+        }
+
+        protected void holdForDialog(bool hold)
+        {
+            holdDialog = hold;
+        }
+
+        protected bool holdingForDialog()
+        {
+            return holdDialog;
+        }
+
         private void deactivationClose(object sender, EventArgs e)
         {
-            Close();
+            if(!holdingForDialog())
+            {
+                Close();
+            }
         }
 
         protected virtual void enterPopupTitle(object sender, EventArgs e)

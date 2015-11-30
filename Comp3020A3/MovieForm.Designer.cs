@@ -114,8 +114,8 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.Padding = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel5.RowCount = 4;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.23762F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.26733F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -130,7 +130,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 8);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(483, 64);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(483, 47);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // movieTitleLabel
@@ -206,9 +206,9 @@
             this.flowLayoutPanel5.Controls.Add(this.ratingLabel);
             this.flowLayoutPanel5.Controls.Add(this.certificationLabel);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(8, 78);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(8, 61);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(483, 24);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(483, 41);
             this.flowLayoutPanel5.TabIndex = 8;
             // 
             // ratingLabel
@@ -251,10 +251,10 @@
             this.genreList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.genreList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genreList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.genreList.Location = new System.Drawing.Point(6, 21);
+            this.genreList.Location = new System.Drawing.Point(6, 0);
             this.genreList.Margin = new System.Windows.Forms.Padding(0);
             this.genreList.Name = "genreList";
-            this.genreList.Size = new System.Drawing.Size(469, 23);
+            this.genreList.Size = new System.Drawing.Size(469, 44);
             this.genreList.TabIndex = 2;
             this.genreList.TabStop = false;
             this.genreList.UseCompatibleStateImageBehavior = false;

@@ -41,6 +41,7 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.editColorsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.reviewGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listGrid)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
@@ -225,11 +226,24 @@
             this.flowLayoutPanel4.Controls.Add(this.followerCountLabel);
             this.flowLayoutPanel4.Controls.Add(this.followButton);
             this.flowLayoutPanel4.Controls.Add(this.manageFollowingButton);
+            this.flowLayoutPanel4.Controls.Add(this.editColorsButton);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(778, 61);
             this.flowLayoutPanel4.TabIndex = 1;
+            // 
+            // editColorsButton
+            // 
+            this.editColorsButton.AutoSize = true;
+            this.editColorsButton.Location = new System.Drawing.Point(610, 3);
+            this.editColorsButton.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
+            this.editColorsButton.Name = "editColorsButton";
+            this.editColorsButton.Size = new System.Drawing.Size(104, 23);
+            this.editColorsButton.TabIndex = 2;
+            this.editColorsButton.Text = "Edit Color Scheme";
+            this.editColorsButton.UseVisualStyleBackColor = true;
+            this.editColorsButton.Click += new System.EventHandler(this.editColorsButton_Click);
             // 
             // ProfileForm
             // 
@@ -266,5 +280,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Button editColorsButton;
     }
 }

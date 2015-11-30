@@ -30,13 +30,13 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.buttonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -68,20 +68,10 @@
             this.titleLabel.MouseEnter += new System.EventHandler(this.enterPopupTitle);
             this.titleLabel.MouseLeave += new System.EventHandler(this.leavePopupTitle);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.cancelButton);
-            this.groupBox1.Controls.Add(this.okButton);
-            this.groupBox1.Location = new System.Drawing.Point(92, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 60);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(119, 19);
+            this.cancelButton.Location = new System.Drawing.Point(101, 3);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 1;
@@ -91,7 +81,7 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(6, 19);
+            this.okButton.Location = new System.Drawing.Point(3, 3);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 0;
@@ -103,7 +93,7 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.buttonPanel, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 391);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -111,6 +101,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(384, 70);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // buttonPanel
+            // 
+            this.buttonPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonPanel.Controls.Add(this.okButton);
+            this.buttonPanel.Controls.Add(this.cancelButton);
+            this.buttonPanel.Location = new System.Drawing.Point(101, 7);
+            this.buttonPanel.Name = "buttonPanel";
+            this.buttonPanel.Size = new System.Drawing.Size(181, 55);
+            this.buttonPanel.TabIndex = 0;
             // 
             // PopupForm
             // 
@@ -127,8 +127,8 @@
             this.Load += new System.EventHandler(this.PopupForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.buttonPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -137,9 +137,9 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel buttonPanel;
     }
 }

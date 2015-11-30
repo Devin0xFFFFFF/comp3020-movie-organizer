@@ -50,6 +50,8 @@ namespace Comp3020A3
                 if(UserManager.login(usernameBox.Text, passwordBox.Text, errors))
                 {
                     ApplicationManager.changeForm("HOME", null);
+                    FirstSignInForm form = new FirstSignInForm();
+                    form.Show();
                 }
             }
         }

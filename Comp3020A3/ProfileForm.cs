@@ -80,10 +80,12 @@ namespace Comp3020A3
             if (ApplicationManager.loggedIn != null && ApplicationManager.loggedIn.username.Equals(user.username))
             {
                 manageFollowingButton.Show();
+                editColorsButton.Show();
             }
             else
             {
                 manageFollowingButton.Hide();
+                editColorsButton.Hide();
             }
         }
 
@@ -112,6 +114,12 @@ namespace Comp3020A3
         private void manageFollowingButton_Click(object sender, EventArgs e)
         {
             FollowingMangementForm form = new FollowingMangementForm(ApplicationManager.loggedIn);
+            form.Show();
+        }
+
+        private void editColorsButton_Click(object sender, EventArgs e)
+        {
+            ChangeColorsForm form = new ChangeColorsForm();
             form.Show();
         }
     }

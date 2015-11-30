@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace Comp3020A3
         public string password { get; set; }
 
         public List<string> following { get; set; }
+
+        public List<int> userColors { get; set; }
 
         public bool isFollowing(string username)
         {
