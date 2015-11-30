@@ -20,9 +20,13 @@ namespace Comp3020A3
 
             colors = new int[ApplicationManager.loggedIn.userColors.Count];
             ApplicationManager.loggedIn.userColors.CopyTo(colors);
-            defaultColor1.BackColor = Color.FromArgb(colors[0]);
-            defaultColor2.BackColor = Color.FromArgb(colors[1]);
-            defaultColor3.BackColor = Color.FromArgb(colors[2]);
+
+            List<int> defaultColors = UserManager.getDefaultUserColors();
+
+            defaultColor1.BackColor = Color.FromArgb(defaultColors[0]);
+            defaultColor2.BackColor = Color.FromArgb(defaultColors[1]);
+            defaultColor3.BackColor = Color.FromArgb(defaultColors[2]);
+
             setAllPalettes();
         }
 
