@@ -56,7 +56,7 @@ namespace Comp3020A3
                 changeProfileLinkText("");
                 changemyListsLinkText("");
                 changesignOutLinkText("");
-                changesignInLinkText("Sign In / Up");
+                changesignInLinkText("Sign In / Sign Up");
             }
         }
 

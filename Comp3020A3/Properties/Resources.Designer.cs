@@ -63,26 +63,6 @@ namespace Comp3020A3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap default_movie_image {
-            get {
-                object obj = ResourceManager.GetObject("default_movie_image", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap default_movie_image1 {
-            get {
-                object obj = ResourceManager.GetObject("default_movie_image1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap default_movie_image2 {
             get {
                 object obj = ResourceManager.GetObject("default_movie_image2", resourceCulture);

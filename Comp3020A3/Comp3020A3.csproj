@@ -156,6 +156,7 @@
     <Compile Include="SignInForm.Designer.cs">
       <DependentUpon>SignInForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestingSuite.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserManager.cs" />
     <EmbeddedResource Include="AddToListsForm.resx">
@@ -224,12 +225,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <None Include="Resources\default_movie_image.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\default_movie_image1.jpg" />
-  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\default_movie_image2.jpg" />
   </ItemGroup>

@@ -175,20 +175,20 @@
             // 
             this.signInLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.signInLink.AutoSize = true;
-            this.signInLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signInLink.Location = new System.Drawing.Point(10, 38);
+            this.signInLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signInLink.Location = new System.Drawing.Point(10, 35);
             this.signInLink.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.signInLink.Name = "signInLink";
-            this.signInLink.Size = new System.Drawing.Size(70, 15);
+            this.signInLink.Size = new System.Drawing.Size(128, 20);
             this.signInLink.TabIndex = 6;
-            this.signInLink.Text = "Sign In / Up";
+            this.signInLink.Text = "Sign In / Sign Up";
             this.signInLink.Click += new System.EventHandler(this.signInLink_Click);
             this.signInLink.MouseEnter += new System.EventHandler(this.linkMouseEnter);
             this.signInLink.MouseLeave += new System.EventHandler(this.linkMouseLeave);
             // 
             // Back
             // 
-            this.Back.Location = new System.Drawing.Point(86, 34);
+            this.Back.Location = new System.Drawing.Point(144, 34);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(75, 23);
             this.Back.TabIndex = 7;

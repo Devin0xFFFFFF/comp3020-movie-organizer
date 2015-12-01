@@ -100,10 +100,16 @@ namespace Comp3020A3
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            ReviewManager.destroyReview(review.ID);
+            holdForDialog(true);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this review?", "Delete Review", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                ReviewManager.destroyReview(review.ID);
 
-            ApplicationManager.reloadForm();
-            Close();
+                ApplicationManager.reloadForm();
+                Close();
+            }
+            holdForDialog(false);
         }
 
         private void authorLabelMouseEnter(object sender, EventArgs e)
