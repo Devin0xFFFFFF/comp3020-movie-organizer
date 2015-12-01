@@ -171,7 +171,14 @@ namespace Comp3020A3
 
         private void searchLabel_Click(object sender, EventArgs e)
         {
-            //search
+            if(searchBox.Text.Length > 0)
+            {
+                //search
+            }
+            else
+            {
+                ApplicationManager.changeForm("SEARCH", null);
+            }
         }
     }
 }

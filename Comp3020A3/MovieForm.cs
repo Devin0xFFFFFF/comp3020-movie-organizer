@@ -42,6 +42,8 @@ namespace Comp3020A3
                 genreList.Items.Add(genre);
             }
 
+            genreList.BackColor = BackColor;
+
             directorLabel.Text = "Director: " + movie.director;
             lengthLabel.Text = "Length: " + movie.length + " min";
 
