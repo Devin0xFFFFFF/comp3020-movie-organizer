@@ -68,21 +68,31 @@ namespace Comp3020A3
                 ReviewManager.sortByDateTime(followingReviews);
             }
 
-            followingReviews = ReviewManager.getReviews(followingReviews, 18);
+            followingReviews = ReviewManager.getReviews(followingReviews, 19);
 
-            if(followingReviews.Count < 18)
+            if(followingReviews.Count < 19)
             {
-                for(i = 0; i < 18 - followingReviews.Count && i < newReviews.Count; i++)
+                int end = 19 - followingReviews.Count;
+                end = (newReviews.Count - end > 0) ? end : newReviews.Count;
+
+                for (i = 0; i < end; i++)
                 {
                     followingReviews.Add(newReviews[i]);
                 }
             }
+
+            ReviewManager.sortByDateTime(followingReviews);
 
             dataGridView2.DataSource = followingReviews;
             dataGridView2.Columns[0].Visible = false;
             dataGridView2.Columns[4].Visible = false;
             dataGridView2.Columns[5].Visible = false;
             dataGridView2.Columns[6].Visible = false;
+        }
+
+        protected override void fillInForm(Object element)
+        {
+            loadNewReviews();
         }
 
         private void viewMoviePage(object sender, DataGridViewCellEventArgs e)

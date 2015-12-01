@@ -10,6 +10,9 @@ namespace Comp3020A3
 {
     public partial class ListForm : Comp3020A3.MainForm
     {
+        bool editable;
+        int selected1, selected2;
+
         public ListForm()
         {
             InitializeComponent();
@@ -22,7 +25,12 @@ namespace Comp3020A3
 
         protected override void fillInForm(Object element)
         {
-            if(element is List<MovieList>)
+            editable = false;
+            reorderToolTip.Hide();
+            selected1 = -1;
+            selected2 = -1;
+
+            if (element is List<MovieList>)
             {
                 List<MovieList> movieLists = (List<MovieList>)element;
                 fillInForm(movieLists);
@@ -40,6 +48,7 @@ namespace Comp3020A3
             listTitleLabel.Text = "My Lists";
             editNameButton.Hide();
             editContentsButton.Show();
+            editOrderButton.Show();
             listIDLabel.Hide();
 
             listDataGrid.DataSource = movieLists;
@@ -61,11 +70,13 @@ namespace Comp3020A3
             {
                 editNameButton.Show();
                 editContentsButton.Show();
+                editOrderButton.Show();
             }
             else
             {
                 editNameButton.Hide();
                 editContentsButton.Hide();
+                editOrderButton.Hide();
             }
 
             listDataGrid.DataSource = MovieManager.getMovies(movieList.movies);
@@ -95,20 +106,61 @@ namespace Comp3020A3
         {
             if(e.RowIndex > -1)
             {
-                if (listTitleLabel.Text.Equals("My Lists"))
+                if (editable)
                 {
-                    List<MovieList> lists = (List<MovieList>)listDataGrid.DataSource;
-                    MovieList list = lists[e.RowIndex];
-
-
-                    ApplicationManager.changeForm("LISTS", list);
+                    attemptSwap(e.RowIndex);
                 }
                 else
                 {
-                    Movie movie = ((List<Movie>)listDataGrid.DataSource)[e.RowIndex];
+                    if (listTitleLabel.Text.Equals("My Lists"))
+                    {
+                        List<MovieList> lists = (List<MovieList>)listDataGrid.DataSource;
+                        MovieList list = lists[e.RowIndex];
 
-                    ApplicationManager.changeForm("MOVIE", movie);
+
+                        ApplicationManager.changeForm("LISTS", list);
+                    }
+                    else
+                    {
+                        Movie movie = ((List<Movie>)listDataGrid.DataSource)[e.RowIndex];
+
+                        ApplicationManager.changeForm("MOVIE", movie);
+                    }
                 }
+            }
+        }
+
+        private void attemptSwap(int index)
+        {
+            if (selected1 == -1)
+            {
+                selected1 = index;
+            }
+            else if(selected2 == -1)
+            {
+                selected2 = index;
+
+                if (listTitleLabel.Text.Equals("My Lists"))
+                {
+                    MovieList list1 = ((List<MovieList>)listDataGrid.DataSource)[selected1];
+                    MovieList list2 = ((List<MovieList>)listDataGrid.DataSource)[selected2];
+
+                    ((List<MovieList>)listDataGrid.DataSource)[selected1] = list2;
+                    ((List<MovieList>)listDataGrid.DataSource)[selected2] = list1;
+                }
+                else
+                {
+                    Movie item1 = ((List<Movie>)listDataGrid.DataSource)[selected1];
+                    Movie item2 = ((List<Movie>)listDataGrid.DataSource)[selected2];
+
+                    ((List<Movie>)listDataGrid.DataSource)[selected1] = item2;
+                    ((List<Movie>)listDataGrid.DataSource)[selected2] = item1;
+                }
+
+                selected1 = -1;
+                selected2 = -1;
+                listDataGrid.ClearSelection();
+                listDataGrid.Refresh();
             }
         }
 
@@ -132,6 +184,37 @@ namespace Comp3020A3
             }
 
             form.Show();
+        }
+
+        private void editOrderButton_Click(object sender, EventArgs e)
+        {
+            if(editable)
+            {
+                editable = false;
+                editOrderButton.Text = "Edit Order";
+                reorderToolTip.Hide();
+                selected1 = -1;
+                selected2 = -1;
+                listDataGrid.ClearSelection();
+
+                if (listTitleLabel.Text.Equals("My Lists"))
+                {
+                    List<MovieList> lists = (List<MovieList>)listDataGrid.DataSource;
+                    MovieListManager.updateListOrder(ApplicationManager.loggedIn, lists);
+                }
+                else
+                {
+                    List<Movie> movies = (List<Movie>)listDataGrid.DataSource;
+                    MovieListManager.updateListOrder(long.Parse(listIDLabel.Text), movies);
+                }
+            }
+            else
+            {
+                editable = true;
+                editOrderButton.Text = "Save Order";
+                reorderToolTip.Show();
+                listDataGrid.ClearSelection();
+            }
         }
     }
 }

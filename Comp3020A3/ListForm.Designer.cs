@@ -33,6 +33,8 @@
             this.newListButton = new System.Windows.Forms.Button();
             this.listDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.reorderToolTip = new System.Windows.Forms.Label();
+            this.editOrderButton = new System.Windows.Forms.Button();
             this.listIDLabel = new System.Windows.Forms.Label();
             this.editContentsButton = new System.Windows.Forms.Button();
             this.editNameButton = new System.Windows.Forms.Button();
@@ -103,6 +105,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.reorderToolTip);
+            this.panel1.Controls.Add(this.editOrderButton);
             this.panel1.Controls.Add(this.listIDLabel);
             this.panel1.Controls.Add(this.editContentsButton);
             this.panel1.Controls.Add(this.editNameButton);
@@ -112,6 +116,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(778, 93);
             this.panel1.TabIndex = 0;
+            // 
+            // reorderToolTip
+            // 
+            this.reorderToolTip.AutoSize = true;
+            this.reorderToolTip.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reorderToolTip.Location = new System.Drawing.Point(192, 67);
+            this.reorderToolTip.Name = "reorderToolTip";
+            this.reorderToolTip.Size = new System.Drawing.Size(293, 18);
+            this.reorderToolTip.TabIndex = 5;
+            this.reorderToolTip.Text = "Select two elements to swap their positions";
+            // 
+            // editOrderButton
+            // 
+            this.editOrderButton.Location = new System.Drawing.Point(696, 44);
+            this.editOrderButton.Name = "editOrderButton";
+            this.editOrderButton.Size = new System.Drawing.Size(75, 23);
+            this.editOrderButton.TabIndex = 4;
+            this.editOrderButton.Text = "Edit Order";
+            this.editOrderButton.UseVisualStyleBackColor = true;
+            this.editOrderButton.Click += new System.EventHandler(this.editOrderButton_Click);
             // 
             // listIDLabel
             // 
@@ -126,7 +150,7 @@
             // 
             this.editContentsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.editContentsButton.AutoSize = true;
-            this.editContentsButton.Location = new System.Drawing.Point(672, 44);
+            this.editContentsButton.Location = new System.Drawing.Point(610, 44);
             this.editContentsButton.Name = "editContentsButton";
             this.editContentsButton.Size = new System.Drawing.Size(80, 23);
             this.editContentsButton.TabIndex = 2;
@@ -137,7 +161,7 @@
             // editNameButton
             // 
             this.editNameButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editNameButton.Location = new System.Drawing.Point(591, 44);
+            this.editNameButton.Location = new System.Drawing.Point(529, 44);
             this.editNameButton.Name = "editNameButton";
             this.editNameButton.Size = new System.Drawing.Size(75, 23);
             this.editNameButton.TabIndex = 1;
@@ -183,5 +207,7 @@
         private System.Windows.Forms.Button editNameButton;
         private System.Windows.Forms.Label listIDLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button editOrderButton;
+        private System.Windows.Forms.Label reorderToolTip;
     }
 }

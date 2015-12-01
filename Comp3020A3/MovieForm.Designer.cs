@@ -34,13 +34,13 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.movieTitleLabel = new System.Windows.Forms.Label();
             this.yearLabel = new System.Windows.Forms.Label();
-            this.addToListButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.directorLabel = new System.Windows.Forms.Label();
             this.lengthLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.ratingLabel = new System.Windows.Forms.Label();
             this.certificationLabel = new System.Windows.Forms.Label();
+            this.addToListButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.genreList = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -126,7 +126,6 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.movieTitleLabel);
             this.flowLayoutPanel2.Controls.Add(this.yearLabel);
-            this.flowLayoutPanel2.Controls.Add(this.addToListButton);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 8);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -156,19 +155,6 @@
             this.yearLabel.TabIndex = 1;
             this.yearLabel.Text = "(Year)";
             this.yearLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // addToListButton
-            // 
-            this.addToListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addToListButton.AutoSize = true;
-            this.addToListButton.Location = new System.Drawing.Point(250, 7);
-            this.addToListButton.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.addToListButton.Name = "addToListButton";
-            this.addToListButton.Size = new System.Drawing.Size(95, 23);
-            this.addToListButton.TabIndex = 1;
-            this.addToListButton.Text = "Add To List";
-            this.addToListButton.UseVisualStyleBackColor = true;
-            this.addToListButton.Click += new System.EventHandler(this.addToListButton_Click);
             // 
             // panel1
             // 
@@ -205,6 +191,7 @@
             // 
             this.flowLayoutPanel5.Controls.Add(this.ratingLabel);
             this.flowLayoutPanel5.Controls.Add(this.certificationLabel);
+            this.flowLayoutPanel5.Controls.Add(this.addToListButton);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel5.Location = new System.Drawing.Point(8, 61);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
@@ -216,7 +203,7 @@
             this.ratingLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ratingLabel.AutoSize = true;
             this.ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ratingLabel.Location = new System.Drawing.Point(3, 0);
+            this.ratingLabel.Location = new System.Drawing.Point(3, 2);
             this.ratingLabel.Name = "ratingLabel";
             this.ratingLabel.Size = new System.Drawing.Size(87, 24);
             this.ratingLabel.TabIndex = 1;
@@ -232,9 +219,22 @@
             this.certificationLabel.Location = new System.Drawing.Point(143, 0);
             this.certificationLabel.Margin = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.certificationLabel.Name = "certificationLabel";
-            this.certificationLabel.Size = new System.Drawing.Size(61, 24);
+            this.certificationLabel.Size = new System.Drawing.Size(61, 29);
             this.certificationLabel.TabIndex = 0;
             this.certificationLabel.Text = "CERT";
+            // 
+            // addToListButton
+            // 
+            this.addToListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addToListButton.AutoSize = true;
+            this.addToListButton.Location = new System.Drawing.Point(214, 3);
+            this.addToListButton.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.addToListButton.Name = "addToListButton";
+            this.addToListButton.Size = new System.Drawing.Size(95, 23);
+            this.addToListButton.TabIndex = 1;
+            this.addToListButton.Text = "Add To List";
+            this.addToListButton.UseVisualStyleBackColor = true;
+            this.addToListButton.Click += new System.EventHandler(this.addToListButton_Click);
             // 
             // panel2
             // 
@@ -247,7 +247,7 @@
             // 
             // genreList
             // 
-            this.genreList.BackColor = System.Drawing.SystemColors.Control;
+            this.genreList.BackColor = System.Drawing.SystemColors.Window;
             this.genreList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.genreList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.genreList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;

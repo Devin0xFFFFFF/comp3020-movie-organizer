@@ -151,5 +151,60 @@ namespace Comp3020A3
 
             return false;
         }
+
+        public static bool saveMovieList(MovieList list)
+        {
+            List<MovieList> lists = DataAccess.readMovieLists();
+            int i = 0;
+
+            while(i < lists.Count && lists[i].ID != list.ID)
+            {
+                i++;
+            }
+
+            if(i < lists.Count)
+            {
+                lists[i].movies = list.movies;
+                DataAccess.writeMovieLists(lists);
+            }
+
+            return false;
+        }
+
+        public static void updateListOrder(User user, List<MovieList> lists)
+        {
+            List<MovieList> mls = DataAccess.readMovieLists();
+            int i;
+
+            foreach (MovieList list in lists)
+            {
+                i = 0;
+                while (i < mls.Count && mls[i].ID != list.ID)
+                {
+                    i++;
+                }
+
+                if(i < mls.Count)
+                {
+                    mls.RemoveAt(i);
+                    mls.Add(list);
+                }
+            }
+
+            DataAccess.writeMovieLists(mls);
+        }
+
+        public static void updateListOrder(long ID, List<Movie> movies)
+        {
+            MovieList list = getMovieList(ID);
+            int i;
+
+            for (i = 0; i < list.movies.Count; i++)
+            {
+                list.movies[i] = movies[i].title;
+            }
+
+            saveMovieList(list);
+        }
     }
 }
