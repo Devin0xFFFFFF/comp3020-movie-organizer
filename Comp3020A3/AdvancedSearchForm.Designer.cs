@@ -82,6 +82,7 @@
             this.numericLength1 = new System.Windows.Forms.NumericUpDown();
             this.numericLength2 = new System.Windows.Forms.NumericUpDown();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.chkPG13 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericRating1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRating2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericYear1)).BeginInit();
@@ -302,9 +303,9 @@
             this.chkFilmNoir.AutoSize = true;
             this.chkFilmNoir.Location = new System.Drawing.Point(293, 213);
             this.chkFilmNoir.Name = "chkFilmNoir";
-            this.chkFilmNoir.Size = new System.Drawing.Size(64, 17);
+            this.chkFilmNoir.Size = new System.Drawing.Size(66, 17);
             this.chkFilmNoir.TabIndex = 22;
-            this.chkFilmNoir.Text = "Filn-Noir";
+            this.chkFilmNoir.Text = "Film-Noir";
             this.chkFilmNoir.UseVisualStyleBackColor = true;
             // 
             // txtDirector
@@ -356,7 +357,7 @@
             // chkR
             // 
             this.chkR.AutoSize = true;
-            this.chkR.Location = new System.Drawing.Point(244, 497);
+            this.chkR.Location = new System.Drawing.Point(301, 497);
             this.chkR.Name = "chkR";
             this.chkR.Size = new System.Drawing.Size(34, 17);
             this.chkR.TabIndex = 29;
@@ -547,7 +548,7 @@
             // chkNC17
             // 
             this.chkNC17.AutoSize = true;
-            this.chkNC17.Location = new System.Drawing.Point(291, 497);
+            this.chkNC17.Location = new System.Drawing.Point(341, 497);
             this.chkNC17.Name = "chkNC17";
             this.chkNC17.Size = new System.Drawing.Size(56, 17);
             this.chkNC17.TabIndex = 54;
@@ -697,11 +698,23 @@
             this.btnSearch.TabIndex = 61;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // chkPG13
+            // 
+            this.chkPG13.AutoSize = true;
+            this.chkPG13.Location = new System.Drawing.Point(239, 497);
+            this.chkPG13.Name = "chkPG13";
+            this.chkPG13.Size = new System.Drawing.Size(56, 17);
+            this.chkPG13.TabIndex = 62;
+            this.chkPG13.Text = "PG-13";
+            this.chkPG13.UseVisualStyleBackColor = true;
             // 
             // AdvancedSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(784, 650);
+            this.Controls.Add(this.chkPG13);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.numericLength2);
             this.Controls.Add(this.numericLength1);
@@ -811,6 +824,7 @@
             this.Controls.SetChildIndex(this.numericLength1, 0);
             this.Controls.SetChildIndex(this.numericLength2, 0);
             this.Controls.SetChildIndex(this.btnSearch, 0);
+            this.Controls.SetChildIndex(this.chkPG13, 0);
             ((System.ComponentModel.ISupportInitialize)(this.numericRating1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRating2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericYear1)).EndInit();
@@ -878,5 +892,6 @@
         private System.Windows.Forms.NumericUpDown numericLength1;
         private System.Windows.Forms.NumericUpDown numericLength2;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.CheckBox chkPG13;
     }
 }
