@@ -109,6 +109,31 @@ namespace Comp3020A3
                 ModifyReviewForm form = new ModifyReviewForm(review);
                 form.Show();
             }
+            else
+            {
+                if(e.ColumnIndex == 2)
+                {
+                    ReviewManager.sortByMovie(((List<Review>)reviewGrid.DataSource));
+                }
+                else if(e.ColumnIndex == 3)
+                {
+                    ReviewManager.sortByRating(((List<Review>)reviewGrid.DataSource));
+                }
+                else if (e.ColumnIndex == 4)
+                {
+                    ReviewManager.sortByContentLength(((List<Review>)reviewGrid.DataSource));
+                }
+                else if (e.ColumnIndex == 5)
+                {
+                    ReviewManager.sortByCreationTime(((List<Review>)reviewGrid.DataSource));
+                }
+                else if (e.ColumnIndex == 6)
+                {
+                    ReviewManager.sortByDateTime(((List<Review>)reviewGrid.DataSource));
+                }
+
+                reviewGrid.Refresh();
+            }
         }
 
         private void manageFollowingButton_Click(object sender, EventArgs e)

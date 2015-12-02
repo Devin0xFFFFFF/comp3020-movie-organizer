@@ -34,6 +34,14 @@ namespace Comp3020A3
             });
         }
 
+        public static void sortByCreationTime(List<Review> reviews)
+        {
+            reviews.Sort(delegate (Review x, Review y)
+            {
+                return y.createdAt.CompareTo(x.createdAt);
+            });
+        }
+
         public static void sortByAuthor(List<Review> reviews)
         {
             reviews.Sort(delegate (Review x, Review y)
@@ -42,11 +50,37 @@ namespace Comp3020A3
             });
         }
 
+        public static void sortByMovie(List<Review> reviews)
+        {
+            reviews.Sort(delegate (Review x, Review y)
+            {
+                return x.movie.CompareTo(y.movie);
+            });
+        }
+
         public static void sortByRating(List<Review> reviews)
         {
             reviews.Sort(delegate (Review x, Review y)
             {
                 return y.getRatingValue().CompareTo(x.getRatingValue());
+            });
+        }
+
+        public static void sortByContentLength(List<Review> reviews)
+        {
+            reviews.Sort(delegate (Review x, Review y)
+            {
+                return y.content.Length.CompareTo(x.content.Length);
+            });
+        }
+
+        public static void sortByAuthorFollowers(List<Review> reviews)
+        {
+            List<User> users = DataAccess.readUsers();
+
+            reviews.Sort(delegate (Review x, Review y)
+            {
+                return UserManager.getFollowers(x.author, users).Count.CompareTo(UserManager.getFollowers(y.author, users).Count);
             });
         }
 

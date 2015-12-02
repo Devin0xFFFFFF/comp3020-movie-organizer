@@ -63,10 +63,10 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(360, 60);
+            this.label1.Size = new System.Drawing.Size(376, 60);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Thanks for signing up with us! Now that you have your own account, there is so mu" +
-    "ch more you can do! Some possible options are: ";
+            this.label1.Text = "Thanks for signing up with us! Now you can follow other users, write reviews, and" +
+    " create lists of movies. We suggest you start out by: ";
             // 
             // profileLink
             // 
@@ -77,7 +77,7 @@
             this.profileLink.Name = "profileLink";
             this.profileLink.Size = new System.Drawing.Size(378, 67);
             this.profileLink.TabIndex = 1;
-            this.profileLink.Text = "Check out your profile and edit the color scheme";
+            this.profileLink.Text = "Going out your profile and editing the color scheme";
             this.profileLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.profileLink.Click += new System.EventHandler(this.profileLink_Click);
             this.profileLink.MouseEnter += new System.EventHandler(this.enterOption);
@@ -92,7 +92,7 @@
             this.listsLink.Name = "listsLink";
             this.listsLink.Size = new System.Drawing.Size(378, 67);
             this.listsLink.TabIndex = 2;
-            this.listsLink.Text = "Go to My Lists and create your first list";
+            this.listsLink.Text = "Heading over to My Lists and creating your first list";
             this.listsLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.listsLink.Click += new System.EventHandler(this.listsLink_Click);
             this.listsLink.MouseEnter += new System.EventHandler(this.enterOption);
@@ -107,7 +107,7 @@
             this.searchLink.Name = "searchLink";
             this.searchLink.Size = new System.Drawing.Size(378, 67);
             this.searchLink.TabIndex = 3;
-            this.searchLink.Text = "Search for a movie and write a review";
+            this.searchLink.Text = "Searching for a movie and writing a review";
             this.searchLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.searchLink.Click += new System.EventHandler(this.searchLink_Click);
             this.searchLink.MouseEnter += new System.EventHandler(this.enterOption);

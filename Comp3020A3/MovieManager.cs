@@ -66,6 +66,14 @@ namespace Comp3020A3
             });
         }
 
+        public static void sortByRating(List<Movie> movies)
+        {
+            movies.Sort(delegate (Movie x, Movie y)
+            {
+                return y.rating.CompareTo(x.rating);
+            });
+        }
+
         public static Movie getMovie(string title)
         {
             Movie movie = null;

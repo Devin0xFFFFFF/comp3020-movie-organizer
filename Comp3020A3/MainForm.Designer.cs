@@ -84,9 +84,9 @@
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(3, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(227, 31);
+            this.titleLabel.Size = new System.Drawing.Size(228, 31);
             this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "Movie Organizer";
+            this.titleLabel.Text = "After the Credits";
             this.titleLabel.Click += new System.EventHandler(this.titleLabel_Click);
             this.titleLabel.MouseEnter += new System.EventHandler(this.linkMouseEnter);
             this.titleLabel.MouseLeave += new System.EventHandler(this.linkMouseLeave);
@@ -96,7 +96,7 @@
             this.searchLabel.AutoSize = true;
             this.searchLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(236, 6);
+            this.searchLabel.Location = new System.Drawing.Point(237, 6);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(80, 25);
             this.searchLabel.TabIndex = 0;
@@ -109,7 +109,7 @@
             // searchBox
             // 
             this.searchBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.searchBox.Location = new System.Drawing.Point(322, 8);
+            this.searchBox.Location = new System.Drawing.Point(323, 8);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(174, 20);
             this.searchBox.TabIndex = 1;
@@ -119,7 +119,7 @@
             // searchButton
             // 
             this.searchButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.searchButton.Location = new System.Drawing.Point(502, 5);
+            this.searchButton.Location = new System.Drawing.Point(503, 5);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(105, 23);
             this.searchButton.TabIndex = 2;
@@ -132,7 +132,7 @@
             this.profileLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.profileLink.AutoSize = true;
             this.profileLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileLink.Location = new System.Drawing.Point(618, 8);
+            this.profileLink.Location = new System.Drawing.Point(619, 8);
             this.profileLink.Margin = new System.Windows.Forms.Padding(8, 0, 3, 0);
             this.profileLink.Name = "profileLink";
             this.profileLink.Size = new System.Drawing.Size(42, 15);
@@ -147,7 +147,7 @@
             this.myListsLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.myListsLink.AutoSize = true;
             this.myListsLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myListsLink.Location = new System.Drawing.Point(666, 8);
+            this.myListsLink.Location = new System.Drawing.Point(667, 8);
             this.myListsLink.Name = "myListsLink";
             this.myListsLink.Size = new System.Drawing.Size(51, 15);
             this.myListsLink.TabIndex = 4;
@@ -161,7 +161,7 @@
             this.signOutLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.signOutLink.AutoSize = true;
             this.signOutLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signOutLink.Location = new System.Drawing.Point(723, 8);
+            this.signOutLink.Location = new System.Drawing.Point(724, 8);
             this.signOutLink.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.signOutLink.Name = "signOutLink";
             this.signOutLink.Size = new System.Drawing.Size(54, 15);
@@ -206,7 +206,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Movie Organizer";
+            this.Text = "After the Credits";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.closeApplication);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

@@ -16,7 +16,7 @@ namespace Comp3020A3
 
             hideCancel(true);
             editWindowTitle("First Login");
-            editTitle("Welcome to Movie Organizer!");
+            editTitle("Welcome to After the Credits!");
         }
 
         protected override void okButton_Click(object sender, EventArgs e)

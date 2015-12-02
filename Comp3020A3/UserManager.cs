@@ -131,6 +131,22 @@ namespace Comp3020A3
             return users;
         }
 
+        public static List<User> getFollowers(string user, List<User> users)
+        {
+            List<User> followers = new List<User>();
+            int i;
+
+            for (i = users.Count - 1; i >= 0; i--)
+            {
+                if (!users.ElementAt(i).isFollowing(user))
+                {
+                    followers.Add(users[i]);
+                }
+            }
+
+            return followers;
+        }
+
         public static bool saveUser(User user)
         {
             List<User> users = DataAccess.readUsers();
