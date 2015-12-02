@@ -100,6 +100,7 @@
             // 
             // ratingBox
             // 
+            this.ratingBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ratingBox.FormattingEnabled = true;
             this.ratingBox.Items.AddRange(new object[] {
             "Terrible",

@@ -89,6 +89,7 @@ namespace Comp3020A3
 
             reviewsGrid.DataSource = allReviews;
             reviewsGrid.Columns[0].Visible = false;
+            reviewsGrid.Columns[2].Visible = false;
 
             orderBox.SelectedIndex = 0;
             filterBox.SelectedIndex = 0;

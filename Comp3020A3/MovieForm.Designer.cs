@@ -333,6 +333,7 @@
             // 
             // orderBox
             // 
+            this.orderBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.orderBox.FormattingEnabled = true;
             this.orderBox.Items.AddRange(new object[] {
             "Date Edited",
@@ -355,6 +356,7 @@
             // 
             // filterBox
             // 
+            this.filterBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.filterBox.FormattingEnabled = true;
             this.filterBox.Items.AddRange(new object[] {
             "All",
@@ -392,6 +394,7 @@
             this.actorList.Name = "actorList";
             this.actorList.Size = new System.Drawing.Size(778, 93);
             this.actorList.TabIndex = 2;
+            this.actorList.TabStop = false;
             this.actorList.UseCompatibleStateImageBehavior = false;
             this.actorList.View = System.Windows.Forms.View.Tile;
             // 

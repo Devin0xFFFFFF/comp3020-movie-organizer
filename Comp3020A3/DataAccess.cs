@@ -182,5 +182,16 @@ namespace Comp3020A3
                 serial.Serialize(fs, reviews);
             }
         }
+
+        public static void clearDB()
+        {
+            List<User> users = new List<User>();
+            List<Review> reviews = new List<Review>();
+            List<MovieList> mls = new List<MovieList>();
+
+            writeUsers(users);
+            writeReviews(reviews);
+            writeMovieLists(mls);
+        }
     }
 }

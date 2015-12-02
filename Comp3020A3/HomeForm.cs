@@ -13,7 +13,7 @@ namespace Comp3020A3
         public HomeForm()
         {
             InitializeComponent();
-            //ApplicationManager.loggedIn = new User() { username = "bobafett2", password = "", following = new List<string>() };
+            
             ApplicationManager.createForms(this);
             checkLoggedIn();
         }
@@ -22,8 +22,6 @@ namespace Comp3020A3
         {
             loadNewMovies();
             loadNewReviews();
-
-            //Console.WriteLine(YesNoResult.yes());
         }
 
         private void loadNewMovies()
@@ -45,6 +43,7 @@ namespace Comp3020A3
             List<Review> followingReviews = new List<Review>();
 
             int i = newReviews.Count - 1;
+            int j;
 
             //Remove your own reviews, collect following ones to be displayed first
 
@@ -54,7 +53,16 @@ namespace Comp3020A3
                 {
                     if(ApplicationManager.loggedIn.isFollowing(newReviews[i].author))
                     {
-                        followingReviews.Add(newReviews[i]);
+                        j = 0;
+                        while(j < followingReviews.Count && !newReviews[i].author.Equals(followingReviews[j].author))
+                        {
+                            j++;
+                        }
+
+                        if(j >= followingReviews.Count)
+                        {
+                            followingReviews.Add(newReviews[i]);
+                        }
                         newReviews.RemoveAt(i);
                     }
                     else if (newReviews[i].author.Equals(ApplicationManager.loggedIn.username))
