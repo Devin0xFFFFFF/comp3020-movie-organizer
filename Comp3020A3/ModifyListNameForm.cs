@@ -58,6 +58,19 @@ namespace Comp3020A3
 
         protected override void okButton_Click(object sender, EventArgs e)
         {
+            changeName();
+        }
+
+        private void enterName(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                changeName();
+            }
+        }
+
+        private void changeName()
+        {
             string name = nameBox.Text;
             List<FormError> errors;
 
@@ -74,9 +87,9 @@ namespace Comp3020A3
                 errorLabel.Text = FormError.getErrorMessage("TITLELEN", errors);
             }
 
-            if(errors.Count <= 0)
+            if (errors.Count <= 0)
             {
-                if(user != null)
+                if (user != null)
                 {
                     ApplicationManager.reloadForm(MovieListManager.getMovieLists(user));
                 }

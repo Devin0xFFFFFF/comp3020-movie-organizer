@@ -166,6 +166,11 @@ namespace Comp3020A3
 
         private void editNameButton_Click(object sender, EventArgs e)
         {
+            editName();
+        }
+
+        public void editName()
+        {
             ModifyListNameForm form = new ModifyListNameForm(long.Parse(listIDLabel.Text));
             form.Show();
         }

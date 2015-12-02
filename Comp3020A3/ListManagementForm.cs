@@ -34,5 +34,49 @@ namespace Comp3020A3
         {
             return checkListBox;
         }
+
+        protected void showTextBox(bool show)
+        {
+            if(show)
+            {
+                inputBox.Show();
+            }
+            else
+            {
+                inputBox.Hide();
+            }
+        }
+
+        protected void showActionButton(bool show)
+        {
+            if (show)
+            {
+                actionButton.Show();
+            }
+            else
+            {
+                actionButton.Hide();
+            }
+        }
+
+        protected void editActionButton(string text)
+        {
+            actionButton.Text = text;
+        }
+
+        protected string getTextBox()
+        {
+            return inputBox.Text;
+        }
+
+        protected virtual void actionButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void enterSearch(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

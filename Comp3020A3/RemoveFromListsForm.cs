@@ -20,6 +20,9 @@ namespace Comp3020A3
             editTitle("Manage " + list.name);
             editSubTitle("");
             EditToolTip("Uncheck boxes to remove movies. Press Ok to save changes.");
+            showActionButton(true);
+            editActionButton("Search for a Movie");
+            showTextBox(true);
             ml = list;
             fillOutForm(list);
         }
@@ -30,6 +33,8 @@ namespace Comp3020A3
             editWindowTitle("Edit List");
             editTitle("Manage My Lists");
             editSubTitle("");
+            showActionButton(false);
+            showTextBox(false);
             EditToolTip("Uncheck boxes to delete lists. Press Ok to save changes.");
             mls = lists;
             fillOutForm(lists);
@@ -99,6 +104,28 @@ namespace Comp3020A3
             }
 
             Close();
+        }
+
+        protected override void actionButton_Click(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        protected override void enterSearch(object sender, KeyPressEventArgs e)
+        {
+            search();
+        }
+
+        private void search()
+        {
+            if (getTextBox().Length > 0)
+            {
+                //search
+            }
+            else
+            {
+                ApplicationManager.changeForm("SEARCH", null);
+            }
         }
     }
 }

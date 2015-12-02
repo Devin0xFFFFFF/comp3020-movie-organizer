@@ -165,13 +165,23 @@ namespace Comp3020A3
         {
             if(e.KeyChar == (char)Keys.Enter)
             {
-                //search
+                search();
             }
         }
 
         private void searchLabel_Click(object sender, EventArgs e)
         {
-            if(searchBox.Text.Length > 0)
+            search();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        private void search()
+        {
+            if (searchBox.Text.Length > 0)
             {
                 //search
             }

@@ -35,7 +35,7 @@ namespace Comp3020A3
 
             genreList.Items.Clear();
 
-            genreList.Items.Add("Genres: ");
+            genreList.Items.Add("Genres:");
 
             foreach(string genre in movie.genres)
             {
@@ -175,6 +175,44 @@ namespace Comp3020A3
 
             reviewsGrid.DataSource = reviews;
             reviewsGrid.Refresh();
+        }
+
+        private void searchByGenre(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection items = genreList.SelectedItems;
+            List<string> genres = new List<string>();
+
+            foreach(ListViewItem item in items)
+            {
+                if(!item.Text.Equals("Genres:"))
+                {
+                    genres.Add(item.Text);
+                }
+            }
+
+            if(genres.Count > 0)
+            {
+                ApplicationManager.changeForm("RESULTS", new SearchQuery() { });
+            }
+        }
+
+        private void searchByActor(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection items = actorList.SelectedItems;
+            List<string> actors = new List<string>();
+
+            foreach (ListViewItem item in items)
+            {
+                if (!item.Text.Equals("Actors:"))
+                {
+                    actors.Add(item.Text);
+                }
+            }
+
+            if (actors.Count > 0)
+            {
+                ApplicationManager.changeForm("RESULTS", new SearchQuery() { actors = actors });
+            }
         }
     }
 }

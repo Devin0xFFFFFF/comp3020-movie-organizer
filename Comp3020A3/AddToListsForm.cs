@@ -16,6 +16,9 @@ namespace Comp3020A3
             editWindowTitle("Add To Lists");
             editTitle("Add To Lists");
             EditToolTip("");
+            showActionButton(true);
+            editActionButton("Create New List");
+            showTextBox(false);
             editSubTitle(movie);
             fillOutForm(movie);
         }
@@ -57,6 +60,12 @@ namespace Comp3020A3
                 i++;
             }
 
+            Close();
+        }
+
+        protected override void actionButton_Click(object sender, EventArgs e)
+        {
+            ApplicationManager.changeForm("LISTS", MovieListManager.getMovieLists(ApplicationManager.loggedIn.username));
             Close();
         }
     }

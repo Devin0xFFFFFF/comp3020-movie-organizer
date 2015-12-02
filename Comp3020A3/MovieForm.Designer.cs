@@ -259,6 +259,7 @@
             this.genreList.TabStop = false;
             this.genreList.UseCompatibleStateImageBehavior = false;
             this.genreList.View = System.Windows.Forms.View.List;
+            this.genreList.SelectedIndexChanged += new System.EventHandler(this.searchByGenre);
             // 
             // pictureBox1
             // 
@@ -397,6 +398,7 @@
             this.actorList.TabStop = false;
             this.actorList.UseCompatibleStateImageBehavior = false;
             this.actorList.View = System.Windows.Forms.View.Tile;
+            this.actorList.SelectedIndexChanged += new System.EventHandler(this.searchByActor);
             // 
             // MovieForm
             // 

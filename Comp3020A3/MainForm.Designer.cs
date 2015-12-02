@@ -39,6 +39,7 @@
             this.signOutLink = new System.Windows.Forms.Label();
             this.signInLink = new System.Windows.Forms.Label();
             this.Back = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.taskBarPanel.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +65,7 @@
             this.taskBarPanel.Controls.Add(this.titleLabel);
             this.taskBarPanel.Controls.Add(this.searchLabel);
             this.taskBarPanel.Controls.Add(this.searchBox);
+            this.taskBarPanel.Controls.Add(this.button1);
             this.taskBarPanel.Controls.Add(this.searchButton);
             this.taskBarPanel.Controls.Add(this.profileLink);
             this.taskBarPanel.Controls.Add(this.myListsLink);
@@ -94,11 +96,11 @@
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
-            this.searchLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(237, 6);
+            this.searchLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLabel.Location = new System.Drawing.Point(237, 0);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(80, 25);
+            this.searchLabel.Size = new System.Drawing.Size(51, 31);
             this.searchLabel.TabIndex = 0;
             this.searchLabel.Text = "Search";
             this.searchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,7 +111,8 @@
             // searchBox
             // 
             this.searchBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.searchBox.Location = new System.Drawing.Point(323, 8);
+            this.searchBox.Location = new System.Drawing.Point(291, 8);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(174, 20);
             this.searchBox.TabIndex = 1;
@@ -119,7 +122,7 @@
             // searchButton
             // 
             this.searchButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.searchButton.Location = new System.Drawing.Point(503, 5);
+            this.searchButton.Location = new System.Drawing.Point(507, 5);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(105, 23);
             this.searchButton.TabIndex = 2;
@@ -132,8 +135,8 @@
             this.profileLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.profileLink.AutoSize = true;
             this.profileLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileLink.Location = new System.Drawing.Point(619, 8);
-            this.profileLink.Margin = new System.Windows.Forms.Padding(8, 0, 3, 0);
+            this.profileLink.Location = new System.Drawing.Point(620, 8);
+            this.profileLink.Margin = new System.Windows.Forms.Padding(5, 0, 3, 0);
             this.profileLink.Name = "profileLink";
             this.profileLink.Size = new System.Drawing.Size(42, 15);
             this.profileLink.TabIndex = 3;
@@ -147,7 +150,7 @@
             this.myListsLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.myListsLink.AutoSize = true;
             this.myListsLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myListsLink.Location = new System.Drawing.Point(667, 8);
+            this.myListsLink.Location = new System.Drawing.Point(668, 8);
             this.myListsLink.Name = "myListsLink";
             this.myListsLink.Size = new System.Drawing.Size(51, 15);
             this.myListsLink.TabIndex = 4;
@@ -161,7 +164,7 @@
             this.signOutLink.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.signOutLink.AutoSize = true;
             this.signOutLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signOutLink.Location = new System.Drawing.Point(724, 8);
+            this.signOutLink.Location = new System.Drawing.Point(725, 8);
             this.signOutLink.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.signOutLink.Name = "signOutLink";
             this.signOutLink.Size = new System.Drawing.Size(54, 15);
@@ -196,6 +199,19 @@
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Location = new System.Drawing.Point(468, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Go";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,5 +245,6 @@
         private System.Windows.Forms.Label signOutLink;
         private System.Windows.Forms.Label signInLink;
         private System.Windows.Forms.Button Back;
+        private System.Windows.Forms.Button button1;
     }
 }
