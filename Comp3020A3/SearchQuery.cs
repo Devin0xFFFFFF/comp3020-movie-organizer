@@ -152,7 +152,7 @@ namespace Comp3020A3
                 foreach (String actor in actors)
                 {
                     // If a user inputed actor is contained in the movie, accept
-                    if (actor.Equals("") && movieActor.ToLower().Contains(actor.ToLower()))
+                    if (!actor.Equals("") && movieActor.ToLower().Contains(actor.ToLower()))
                     {
                         match = true;
                         break;
