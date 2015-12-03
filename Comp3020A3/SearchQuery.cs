@@ -12,7 +12,7 @@ namespace Comp3020A3
 
         private List<Movie> movies;
 
-        public Boolean action, comedy, family, history, mystery, scifi, war, adventure, crime, fantasy,
+        public bool action, comedy, family, history, mystery, scifi, war, adventure, crime, fantasy,
             horror, news, sport, western, animation, documentary, filmnoir, music, realitytv, talkshow,
             biography, drama, gameshow, musical, romance, thriller;
 
@@ -20,7 +20,7 @@ namespace Comp3020A3
 
         public List<string> actors;
 
-        public Boolean g, pg, pg13, r, nc17;
+        public bool g, pg, pg13, r, nc17;
 
         public int rating1, rating2;
         public int year1, year2;
@@ -56,6 +56,9 @@ namespace Comp3020A3
 
                 if (title != "" && !movie.title.Contains(title)) { movies.Remove(movie); deleted = true; }
 
+                if (!deleted && checkGenres(movie) == false) { movies.Remove(movie); deleted = true; }
+
+                /* Movie must meet all criteria
                 if (!deleted && action && !movie.genres.Contains("Action")) { movies.Remove(movie); deleted = true; }
                 if (!deleted && comedy && !movie.genres.Contains("Comedy")) { movies.Remove(movie); deleted = true; }
                 if (!deleted && family && !movie.genres.Contains("Family")) { movies.Remove(movie); deleted = true; }
@@ -82,23 +85,145 @@ namespace Comp3020A3
                 if (!deleted && musical && !movie.genres.Contains("Musical")) { movies.Remove(movie); deleted = true; }
                 if (!deleted && romance && !movie.genres.Contains("Romance")) { movies.Remove(movie); deleted = true; }
                 if (!deleted && thriller && !movie.genres.Contains("Thriller")) { movies.Remove(movie); deleted = true; }
+                */
+
 
                 if (!deleted && director != "" && !movie.director.Contains(director)) { movies.Remove(movie); deleted = true; }
 
+
+                if (!deleted && checkActors(movie) == false) { movies.Remove(movie); deleted = true; }
+
+                /* Must match all actors
                 foreach (String actor in actors)
                 {
                     if (!deleted && actor != "" && !movie.actors.Contains(actor)) { movies.Remove(movie); deleted = true; }
                 }
+                */
 
-                // TODO: Certification (change to radio buttons)
-                //if (!deleted && g && !movie.certification.Equals("G")) { movies.Remove(movie); deleted = true; }
+                if (!deleted && checkCertification(movie) == false) { movies.Remove(movie); deleted = true; }
+
 
                 if (!deleted && !(movie.rating >= rating1) && !(movie.rating <= rating2)) { movies.Remove(movie); deleted = true; }
                 if (!deleted && !(movie.year >= year1) && !(movie.year <= year2)) { movies.Remove(movie); deleted = true; }
                 if (!deleted && !(movie.length >= length1) && !(movie.rating <= length2)) { movies.Remove(movie); deleted = true; }
             }
 
-            throw new NotImplementedException();
+        }
+
+        private bool checkActors(Movie movie)
+        {
+            bool match = false;
+            List<string> movieActors = movie.actors;
+
+            // If all actor fields are empty, accept
+            if (noActors() == true)
+            {
+                match = true;
+            }
+            // If one actor matches, accept
+            else if (matchActor(movieActors) == true)
+            {
+                match = true;
+            }
+
+            return match;
+        }
+
+        private bool matchActor(List<string> movieActors)
+        {
+            bool match = false;
+
+            foreach (String movieActor in movieActors)
+            {
+                foreach (String actor in actors)
+                {
+                    // If a user inputed actor is contained in the movie, accept
+                    if (actor.Equals("") && movieActor.Contains(actor))
+                    {
+                        match = true;
+                        break;
+                    }
+                }
+
+                if (match == true)
+                {
+                    break;
+                }
+            }
+
+            return match;
+        }
+
+        private bool noActors()
+        {
+            bool none = true;
+
+            // Check for non-empty actors
+            foreach (String actor in actors)
+            {
+                if (actor.Equals("") == false)
+                {
+                    none = false;
+                    break;
+                }
+            }
+            return none;
+        }
+
+        private bool checkGenres(Movie movie)
+        {
+            bool match = false;
+            List<string> genres = movie.genres;
+
+            // If all genres are false, accept
+            if (action == false && comedy == false && family == false && history == false && mystery == false && scifi == false &&
+                war == false && adventure == false && crime == false && fantasy == false && horror == false && news == false && 
+                sport == false && western == false && animation == false && documentary == false && filmnoir == false && music == false 
+                && realitytv == false && talkshow == false && biography == false && drama == false && gameshow == false && musical == false 
+                && romance == false && thriller == false)
+            {
+                match = true;
+            }
+            // If one of these is true, accept
+            else if ((action == true && genres.Contains("Action")) || (comedy == true && genres.Contains("Comedy")) ||
+                (family == true && genres.Contains("Family")) || (history == true && genres.Contains("History")) ||
+                (mystery == true && genres.Contains("Mystery")) || (scifi == true && genres.Contains("Sci-Fi")) || 
+                (war == true && genres.Contains("War")) || (adventure == true && genres.Contains("Adventure")) || 
+                (crime == true && genres.Contains("Crime")) || (fantasy == true && genres.Contains("Fantasy")) || 
+                (horror == true && genres.Contains("Horror")) || (news == true && genres.Contains("News")) ||
+                (sport == true && genres.Contains("Sport")) || (western == true && genres.Contains("Western")) ||
+                (animation == true && genres.Contains("Animation")) || (documentary == true && genres.Contains("Documentary")) || 
+                (filmnoir == true && genres.Contains("Film-Noir")) || (music == true && genres.Contains("Music")) ||
+                (realitytv == true && genres.Contains("Reality-TV")) || (talkshow == true && genres.Contains("Talk-Show")) || 
+                (biography == true && genres.Contains("Biography")) || (drama == true && genres.Contains("Drama")) || 
+                (gameshow == true && genres.Contains("Game-Show")) ||(musical == true && genres.Contains("Musical")) ||
+                (romance == true && genres.Contains("Romance")) || (thriller == true && genres.Contains("Thriller")) )
+            {
+                match = true;
+            }
+
+            return match;
+        }
+
+        private bool checkCertification(Movie movie)
+        {
+            bool match = false;
+            string movieCert = movie.certification;
+
+            // If all options are false, accept
+            if (g == false && pg == false && pg13 == false && r == false && nc17 == false)
+            {
+                match = true;
+            }
+            // If one of these is true, accept
+            else if ((g == true && movieCert.Equals("G")) || (pg == true && movieCert.Equals("PG")) ||
+                (pg13 == true && movieCert.Equals("PG-13")) || (r == true && movieCert.Equals("R"))
+                || (nc17 == true && movieCert.Equals("NC-17")))
+            {
+                match = true;
+            }
+            
+            return match;
         }
     }
 }
