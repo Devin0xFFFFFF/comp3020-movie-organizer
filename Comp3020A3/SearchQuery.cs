@@ -36,6 +36,19 @@ namespace Comp3020A3
             movies = DataAccess.readMovies();
         }
 
+        public SearchQuery(String title)
+        {
+            movies = DataAccess.readMovies();
+
+            for (int i = movies.Count - 1; i >= 0; i--)
+            {
+                if (title != "" && !movies.ElementAt(i).title.Contains(title))
+                {
+                    movies.RemoveAt(i);
+                }
+            }
+        }
+
         public bool verify(List<FormError> errors)
         {
             int errs = errors.Count;

@@ -184,6 +184,8 @@ namespace Comp3020A3
             if (searchBox.Text.Length > 0)
             {
                 //search
+                SearchQuery query = new SearchQuery(searchBox.Text);
+                ApplicationManager.changeForm("RESULTS", query);
             }
             else
             {
