@@ -42,7 +42,7 @@ namespace Comp3020A3
 
             for (int i = movies.Count - 1; i >= 0; i--)
             {
-                if (title != "" && !movies.ElementAt(i).title.Contains(title))
+                if (title != "" && !movies.ElementAt(i).title.ToLower().Contains(title))
                 {
                     movies.RemoveAt(i);
                 }
@@ -68,7 +68,7 @@ namespace Comp3020A3
             {
                 bool deleted = false;
 
-                if (title != "" && !movies.ElementAt(i).title.Contains(title)) { movies.RemoveAt(i); deleted = true; }
+                if (title != "" && !movies.ElementAt(i).title.ToLower().Contains(title)) { movies.RemoveAt(i); deleted = true; }
 
                 if (!deleted && checkGenres(movies.ElementAt(i)) == false) { movies.RemoveAt(i); deleted = true; }
 
@@ -102,7 +102,7 @@ namespace Comp3020A3
                 */
 
 
-                if (!deleted && director != "" && !movies.ElementAt(i).director.Contains(director)) { movies.RemoveAt(i); deleted = true; }
+                if (!deleted && director != "" && !movies.ElementAt(i).director.ToLower().Contains(director)) { movies.RemoveAt(i); deleted = true; }
 
 
                 if (!deleted && checkActors(movies.ElementAt(i)) == false) { movies.RemoveAt(i); deleted = true; }
@@ -152,7 +152,7 @@ namespace Comp3020A3
                 foreach (String actor in actors)
                 {
                     // If a user inputed actor is contained in the movie, accept
-                    if (actor.Equals("") && movieActor.Contains(actor))
+                    if (actor.Equals("") && movieActor.ToLower().Contains(actor))
                     {
                         match = true;
                         break;
