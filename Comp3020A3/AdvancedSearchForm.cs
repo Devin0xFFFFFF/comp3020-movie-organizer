@@ -147,6 +147,8 @@ namespace Comp3020A3
             query.length2 = (int)numericLength2.Value;
 
             query.Search();
+
+            ApplicationManager.changeForm("RESULTS", query);
         }
     }
 }
