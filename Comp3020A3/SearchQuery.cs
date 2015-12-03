@@ -50,13 +50,14 @@ namespace Comp3020A3
 
         public void Search()
         {
-            foreach (Movie movie in movies)
+            for (int i = movies.Count-1; i >= 0; i--)
+            //foreach (Movie movie in movies)
             {
                 bool deleted = false;
 
-                if (title != "" && !movie.title.Contains(title)) { movies.Remove(movie); deleted = true; }
+                if (title != "" && !movies.ElementAt(i).title.Contains(title)) { movies.RemoveAt(i); deleted = true; }
 
-                if (!deleted && checkGenres(movie) == false) { movies.Remove(movie); deleted = true; }
+                if (!deleted && checkGenres(movies.ElementAt(i)) == false) { movies.RemoveAt(i); deleted = true; }
 
                 /* Movie must meet all criteria
                 if (!deleted && action && !movie.genres.Contains("Action")) { movies.Remove(movie); deleted = true; }
@@ -88,10 +89,10 @@ namespace Comp3020A3
                 */
 
 
-                if (!deleted && director != "" && !movie.director.Contains(director)) { movies.Remove(movie); deleted = true; }
+                if (!deleted && director != "" && !movies.ElementAt(i).director.Contains(director)) { movies.RemoveAt(i); deleted = true; }
 
 
-                if (!deleted && checkActors(movie) == false) { movies.Remove(movie); deleted = true; }
+                if (!deleted && checkActors(movies.ElementAt(i)) == false) { movies.RemoveAt(i); deleted = true; }
 
                 /* Must match all actors
                 foreach (String actor in actors)
@@ -100,12 +101,12 @@ namespace Comp3020A3
                 }
                 */
 
-                if (!deleted && checkCertification(movie) == false) { movies.Remove(movie); deleted = true; }
+                if (!deleted && checkCertification(movies.ElementAt(i)) == false) { movies.RemoveAt(i); deleted = true; }
 
 
-                if (!deleted && !(movie.rating >= rating1) && !(movie.rating <= rating2)) { movies.Remove(movie); deleted = true; }
-                if (!deleted && !(movie.year >= year1) && !(movie.year <= year2)) { movies.Remove(movie); deleted = true; }
-                if (!deleted && !(movie.length >= length1) && !(movie.rating <= length2)) { movies.Remove(movie); deleted = true; }
+                if (!deleted && !(movies.ElementAt(i).rating >= rating1) && !(movies.ElementAt(i).rating <= rating2)) { movies.RemoveAt(i); deleted = true; }
+                if (!deleted && !(movies.ElementAt(i).year >= year1) && !(movies.ElementAt(i).year <= year2)) { movies.RemoveAt(i); deleted = true; }
+                if (!deleted && !(movies.ElementAt(i).length >= length1) && !(movies.ElementAt(i).rating <= length2)) { movies.RemoveAt(i); deleted = true; }
             }
 
         }
