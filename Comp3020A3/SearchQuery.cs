@@ -70,7 +70,7 @@ namespace Comp3020A3
 
                 if (!title.Equals("") && !movies.ElementAt(i).title.ToLower().Contains(title.ToLower())) { movies.RemoveAt(i); deleted = true; }
 
-                if (!deleted && checkGenres(movies.ElementAt(i)) == false) { movies.RemoveAt(i); deleted = true; }
+                if (!deleted && !checkGenres(movies.ElementAt(i)) ) { movies.RemoveAt(i); deleted = true; }
 
                 /* Movie must meet all criteria
                 if (!deleted && action && !movie.genres.Contains("Action")) { movies.Remove(movie); deleted = true; }
@@ -105,7 +105,7 @@ namespace Comp3020A3
                 if (!deleted && !director.Equals("") && !movies.ElementAt(i).director.ToLower().Contains(director.ToLower())) { movies.RemoveAt(i); deleted = true; }
 
 
-                if (!deleted && checkActors(movies.ElementAt(i)) == false) { movies.RemoveAt(i); deleted = true; }
+                if (!deleted && !checkActors(movies.ElementAt(i)) ) { movies.RemoveAt(i); deleted = true; }
 
                 /* Must match all actors
                 foreach (String actor in actors)
@@ -114,7 +114,7 @@ namespace Comp3020A3
                 }
                 */
 
-                if (!deleted && checkCertification(movies.ElementAt(i)) == false) { movies.RemoveAt(i); deleted = true; }
+                if (!deleted && !checkCertification(movies.ElementAt(i)) ) { movies.RemoveAt(i); deleted = true; }
 
 
                 if (!deleted && !(movies.ElementAt(i).rating >= rating1) && !(movies.ElementAt(i).rating <= rating2)) { movies.RemoveAt(i); deleted = true; }
@@ -130,12 +130,12 @@ namespace Comp3020A3
             List<string> movieActors = movie.actorList;
 
             // If all actor fields are empty, accept
-            if (noActors() == true)
+            if (noActors())
             {
                 match = true;
             }
             // If one actor matches, accept
-            else if (matchActor(movieActors) == true)
+            else if (matchActor(movieActors) )
             {
                 match = true;
             }
@@ -159,7 +159,7 @@ namespace Comp3020A3
                     }
                 }
 
-                if (match == true)
+                if (match)
                 {
                     break;
                 }
@@ -175,7 +175,7 @@ namespace Comp3020A3
             // Check for non-empty actors
             foreach (String actor in actors)
             {
-                if (actor.Equals("") == false)
+                if (!actor.Equals(""))
                 {
                     none = false;
                     break;
@@ -190,28 +190,28 @@ namespace Comp3020A3
             List<string> genres = movie.genreList;
 
             // If all genres are false, accept
-            if (action == false && comedy == false && family == false && history == false && mystery == false && scifi == false &&
-                war == false && adventure == false && crime == false && fantasy == false && horror == false && news == false && 
-                sport == false && western == false && animation == false && documentary == false && filmnoir == false && music == false 
-                && realitytv == false && talkshow == false && biography == false && drama == false && gameshow == false && musical == false 
-                && romance == false && thriller == false)
+            if (!action && !comedy && !family && !history && !mystery && !scifi &&
+                !war && !adventure && !crime && !fantasy && !horror && !news && 
+                !sport && !western && !animation && !documentary && !filmnoir && !music 
+                && !realitytv && !talkshow && !biography && !drama && !gameshow && !musical 
+                && !romance && !thriller)
             {
                 match = true;
             }
             // If one of these is true, accept
-            else if ((action == true && genres.Contains("Action")) || (comedy == true && genres.Contains("Comedy")) ||
-                (family == true && genres.Contains("Family")) || (history == true && genres.Contains("History")) ||
-                (mystery == true && genres.Contains("Mystery")) || (scifi == true && genres.Contains("Sci-Fi")) || 
-                (war == true && genres.Contains("War")) || (adventure == true && genres.Contains("Adventure")) || 
-                (crime == true && genres.Contains("Crime")) || (fantasy == true && genres.Contains("Fantasy")) || 
-                (horror == true && genres.Contains("Horror")) || (news == true && genres.Contains("News")) ||
-                (sport == true && genres.Contains("Sport")) || (western == true && genres.Contains("Western")) ||
-                (animation == true && genres.Contains("Animation")) || (documentary == true && genres.Contains("Documentary")) || 
-                (filmnoir == true && genres.Contains("Film-Noir")) || (music == true && genres.Contains("Music")) ||
-                (realitytv == true && genres.Contains("Reality-TV")) || (talkshow == true && genres.Contains("Talk-Show")) || 
-                (biography == true && genres.Contains("Biography")) || (drama == true && genres.Contains("Drama")) || 
-                (gameshow == true && genres.Contains("Game-Show")) ||(musical == true && genres.Contains("Musical")) ||
-                (romance == true && genres.Contains("Romance")) || (thriller == true && genres.Contains("Thriller")) )
+            else if ((action && genres.Contains("Action")) || (comedy && genres.Contains("Comedy")) ||
+                (family && genres.Contains("Family")) || (history && genres.Contains("History")) ||
+                (mystery && genres.Contains("Mystery")) || (scifi && genres.Contains("Sci-Fi")) || 
+                (war && genres.Contains("War")) || (adventure && genres.Contains("Adventure")) || 
+                (crime && genres.Contains("Crime")) || (fantasy && genres.Contains("Fantasy")) || 
+                (horror && genres.Contains("Horror")) || (news && genres.Contains("News")) ||
+                (sport && genres.Contains("Sport")) || (western && genres.Contains("Western")) ||
+                (animation && genres.Contains("Animation")) || (documentary && genres.Contains("Documentary")) || 
+                (filmnoir && genres.Contains("Film-Noir")) || (music && genres.Contains("Music")) ||
+                (realitytv && genres.Contains("Reality-TV")) || (talkshow && genres.Contains("Talk-Show")) || 
+                (biography && genres.Contains("Biography")) || (drama && genres.Contains("Drama")) || 
+                (gameshow && genres.Contains("Game-Show")) ||(musical && genres.Contains("Musical")) ||
+                (romance && genres.Contains("Romance")) || (thriller && genres.Contains("Thriller")) )
             {
                 match = true;
             }
@@ -225,14 +225,14 @@ namespace Comp3020A3
             string movieCert = movie.certification;
 
             // If all options are false, accept
-            if (g == false && pg == false && pg13 == false && r == false && nc17 == false)
+            if (!g && !pg && !pg13 && !r && !nc17)
             {
                 match = true;
             }
             // If one of these is true, accept
-            else if ((g == true && movieCert.Equals("G")) || (pg == true && movieCert.Equals("PG")) ||
-                (pg13 == true && movieCert.Equals("PG-13")) || (r == true && movieCert.Equals("R"))
-                || (nc17 == true && movieCert.Equals("NC-17")))
+            else if ((g && movieCert.Equals("G")) || (pg && movieCert.Equals("PG")) ||
+                (pg13 && movieCert.Equals("PG-13")) || (r && movieCert.Equals("R"))
+                || (nc17 && movieCert.Equals("NC-17")))
             {
                 match = true;
             }
