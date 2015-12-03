@@ -37,7 +37,7 @@ namespace Comp3020A3
 
             genreList.Items.Add("Genres:");
 
-            foreach(string genre in movie.genres)
+            foreach(string genre in movie.genreList)
             {
                 genreList.Items.Add(genre);
             }
@@ -51,7 +51,7 @@ namespace Comp3020A3
 
             actorList.Items.Add("Actors:");
 
-            foreach (string actor in movie.actors)
+            foreach (string actor in movie.actorList)
             {
                 actorList.Items.Add(actor);
             }

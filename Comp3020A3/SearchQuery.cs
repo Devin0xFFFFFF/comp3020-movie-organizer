@@ -127,7 +127,7 @@ namespace Comp3020A3
         private bool checkActors(Movie movie)
         {
             bool match = false;
-            List<string> movieActors = movie.actors;
+            List<string> movieActors = movie.actorList;
 
             // If all actor fields are empty, accept
             if (noActors() == true)
@@ -187,7 +187,7 @@ namespace Comp3020A3
         private bool checkGenres(Movie movie)
         {
             bool match = false;
-            List<string> genres = movie.genres;
+            List<string> genres = movie.genreList;
 
             // If all genres are false, accept
             if (action == false && comedy == false && family == false && history == false && mystery == false && scifi == false &&

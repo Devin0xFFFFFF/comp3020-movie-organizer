@@ -14,8 +14,10 @@ namespace Comp3020A3
         public string certification { get; set; }
         public string director { get; set; }
         public int rating { get; set; }
-        public List<string> genres { get; set; }
-        public List<string> actors { get; set; }
+        public string genres { get; set; }
+        public string actors { get; set; }
+        public List<string> genreList { get; set; }
+        public List<string> actorList { get; set; }
 
         public Movie()
         {
@@ -32,6 +34,31 @@ namespace Comp3020A3
             rating = m.rating;
             genres = m.genres;
             actors = m.actors;
+            genreList = m.genreList;
+            actorList = m.actorList;
+        }
+
+        public void initLists()
+        {
+            genres = initList(genreList);
+            actors = initList(actorList);
+        }
+
+        private string initList(List<string> list)
+        {
+            string strlist = "";
+
+            if (list.Count > 0)
+            {
+                for (int i = 0; i < list.Count - 1; i++)
+                {
+                    strlist += list[i] + ", ";
+                }
+
+                strlist += list[list.Count - 1];
+            }
+
+            return strlist;
         }
     }
 }

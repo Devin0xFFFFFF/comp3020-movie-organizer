@@ -74,6 +74,22 @@ namespace Comp3020A3
             });
         }
 
+        public static void sortByGenres(List<Movie> movies)
+        {
+            movies.Sort(delegate (Movie x, Movie y)
+            {
+                return x.genreList[0].CompareTo(y.genreList[0]);
+            });
+        }
+
+        public static void sortByActors(List<Movie> movies)
+        {
+            movies.Sort(delegate (Movie x, Movie y)
+            {
+                return x.actorList[0].CompareTo(y.actorList[0]);
+            });
+        }
+
         public static Movie getMovie(string title)
         {
             Movie movie = null;
@@ -113,34 +129,11 @@ namespace Comp3020A3
                     lgenres = new List<string>();
                     lactors = new List<string>();
 
-                    /*
-
-                    Console.WriteLine("1" + reader.Name + " : " + reader.Value);
-                    reader.Read();
-                    Console.WriteLine("2" + reader.Name + " : " + reader.Value);
-                    reader.Read();
-                    Console.WriteLine("3" + reader.Name + " : " + reader.Value);
-                    reader.Read();
-                    Console.WriteLine("4" + reader.Name + " : " + reader.Value);
-                    reader.Read();
-                    Console.WriteLine("5" + reader.Name + " : " + reader.Value);
-                    reader.Read();
-                    Console.WriteLine("6" + reader.Name + " : " + reader.Value);
-                    reader.Read();
-                    Console.WriteLine("7" + reader.Name + " : " + reader.Value);
-                    reader.Read();
-                    Console.WriteLine("8" + reader.Name + " : " + reader.Value);
-                    reader.Read();
-                    Console.WriteLine("9" + reader.Name + " : " + reader.Value);
-
-                    */
-
                     reader.Read();
                     reader.Read();
 
                     while (reader.NodeType != XmlNodeType.EndElement && reader.Name != "movie")
                     {
-                        //Console.WriteLine(reader.Name + " : " + reader.Value);
                         if (reader.Name == "title")
                         {
                             reader.Read();
@@ -188,7 +181,8 @@ namespace Comp3020A3
                         reader.Read();
                         
                     }
-                    movies.Add(new Movie() { title = t, year = y, length = len, certification = cert, director = dir, rating = r, genres = lgenres, actors = lactors });
+                    movies.Add(new Movie() { title = t, year = y, length = len, certification = cert, director = dir, rating = r, genreList = lgenres, actorList = lactors });
+                    movies[movies.Count - 1].initLists();
                     cert = "";
                 }
             }

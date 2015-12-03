@@ -15,7 +15,7 @@ namespace Comp3020A3
         public HomeForm()
         {
             InitializeComponent();
-            
+
             ApplicationManager.createForms(this);
             checkLoggedIn();
         }
@@ -143,6 +143,14 @@ namespace Comp3020A3
                 else if (e.ColumnIndex == 5)
                 {
                     MovieManager.sortByRating(((List<Movie>)dataGridView1.DataSource));
+                }
+                else if (e.ColumnIndex == 6)
+                {
+                    MovieManager.sortByGenres(((List<Movie>)dataGridView1.DataSource));
+                }
+                else if (e.ColumnIndex == 7)
+                {
+                    MovieManager.sortByActors(((List<Movie>)dataGridView1.DataSource));
                 }
 
                 dataGridView1.Refresh();
