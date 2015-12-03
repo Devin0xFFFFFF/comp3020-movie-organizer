@@ -38,6 +38,7 @@ namespace Comp3020A3
             dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].Visible = false;
             dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
         }
 
         private void loadNewReviews()
@@ -147,10 +148,6 @@ namespace Comp3020A3
                 else if (e.ColumnIndex == 6)
                 {
                     MovieManager.sortByGenres(((List<Movie>)dataGridView1.DataSource));
-                }
-                else if (e.ColumnIndex == 7)
-                {
-                    MovieManager.sortByActors(((List<Movie>)dataGridView1.DataSource));
                 }
 
                 dataGridView1.Refresh();
