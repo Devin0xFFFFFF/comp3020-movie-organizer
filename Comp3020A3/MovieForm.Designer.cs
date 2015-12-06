@@ -136,11 +136,11 @@
             // 
             this.movieTitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.movieTitleLabel.AutoSize = true;
-            this.movieTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.movieTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.movieTitleLabel.Location = new System.Drawing.Point(0, 0);
             this.movieTitleLabel.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.movieTitleLabel.Name = "movieTitleLabel";
-            this.movieTitleLabel.Size = new System.Drawing.Size(145, 31);
+            this.movieTitleLabel.Size = new System.Drawing.Size(117, 25);
             this.movieTitleLabel.TabIndex = 0;
             this.movieTitleLabel.Text = "Movie Title";
             // 
@@ -149,7 +149,7 @@
             this.yearLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.yearLabel.AutoSize = true;
             this.yearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearLabel.Location = new System.Drawing.Point(153, 3);
+            this.yearLabel.Location = new System.Drawing.Point(125, 0);
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(61, 24);
             this.yearLabel.TabIndex = 1;
