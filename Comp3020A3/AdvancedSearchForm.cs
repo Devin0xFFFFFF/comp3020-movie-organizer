@@ -136,6 +136,8 @@ namespace Comp3020A3
             query.pg13 = chkPG13.Checked;
             query.r = chkR.Checked;
             query.nc17 = chkNC17.Checked;
+            query.approved = chkApproved.Checked;
+            query.noCertification = chkNoCertification.Checked;
 
             query.rating1 = (int)numericRating1.Value;
             query.rating2 = (int)numericRating2.Value;

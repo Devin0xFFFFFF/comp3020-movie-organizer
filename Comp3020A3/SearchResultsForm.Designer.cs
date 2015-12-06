@@ -31,8 +31,10 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -53,6 +55,8 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(778, 418);
             this.dataGridView.TabIndex = 1;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // tableLayoutPanel2
             // 
@@ -71,11 +75,22 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblNumber);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(778, 68);
             this.panel1.TabIndex = 2;
+            // 
+            // lblNumber
+            // 
+            this.lblNumber.AutoSize = true;
+            this.lblNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumber.Location = new System.Drawing.Point(9, 22);
+            this.lblNumber.Name = "lblNumber";
+            this.lblNumber.Size = new System.Drawing.Size(70, 25);
+            this.lblNumber.TabIndex = 0;
+            this.lblNumber.Text = "label1";
             // 
             // SearchResultsForm
             // 
@@ -86,6 +101,8 @@
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -95,5 +112,6 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblNumber;
     }
 }

@@ -20,7 +20,7 @@ namespace Comp3020A3
 
         public List<string> actors;
 
-        public bool g, pg, pg13, r, nc17;
+        public bool g, pg, pg13, r, nc17, approved, noCertification;
 
         public int rating1, rating2;
         public int year1, year2;
@@ -40,6 +40,7 @@ namespace Comp3020A3
         {
             movies = DataAccess.readMovies();
 
+            int count = movies.Count();
             for (int i = movies.Count - 1; i >= 0; i--)
             {
                 if (!title.Equals("") && !movies.ElementAt(i).title.ToLower().Contains(title))
@@ -63,6 +64,8 @@ namespace Comp3020A3
 
         public void Search()
         {
+
+            int count = movies.Count();
             for (int i = movies.Count-1; i >= 0; i--)
             //foreach (Movie movie in movies)
             {
@@ -117,9 +120,9 @@ namespace Comp3020A3
                 if (!deleted && !checkCertification(movies.ElementAt(i)) ) { movies.RemoveAt(i); deleted = true; }
 
 
-                if (!deleted && !(movies.ElementAt(i).rating >= rating1) && !(movies.ElementAt(i).rating <= rating2)) { movies.RemoveAt(i); deleted = true; }
-                if (!deleted && !(movies.ElementAt(i).year >= year1) && !(movies.ElementAt(i).year <= year2)) { movies.RemoveAt(i); deleted = true; }
-                if (!deleted && !(movies.ElementAt(i).length >= length1) && !(movies.ElementAt(i).rating <= length2)) { movies.RemoveAt(i); deleted = true; }
+                if (!deleted && (!(movies.ElementAt(i).rating >= rating1) || !(movies.ElementAt(i).rating <= rating2))) { movies.RemoveAt(i); deleted = true; }
+                if (!deleted && (!(movies.ElementAt(i).year >= year1) || !(movies.ElementAt(i).year <= year2))) { movies.RemoveAt(i); deleted = true; }
+                if (!deleted && (!(movies.ElementAt(i).length >= length1) || !(movies.ElementAt(i).rating <= length2))) { movies.RemoveAt(i); deleted = true; }
             }
 
         }
@@ -225,14 +228,15 @@ namespace Comp3020A3
             string movieCert = movie.certification;
 
             // If all options are false, accept
-            if (!g && !pg && !pg13 && !r && !nc17)
+            if (!g && !pg && !pg13 && !r && !nc17 && !approved && !noCertification)
             {
                 match = true;
             }
             // If one of these is true, accept
             else if ((g && movieCert.Equals("G")) || (pg && movieCert.Equals("PG")) ||
                 (pg13 && movieCert.Equals("PG-13")) || (r && movieCert.Equals("R"))
-                || (nc17 && movieCert.Equals("NC-17")))
+                || (nc17 && movieCert.Equals("NC-17")) || (approved && movieCert.Equals("Approved"))
+                || (noCertification && movieCert.Equals("")))
             {
                 match = true;
             }

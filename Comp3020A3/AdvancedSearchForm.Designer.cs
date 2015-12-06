@@ -83,6 +83,8 @@
             this.numericLength2 = new System.Windows.Forms.NumericUpDown();
             this.btnSearch = new System.Windows.Forms.Button();
             this.chkPG13 = new System.Windows.Forms.CheckBox();
+            this.chkApproved = new System.Windows.Forms.CheckBox();
+            this.chkNoCertification = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericRating1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRating2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericYear1)).BeginInit();
@@ -563,19 +565,9 @@
             0,
             0,
             0});
-            this.numericRating1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericRating1.Name = "numericRating1";
             this.numericRating1.Size = new System.Drawing.Size(49, 20);
             this.numericRating1.TabIndex = 55;
-            this.numericRating1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericRating1.ValueChanged += new System.EventHandler(this.numericRating1_ValueChanged);
             // 
             // numericRating2
@@ -583,11 +575,6 @@
             this.numericRating2.Location = new System.Drawing.Point(235, 532);
             this.numericRating2.Maximum = new decimal(new int[] {
             9,
-            0,
-            0,
-            0});
-            this.numericRating2.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -640,7 +627,7 @@
             this.numericYear2.Size = new System.Drawing.Size(49, 20);
             this.numericYear2.TabIndex = 58;
             this.numericYear2.Value = new decimal(new int[] {
-            1900,
+            2015,
             0,
             0,
             0});
@@ -685,16 +672,17 @@
             this.numericLength2.Size = new System.Drawing.Size(49, 20);
             this.numericLength2.TabIndex = 60;
             this.numericLength2.Value = new decimal(new int[] {
-            1,
+            500,
             0,
             0,
             0});
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(697, 69);
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(623, 588);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(149, 50);
             this.btnSearch.TabIndex = 61;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -710,10 +698,32 @@
             this.chkPG13.Text = "PG-13";
             this.chkPG13.UseVisualStyleBackColor = true;
             // 
+            // chkApproved
+            // 
+            this.chkApproved.AutoSize = true;
+            this.chkApproved.Location = new System.Drawing.Point(403, 497);
+            this.chkApproved.Name = "chkApproved";
+            this.chkApproved.Size = new System.Drawing.Size(72, 17);
+            this.chkApproved.TabIndex = 63;
+            this.chkApproved.Text = "Approved";
+            this.chkApproved.UseVisualStyleBackColor = true;
+            // 
+            // chkNoCertification
+            // 
+            this.chkNoCertification.AutoSize = true;
+            this.chkNoCertification.Location = new System.Drawing.Point(481, 497);
+            this.chkNoCertification.Name = "chkNoCertification";
+            this.chkNoCertification.Size = new System.Drawing.Size(98, 17);
+            this.chkNoCertification.TabIndex = 64;
+            this.chkNoCertification.Text = "No Certification";
+            this.chkNoCertification.UseVisualStyleBackColor = true;
+            // 
             // AdvancedSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(784, 650);
+            this.Controls.Add(this.chkNoCertification);
+            this.Controls.Add(this.chkApproved);
             this.Controls.Add(this.chkPG13);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.numericLength2);
@@ -825,6 +835,8 @@
             this.Controls.SetChildIndex(this.numericLength2, 0);
             this.Controls.SetChildIndex(this.btnSearch, 0);
             this.Controls.SetChildIndex(this.chkPG13, 0);
+            this.Controls.SetChildIndex(this.chkApproved, 0);
+            this.Controls.SetChildIndex(this.chkNoCertification, 0);
             ((System.ComponentModel.ISupportInitialize)(this.numericRating1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericRating2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericYear1)).EndInit();
@@ -893,5 +905,7 @@
         private System.Windows.Forms.NumericUpDown numericLength2;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.CheckBox chkPG13;
+        private System.Windows.Forms.CheckBox chkApproved;
+        private System.Windows.Forms.CheckBox chkNoCertification;
     }
 }
