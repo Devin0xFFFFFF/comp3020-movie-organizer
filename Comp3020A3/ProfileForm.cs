@@ -10,9 +10,12 @@ namespace Comp3020A3
 {
     public partial class ProfileForm : Comp3020A3.MainForm
     {
+        private int lastClicked;
+
         public ProfileForm()
         {
             InitializeComponent();
+            lastClicked = -1;
         }
 
         protected override void fillInForm(Object element)
@@ -109,6 +112,12 @@ namespace Comp3020A3
                 ModifyReviewForm form = new ModifyReviewForm(review);
                 form.Show();
             }
+            else if(lastClicked == e.ColumnIndex)
+            {
+                List<Review> reviews = (List<Review>)reviewGrid.DataSource;
+                reviews.Reverse();
+                reviewGrid.Refresh();
+            }
             else
             {
                 if(e.ColumnIndex == 2)
@@ -132,6 +141,7 @@ namespace Comp3020A3
                     ReviewManager.sortByDateTime(((List<Review>)reviewGrid.DataSource));
                 }
 
+                lastClicked = e.ColumnIndex;
                 reviewGrid.Refresh();
             }
         }

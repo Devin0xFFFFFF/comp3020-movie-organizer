@@ -74,6 +74,14 @@ namespace Comp3020A3
             });
         }
 
+        public static void sortByLength(List<Movie> movies)
+        {
+            movies.Sort(delegate (Movie x, Movie y)
+            {
+                return x.length.CompareTo(y.length);
+            });
+        }
+
         public static void sortByGenres(List<Movie> movies)
         {
             movies.Sort(delegate (Movie x, Movie y)
@@ -87,6 +95,22 @@ namespace Comp3020A3
             movies.Sort(delegate (Movie x, Movie y)
             {
                 return x.actorList[0].CompareTo(y.actorList[0]);
+            });
+        }
+
+        public static void sortByDirector(List<Movie> movies)
+        {
+            movies.Sort(delegate (Movie x, Movie y)
+            {
+                return x.director.CompareTo(y.director);
+            });
+        }
+
+        public static void sortByCertification(List<Movie> movies)
+        {
+            movies.Sort(delegate (Movie x, Movie y)
+            {
+                return y.certification.CompareTo(x.certification);
             });
         }
 
