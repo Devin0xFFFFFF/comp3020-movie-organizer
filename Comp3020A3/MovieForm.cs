@@ -179,6 +179,7 @@ namespace Comp3020A3
 
         private void searchByGenre(object sender, EventArgs e)
         {
+            /*
             ListView.SelectedListViewItemCollection items = genreList.SelectedItems;
             List<string> genres = new List<string>();
 
@@ -194,10 +195,13 @@ namespace Comp3020A3
             {
                 ApplicationManager.changeForm("RESULTS", new SearchQuery() { });
             }
+
+         */
         }
 
         private void searchByActor(object sender, EventArgs e)
         {
+            /*
             ListView.SelectedListViewItemCollection items = actorList.SelectedItems;
             List<string> actors = new List<string>();
 
@@ -211,8 +215,11 @@ namespace Comp3020A3
 
             if (actors.Count > 0)
             {
-                ApplicationManager.changeForm("RESULTS", new SearchQuery() { actors = actors });
+                SearchQuery q = new SearchQuery() { title = "", director = "", actors = actors };
+                q.Search();
+                ApplicationManager.changeForm("RESULTS", q);
             }
+            */
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Comp3020A3
             EditToolTip("Uncheck boxes to remove movies. Press Ok to save changes.");
             showActionButton(true);
             editActionButton("Search for a Movie");
-            showTextBox(true);
+            showTextBox(false);
             ml = list;
             fillOutForm(list);
         }
