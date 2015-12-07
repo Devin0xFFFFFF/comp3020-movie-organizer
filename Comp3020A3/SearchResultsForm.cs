@@ -65,6 +65,16 @@ namespace Comp3020A3
                 dataGridView.Refresh();
             }
         }
+
+        private void btnRefine_Click(object sender, EventArgs e)
+        {
+            ApplicationManager.previousForm();
+        }
+
+        private void btnScatterplot_Click(object sender, EventArgs e)
+        {
+            ApplicationManager.changeForm("SCATTER", query);
+        }
     }
 
 

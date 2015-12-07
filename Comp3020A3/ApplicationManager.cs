@@ -52,6 +52,10 @@ namespace Comp3020A3
             {
                 i = 6;
             }
+            else if (form.Equals("SCATTER"))
+            {
+                i = 7;
+            }
 
             return forms.ElementAt(i);
         }
@@ -123,6 +127,7 @@ namespace Comp3020A3
             forms.Add(new ListForm());
             forms.Add(new AdvancedSearchForm());
             forms.Add(new SearchResultsForm());
+            forms.Add(new ScatterplotForm());
 
             appStack.Push(new ApplicationState() { form = home, obj = null, user = (loggedIn == null) ? null : loggedIn.username });
         }

@@ -32,6 +32,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNumber = new System.Windows.Forms.Label();
+            this.btnRefine = new System.Windows.Forms.Button();
+            this.btnScatterplot = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,6 +77,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnScatterplot);
+            this.panel1.Controls.Add(this.btnRefine);
             this.panel1.Controls.Add(this.lblNumber);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -91,6 +95,28 @@
             this.lblNumber.Size = new System.Drawing.Size(70, 25);
             this.lblNumber.TabIndex = 0;
             this.lblNumber.Text = "label1";
+            // 
+            // btnRefine
+            // 
+            this.btnRefine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefine.Location = new System.Drawing.Point(485, 15);
+            this.btnRefine.Name = "btnRefine";
+            this.btnRefine.Size = new System.Drawing.Size(139, 43);
+            this.btnRefine.TabIndex = 1;
+            this.btnRefine.Text = "Refine Results";
+            this.btnRefine.UseVisualStyleBackColor = true;
+            this.btnRefine.Click += new System.EventHandler(this.btnRefine_Click);
+            // 
+            // btnScatterplot
+            // 
+            this.btnScatterplot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScatterplot.Location = new System.Drawing.Point(630, 15);
+            this.btnScatterplot.Name = "btnScatterplot";
+            this.btnScatterplot.Size = new System.Drawing.Size(139, 43);
+            this.btnScatterplot.TabIndex = 2;
+            this.btnScatterplot.Text = "Scatterplot";
+            this.btnScatterplot.UseVisualStyleBackColor = true;
+            this.btnScatterplot.Click += new System.EventHandler(this.btnScatterplot_Click);
             // 
             // SearchResultsForm
             // 
@@ -113,5 +139,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNumber;
+        private System.Windows.Forms.Button btnRefine;
+        private System.Windows.Forms.Button btnScatterplot;
     }
 }
