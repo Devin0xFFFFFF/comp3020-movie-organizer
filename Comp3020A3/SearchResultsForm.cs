@@ -11,6 +11,7 @@ namespace Comp3020A3
     public partial class SearchResultsForm : Comp3020A3.MainForm
     {
         SearchQuery query;
+        int laskClickedColumn = -1;
 
         public SearchResultsForm()
         {
@@ -42,9 +43,14 @@ namespace Comp3020A3
 
                 ApplicationManager.changeForm("MOVIE", new Movie(movie));
             }
+            else if(laskClickedColumn == e.ColumnIndex)
+            {
+                List<Movie> movies = (List<Movie>)dataGridView.DataSource;
+                movies.Reverse();
+                dataGridView.Refresh();
+            }
             else
             {
-                Console.WriteLine(e.ColumnIndex);
                 if (e.ColumnIndex == 0)
                 {
                     MovieManager.sortByTitle(((List<Movie>)dataGridView.DataSource));
@@ -52,6 +58,18 @@ namespace Comp3020A3
                 else if (e.ColumnIndex == 1)
                 {
                     MovieManager.sortByYear(((List<Movie>)dataGridView.DataSource));
+                }
+                else if (e.ColumnIndex == 2)
+                {
+                    MovieManager.sortByLength(((List<Movie>)dataGridView.DataSource));
+                }
+                else if (e.ColumnIndex == 3)
+                {
+                    MovieManager.sortByCertification(((List<Movie>)dataGridView.DataSource));
+                }
+                else if (e.ColumnIndex == 4)
+                {
+                    MovieManager.sortByDirector(((List<Movie>)dataGridView.DataSource));
                 }
                 else if (e.ColumnIndex == 5)
                 {
@@ -61,7 +79,12 @@ namespace Comp3020A3
                 {
                     MovieManager.sortByGenres(((List<Movie>)dataGridView.DataSource));
                 }
+                else if (e.ColumnIndex == 7)
+                {
+                    MovieManager.sortByActors(((List<Movie>)dataGridView.DataSource));
+                }
 
+                laskClickedColumn = e.ColumnIndex;
                 dataGridView.Refresh();
             }
         }
