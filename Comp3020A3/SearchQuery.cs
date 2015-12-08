@@ -122,7 +122,7 @@ namespace Comp3020A3
 
                 if (!deleted && (!(movies.ElementAt(i).rating >= rating1) || !(movies.ElementAt(i).rating <= rating2))) { movies.RemoveAt(i); deleted = true; }
                 if (!deleted && (!(movies.ElementAt(i).year >= year1) || !(movies.ElementAt(i).year <= year2))) { movies.RemoveAt(i); deleted = true; }
-                if (!deleted && (!(movies.ElementAt(i).length >= length1) || !(movies.ElementAt(i).rating <= length2))) { movies.RemoveAt(i); deleted = true; }
+                if (!deleted && (!(movies.ElementAt(i).length >= length1) || !(movies.ElementAt(i).length <= length2))) { movies.RemoveAt(i); deleted = true; }
             }
 
         }
