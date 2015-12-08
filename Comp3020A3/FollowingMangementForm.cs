@@ -15,6 +15,8 @@ namespace Comp3020A3
         public FollowingMangementForm(User user)
         {
             InitializeComponent();
+            showActionButton(false);
+            showTextBox(false);
             this.user = user;
             fillInForm(user);
         }
