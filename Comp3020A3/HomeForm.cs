@@ -11,10 +11,12 @@ namespace Comp3020A3
     public partial class HomeForm : Comp3020A3.MainForm
     {
         public static int REVIEWS = 20;
+        private int lastClicked;
 
         public HomeForm()
         {
             InitializeComponent();
+            lastClicked = -1;
 
             ApplicationManager.createForms(this);
             checkLoggedIn();
@@ -130,6 +132,12 @@ namespace Comp3020A3
 
                 ApplicationManager.changeForm("MOVIE", new Movie(movie));
             }
+            else if(lastClicked == e.ColumnIndex)
+            {
+                List<Movie> movies = (List<Movie>)dataGridView1.DataSource;
+                movies.Reverse();
+                dataGridView1.Refresh();
+            }
             else
             {
                 Console.WriteLine(e.ColumnIndex);
@@ -150,6 +158,7 @@ namespace Comp3020A3
                     MovieManager.sortByGenres(((List<Movie>)dataGridView1.DataSource));
                 }
 
+                lastClicked = e.ColumnIndex;
                 dataGridView1.Refresh();
             }
         }
