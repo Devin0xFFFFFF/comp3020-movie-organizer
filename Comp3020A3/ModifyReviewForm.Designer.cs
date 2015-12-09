@@ -40,6 +40,7 @@
             this.errorLabel = new System.Windows.Forms.Label();
             this.deleteButton = new System.Windows.Forms.Button();
             this.reviewTimeLabel = new System.Windows.Forms.Label();
+            this.viewProfileButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -116,6 +117,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel1.Controls.Add(this.viewProfileButton);
             this.panel1.Controls.Add(this.authorFrontLabel);
             this.panel1.Controls.Add(this.authorLabel);
             this.panel1.Location = new System.Drawing.Point(3, 30);
@@ -197,6 +199,16 @@
             this.reviewTimeLabel.TabIndex = 5;
             this.reviewTimeLabel.Text = "Review";
             // 
+            // viewProfileButton
+            // 
+            this.viewProfileButton.Location = new System.Drawing.Point(291, 6);
+            this.viewProfileButton.Name = "viewProfileButton";
+            this.viewProfileButton.Size = new System.Drawing.Size(75, 23);
+            this.viewProfileButton.TabIndex = 4;
+            this.viewProfileButton.Text = "View Profile";
+            this.viewProfileButton.UseVisualStyleBackColor = true;
+            this.viewProfileButton.Click += new System.EventHandler(this.authorLabel_Click);
+            // 
             // ModifyReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,5 +242,6 @@
         private System.Windows.Forms.ComboBox ratingBox;
         private System.Windows.Forms.Label reviewTimeLabel;
         private System.Windows.Forms.Label authorFrontLabel;
+        private System.Windows.Forms.Button viewProfileButton;
     }
 }

@@ -15,7 +15,7 @@ namespace Comp3020A3
             InitializeComponent();
             editWindowTitle("Add To Lists");
             editTitle("Add To Lists");
-            EditToolTip("");
+            EditToolTip("Check off the lists you wish to add the movie to.");
             showActionButton(true);
             editActionButton("Create New List");
             showTextBox(false);

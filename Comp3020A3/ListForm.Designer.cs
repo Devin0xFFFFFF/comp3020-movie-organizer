@@ -64,7 +64,6 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel3.Controls.Add(this.newListButton, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.listDataGrid, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 102);
@@ -77,7 +76,7 @@
             // 
             // newListButton
             // 
-            this.newListButton.Location = new System.Drawing.Point(3, 356);
+            this.newListButton.Location = new System.Drawing.Point(448, 44);
             this.newListButton.Name = "newListButton";
             this.newListButton.Size = new System.Drawing.Size(75, 23);
             this.newListButton.TabIndex = 1;
@@ -105,6 +104,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.newListButton);
             this.panel1.Controls.Add(this.reorderToolTip);
             this.panel1.Controls.Add(this.editOrderButton);
             this.panel1.Controls.Add(this.listIDLabel);
