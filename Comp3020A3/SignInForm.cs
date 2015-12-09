@@ -51,7 +51,7 @@ namespace Comp3020A3
                 {
                     ApplicationManager.changeForm("HOME", null);
                     FirstSignInForm form = new FirstSignInForm();
-                    form.Show();
+                    form.ShowDialog();
                 }
             }
         }

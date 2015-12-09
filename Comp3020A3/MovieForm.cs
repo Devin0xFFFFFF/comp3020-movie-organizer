@@ -108,7 +108,7 @@ namespace Comp3020A3
                 form = new ModifyReviewForm(movieTitleLabel.Text, ApplicationManager.loggedIn.username);
             }
 
-            form.Show();
+            form.ShowDialog();
         }
 
         private void openReview(object sender, DataGridViewCellEventArgs e)
@@ -119,14 +119,14 @@ namespace Comp3020A3
                 Review review = reviews[e.RowIndex];
 
                 ModifyReviewForm form = new ModifyReviewForm(review);
-                form.Show();
+                form.ShowDialog();
             }
         }
 
         private void addToListButton_Click(object sender, EventArgs e)
         {
             AddToListsForm form = new AddToListsForm(movieTitleLabel.Text);
-            form.Show();
+            form.ShowDialog();
         }
 
         private void orderReviews(object sender, EventArgs e)

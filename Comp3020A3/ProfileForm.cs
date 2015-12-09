@@ -110,7 +110,7 @@ namespace Comp3020A3
                 Review review = reviews[e.RowIndex];
 
                 ModifyReviewForm form = new ModifyReviewForm(review);
-                form.Show();
+                form.ShowDialog();
             }
             else if(lastClicked == e.ColumnIndex)
             {
@@ -149,13 +149,13 @@ namespace Comp3020A3
         private void manageFollowingButton_Click(object sender, EventArgs e)
         {
             FollowingMangementForm form = new FollowingMangementForm(ApplicationManager.loggedIn);
-            form.Show();
+            form.ShowDialog();
         }
 
         private void editColorsButton_Click(object sender, EventArgs e)
         {
             ChangeColorsForm form = new ChangeColorsForm();
-            form.Show();
+            form.ShowDialog();
         }
     }
 }

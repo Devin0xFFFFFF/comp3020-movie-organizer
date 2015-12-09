@@ -99,7 +99,7 @@ namespace Comp3020A3
         private void newListButton_Click(object sender, EventArgs e)
         {
             ModifyListNameForm form = new ModifyListNameForm(ApplicationManager.loggedIn.username);
-            form.Show();
+            form.ShowDialog();
         }
 
         private void selectCell(object sender, DataGridViewCellEventArgs e)
@@ -172,7 +172,7 @@ namespace Comp3020A3
         public void editName()
         {
             ModifyListNameForm form = new ModifyListNameForm(long.Parse(listIDLabel.Text));
-            form.Show();
+            form.ShowDialog();
         }
 
         private void editContentsButton_Click(object sender, EventArgs e)
@@ -188,7 +188,7 @@ namespace Comp3020A3
               form  = new RemoveFromListsForm(MovieListManager.getMovieList(long.Parse(listIDLabel.Text)));
             }
 
-            form.Show();
+            form.ShowDialog();
         }
 
         private void editOrderButton_Click(object sender, EventArgs e)

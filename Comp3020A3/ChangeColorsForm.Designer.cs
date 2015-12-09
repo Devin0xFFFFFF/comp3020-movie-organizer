@@ -154,6 +154,7 @@
             this.taskBarPalatte.Size = new System.Drawing.Size(57, 23);
             this.taskBarPalatte.TabIndex = 1;
             this.taskBarPalatte.TabStop = false;
+            this.taskBarPalatte.Click += new System.EventHandler(this.pickTaskbarColorButton_Click);
             // 
             // windowPalatte
             // 
@@ -163,6 +164,7 @@
             this.windowPalatte.Size = new System.Drawing.Size(57, 23);
             this.windowPalatte.TabIndex = 2;
             this.windowPalatte.TabStop = false;
+            this.windowPalatte.Click += new System.EventHandler(this.pickWindowColorButton_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -221,6 +223,7 @@
             this.popupPalatte.Size = new System.Drawing.Size(57, 23);
             this.popupPalatte.TabIndex = 2;
             this.popupPalatte.TabStop = false;
+            this.popupPalatte.Click += new System.EventHandler(this.pickPopupWindowColorButton_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -253,17 +256,17 @@
             // 
             this.defaultColorsButton.Location = new System.Drawing.Point(3, 3);
             this.defaultColorsButton.Name = "defaultColorsButton";
-            this.defaultColorsButton.Size = new System.Drawing.Size(110, 23);
+            this.defaultColorsButton.Size = new System.Drawing.Size(135, 23);
             this.defaultColorsButton.TabIndex = 1;
-            this.defaultColorsButton.Text = "Set Default Colors";
+            this.defaultColorsButton.Text = "Revert To Default Colors";
             this.defaultColorsButton.UseVisualStyleBackColor = true;
             this.defaultColorsButton.Click += new System.EventHandler(this.defaultColorsButton_Click);
             // 
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.BackColor = System.Drawing.Color.Silver;
-            this.flowLayoutPanel6.Controls.Add(this.defaultColor1);
             this.flowLayoutPanel6.Controls.Add(this.defaultColor2);
+            this.flowLayoutPanel6.Controls.Add(this.defaultColor1);
             this.flowLayoutPanel6.Controls.Add(this.defaultColor3);
             this.flowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel6.Location = new System.Drawing.Point(156, 5);
@@ -275,7 +278,7 @@
             // defaultColor1
             // 
             this.defaultColor1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.defaultColor1.Location = new System.Drawing.Point(3, 3);
+            this.defaultColor1.Location = new System.Drawing.Point(66, 3);
             this.defaultColor1.Name = "defaultColor1";
             this.defaultColor1.Size = new System.Drawing.Size(57, 23);
             this.defaultColor1.TabIndex = 3;
@@ -284,7 +287,7 @@
             // defaultColor2
             // 
             this.defaultColor2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.defaultColor2.Location = new System.Drawing.Point(66, 3);
+            this.defaultColor2.Location = new System.Drawing.Point(3, 3);
             this.defaultColor2.Name = "defaultColor2";
             this.defaultColor2.Size = new System.Drawing.Size(57, 23);
             this.defaultColor2.TabIndex = 2;

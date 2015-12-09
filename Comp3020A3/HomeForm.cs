@@ -171,7 +171,7 @@ namespace Comp3020A3
                 Review review = reviews[e.RowIndex];
 
                 ModifyReviewForm form = new ModifyReviewForm(review);
-                form.Show();
+                form.ShowDialog();
             }
             else
             {
@@ -205,7 +205,7 @@ namespace Comp3020A3
                 Review review = reviews[e.RowIndex];
 
                 ModifyReviewForm form = new ModifyReviewForm(review);
-                form.Show();
+                form.ShowDialog();
             }
             else
             {
