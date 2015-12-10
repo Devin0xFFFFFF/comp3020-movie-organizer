@@ -12,30 +12,37 @@ namespace Comp3020A3
     {
 
         SearchQuery query;
+        List<Movie> movies;
+
+        struct scatterplot
+        {
+            public int yearX;
+            public int ratingY;
+        }
+
+        scatterplot[] coords;
 
         public ScatterplotForm()
         {
             InitializeComponent();
 
-            this.Invalidate();
-            //Pen pen = new Pen(Color.Black);
-            //panel.CreateGraphics().DrawLine(pen, new Point(0, 0), new Point(panel.Size.Height, 0));
-            //this.Invalidate();
         }
 
         protected override void fillInForm(Object element)
         {
             query = (SearchQuery)element;
 
+            movies = query.getList();
+
+
+            coords = new scatterplot[];
+
+            for (int i = 0; i < ; i++)
+            {
+                
+            }
+
         }
 
-        private void panel_Paint(object sender, PaintEventArgs e)
-        {
-            Pen pen = new Pen(Color.Black);
-            Graphics graph = panel.CreateGraphics();
-            graph.DrawLine(pen, new Point(0, 0), new Point(0, panel.Size.Height));
-            graph.DrawLine(pen, new Point(0, panel.Size.Height), new Point(panel.Size.Width, panel.Size.Height));
-            //this.Invalidate();
-        }
     }
 }
