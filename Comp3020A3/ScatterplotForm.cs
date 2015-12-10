@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Comp3020A3;
 
 namespace Comp3020A3
 {
@@ -12,15 +13,16 @@ namespace Comp3020A3
     {
 
         SearchQuery query;
-        List<Movie> movies;
+        Movie[] movies;
+        //scatterplot[] coords;
 
-        struct scatterplot
-        {
-            public int yearX;
-            public int ratingY;
-        }
+        //struct scatterplot
+        //{
+        //    public int yearX;
+        //    public int ratingY;
+        //}
 
-        scatterplot[] coords;
+        
 
         public ScatterplotForm()
         {
@@ -32,15 +34,17 @@ namespace Comp3020A3
         {
             query = (SearchQuery)element;
 
-            movies = query.getList();
+            movies = query.getList().ToArray();
 
+            //coords = new scatterplot[movies.Length];
 
-            coords = new scatterplot[];
-
-            for (int i = 0; i < ; i++)
+            for (int i = 0; i < movies.Length; i++)
             {
-                
+                chart.Series["Series1"].Points.AddXY((double)movies[i].year, (double)movies[i].rating);
+                //coords[i].ratingY = movies[i].rating;
             }
+
+            //chart.Series["Series1"].Points.DataBindXY();
 
         }
 
