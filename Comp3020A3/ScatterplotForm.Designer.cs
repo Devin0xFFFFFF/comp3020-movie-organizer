@@ -67,6 +67,8 @@
             this.chart.Titles.Add(title1);
             this.chart.Titles.Add(title2);
             this.chart.Titles.Add(title3);
+            this.chart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chart_MouseClick);
+            this.chart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart_MouseMove);
             // 
             // ScatterplotForm
             // 
