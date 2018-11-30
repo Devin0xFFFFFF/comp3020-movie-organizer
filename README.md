@@ -1,7 +1,8 @@
 # comp3020-movie-organizer
-###For The Comp 3020 HCI Project
 
-####A Windows Forms application written in C# using Visual Studio
+### Comp 3020 HCI Project
+
+#### A Windows Forms application written in C# using Visual Studio
 
 This repository consists of the University of Manitoba's Introduction to Human Computer Interaction course project.
 
@@ -14,7 +15,7 @@ This includes the following directories:
 - Comp3020_A1-Part2c
 - Comp3020A2P3
 
-The thrid part (A3) was developing the actual application based on the requirements and prototypes we developed earlier in the semester.
+The third part (A3) was developing the actual application based on the requirements and prototypes we developed earlier in the semester.
 
 The source files are under [Comp3020A3](./Comp3020A3)
 
